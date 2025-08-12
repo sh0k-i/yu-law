@@ -1,0 +1,343 @@
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { Component as EtherealShadows } from '../components/EtherealShadows'
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: ''
+  })
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // Handle form submission here
+    console.log('Form submitted:', formData)
+    // You would typically send this to your backend
+  }
+
+  const services = [
+    'Family Law',
+    'Immigration Law',
+    'Personal Injury',
+    'Other'
+  ]
+
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="bg-brand-black text-white pt-32 pb-24 -mt-20 relative overflow-hidden">
+        {/* Dynamic Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-brand-black to-gray-800"></div>
+        {/* Central blue spotlight */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400 opacity-[0.06] rounded-full blur-3xl"></div>
+        {/* Left red spotlight */}
+        <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-brand-red opacity-[0.08] rounded-full blur-3xl"></div>
+        {/* Right red spotlight */}
+        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-brand-red opacity-[0.08] rounded-full blur-3xl"></div>
+        
+        {/* Ethereal Shadows Overlay */}
+        <div className="absolute inset-0 z-5">
+          <EtherealShadows
+            color="rgba(128, 128, 128, 1)"
+            animation={{ scale: 100, speed: 90 }}
+            noise={{ opacity: 1, scale: 1.2 }}
+            sizing="fill"
+            className="w-full h-full"
+          />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center">
+            <motion.h1 
+              className="text-5xl md:text-6xl font-lancea text-white mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              CONTACT US
+            </motion.h1>
+            <motion.div 
+              className="w-24 h-1 bg-brand-red mx-auto mb-8"
+              initial={{ width: 0 }}
+              whileInView={{ width: 96 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            ></motion.div>
+            <motion.p 
+              className="text-xl font-acherus text-brand-cream max-w-3xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              Ready to take the next step? Contact Yu Law Firm today for your free consultation.
+            </motion.p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form & Info */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Contact Form */}
+            <div>
+              <motion.h2 
+                className="text-4xl font-lancea text-brand-black mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                Get Your Free Consultation
+              </motion.h2>
+              <motion.div 
+                className="w-24 h-1 bg-brand-red mb-8"
+                initial={{ width: 0 }}
+                whileInView={{ width: 96 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              ></motion.div>
+              <p className="text-lg font-acherus text-brand-gray mb-8 leading-relaxed">
+                Fill out the form below and we'll get back to you within 24 hours to discuss your case.
+              </p>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-acherus font-medium text-brand-black mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus"
+                    placeholder="Your full name"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-acherus font-medium text-brand-black mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-acherus font-medium text-brand-black mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus"
+                    placeholder="(555) 123-4567"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="service" className="block text-sm font-acherus font-medium text-brand-black mb-2">
+                    Service Needed
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus"
+                  >
+                    <option value="">Select a service</option>
+                    {services.map((service) => (
+                      <option key={service} value={service}>
+                        {service}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-acherus font-medium text-brand-black mb-2">
+                    Tell us about your case *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={6}
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus"
+                    placeholder="Please provide details about your legal situation..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="btn-primary w-full"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            {/* Contact Information */}
+            <div>
+              <motion.h2 
+                className="text-4xl font-lancea text-brand-black mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                Get In Touch
+              </motion.h2>
+              <motion.div 
+                className="w-24 h-1 bg-brand-red mb-8"
+                initial={{ width: 0 }}
+                whileInView={{ width: 96 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              ></motion.div>
+
+              <div className="space-y-8">
+                <div className="flex items-start">
+                  <div className="text-brand-red w-12 h-12 flex items-center justify-center mr-4 mt-1">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-lancea text-brand-black mb-2">Phone</h3>
+                    <p className="font-acherus text-brand-gray mb-2">Call us for immediate assistance</p>
+                    <a 
+                      href="tel:940-239-9837" 
+                      className="text-brand-red font-acherus font-medium hover:text-brand-black transition-colors"
+                    >
+                      940-239-9837
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="text-brand-red w-12 h-12 flex items-center justify-center mr-4 mt-1">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-lancea text-brand-black mb-2">Email</h3>
+                    <p className="font-acherus text-brand-gray mb-2">Send us an email anytime</p>
+                    <a 
+                      href="mailto:info@yulawfirm.com" 
+                      className="text-brand-red font-acherus font-medium hover:text-brand-black transition-colors"
+                    >
+                      info@yulawfirm.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="text-brand-red w-12 h-12 flex items-center justify-center mr-4 mt-1">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-lancea text-brand-black mb-2">Location</h3>
+                    <p className="font-acherus text-brand-gray mb-2">Serving clients throughout Texas</p>
+                    <p className="text-brand-black font-acherus">Texas, United States</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="text-brand-red w-12 h-12 flex items-center justify-center mr-4 mt-1">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+                      <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-lancea text-brand-black mb-2">Office Hours</h3>
+                    <p className="font-acherus text-brand-gray mb-2">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p className="font-acherus text-brand-gray mb-2">Saturday: 10:00 AM - 4:00 PM</p>
+                    <p className="font-acherus text-brand-gray">Sunday: By appointment only</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-12 p-6 bg-brand-cream rounded-md">
+                <h3 className="text-2xl font-lancea text-brand-black mb-4">Emergency Contact</h3>
+                <p className="font-acherus text-brand-gray mb-4">
+                  If you have a legal emergency outside of business hours, please call our emergency line.
+                </p>
+                <a 
+                  href="tel:940-239-9837" 
+                  className="btn-primary inline-block"
+                >
+                  Emergency Line
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section Placeholder */}
+      <section className="py-20 bg-brand-cream">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <motion.h2 
+              className="text-4xl font-lancea text-brand-black mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Visit Our Office
+            </motion.h2>
+            <motion.div 
+              className="w-24 h-1 bg-brand-red mx-auto mb-8"
+              initial={{ width: 0 }}
+              whileInView={{ width: 96 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            ></motion.div>
+            <div className="bg-brand-gray bg-opacity-20 h-96 rounded-md flex items-center justify-center">
+              <p className="font-acherus text-brand-gray text-lg">
+                Interactive Map Coming Soon
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
+
+export default Contact

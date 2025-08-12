@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom font imports - You'll need to add these font files */
+@font-face {
+  font-family: 'Lancea Premium';
+  src: url('./assets/fonts/lancea.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Acherus Grotesque';
+  src: url('./assets/fonts/acherus-grotesque-light.woff2') format('woff2'),
+       url('./assets/fonts/acherus-grotesque-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Acherus Grotesque', 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lancea Premium', serif;
+  font-weight: normal;
+}
+
+/* Custom button styles matching brand */
+.btn-primary {
+  @apply bg-brand-red text-white px-8 py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply border-2 border-brand-black text-brand-black px-8 py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-brand-black hover:text-white hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-black focus:ring-offset-2;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation utilities */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects for cards */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+}
