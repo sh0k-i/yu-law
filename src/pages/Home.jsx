@@ -59,7 +59,7 @@ const Home = () => {
           <StaggerTestimonials />
         </div>
       </section>
-      <WhyChooseUsSection />
+      {/* <WhyChooseUsSection /> */}
       {/* <CoreValuesSection /> */}
       <CTASection />
       <FAQSection />
