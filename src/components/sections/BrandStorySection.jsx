@@ -7,11 +7,11 @@ const BrandStorySection = () => {
       {/* Background matching Settlements By Yu section */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-brand-black to-gray-800"></div>
       {/* Central blue spotlight */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400 opacity-[0.04] rounded-full blur-3xl"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400 opacity-[0.04] blur-3xl"></div>
       {/* Left red spotlight */}
-      <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-brand-red opacity-[0.06] rounded-full blur-3xl"></div>
+      <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-brand-red opacity-[0.06] blur-3xl"></div>
       {/* Right red spotlight */}
-      <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-brand-red opacity-[0.06] rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-brand-red opacity-[0.06] blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -61,12 +61,17 @@ const BrandStorySection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <Link
-                to="/about"
-                className="btn-primary"
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Learn More About Us
-              </Link>
+                <Link
+                  to="/about"
+                  className="btn-primary"
+                >
+                  Learn More About Us
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
           <motion.div 

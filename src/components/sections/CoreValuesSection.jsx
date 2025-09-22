@@ -117,13 +117,13 @@ const CoreValuesSection = () => {
               className="group"
             >
               <motion.div 
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col"
+                className="bg-white p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col"
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.2 }}
               >
                 {/* Icon Container */}
                 <motion.div 
-                  className="bg-brand-red text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                  className="bg-brand-red text-white w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
                   whileHover={{ rotate: 5 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -142,7 +142,7 @@ const CoreValuesSection = () => {
 
                 {/* Bottom accent line */}
                 <motion.div
-                  className="mt-6 h-1 bg-brand-red rounded-full"
+                  className="mt-6 h-1 bg-brand-red"
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
                   viewport={{ once: true }}

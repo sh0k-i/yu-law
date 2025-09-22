@@ -1,19 +1,21 @@
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import Logo from './Logo'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const { t } = useTranslation()
 
   const practiceAreas = [
-    'Family Law',
-    'Immigration Law',
     'Personal Injury',
+    'Family Law',
+    'Estate Planning',
   ]
 
   const quickLinks = [
-    { name: 'About Us', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '/contact' },
+    { name: t('footer.aboutUs'), href: '/about' },
+    { name: t('header.services'), href: '/services' },
+    { name: t('header.contact'), href: '/contact' },
   ]
 
   return (
@@ -31,20 +33,20 @@ const Footer = () => {
             </div>
             <div className="mt-6">
               <p className="text-brand-cream font-acherus mb-2">
-                <span className="font-medium">Phone:</span> 940-239-9837
+                <span className="font-medium">{t('footer.contact.phone')}</span> 940-239-9837
               </p>
               <p className="text-brand-cream font-acherus mb-2">
-                <span className="font-medium">Email:</span> info@yulawfirm.com
+                <span className="font-medium">{t('footer.contact.email')}</span> info@yulawfirm.com
               </p>
               <p className="text-brand-cream font-acherus">
-                <span className="font-medium">Address:</span> Texas, United States
+                <span className="font-medium">{t('footer.contact.address')}</span> Texas, United States
               </p>
             </div>
           </div>
 
           {/* Practice Areas */}
           <div>
-            <h4 className="text-lg font-lancea text-white mb-4">Practice Areas</h4>
+            <h4 className="text-lg font-lancea text-white mb-4">{t('footer.practiceAreas')}</h4>
             <ul className="space-y-2">
               {practiceAreas.map((area) => (
                 <li key={area}>
@@ -61,7 +63,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-lancea text-white mb-4">Quick Links</h4>
+            <h4 className="text-lg font-lancea text-white mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -79,7 +81,7 @@ const Footer = () => {
                 to="/contact"
                 className="btn-primary inline-block"
               >
-                Get Started Now
+                {t('header.getStarted')}
               </Link>
             </div>
           </div>
@@ -89,20 +91,20 @@ const Footer = () => {
         <div className="border-t border-brand-gray mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-brand-cream font-acherus text-sm">
-              © {currentYear} Yu Law Firm. All rights reserved.
+              {t('footer.copyright', { year: currentYear })}
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link
                 to="/privacy"
                 className="text-brand-cream font-acherus text-sm hover:text-brand-red transition-colors duration-200"
               >
-                Privacy Policy
+                {t('footer.privacy')}
               </Link>
               <Link
                 to="/terms"
                 className="text-brand-cream font-acherus text-sm hover:text-brand-red transition-colors duration-200"
               >
-                Terms of Service
+                {t('footer.terms')}
               </Link>
             </div>
           </div>

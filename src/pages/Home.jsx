@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import HeroSection from '../components/sections/HeroSection'
-import StatisticsSection from '../components/sections/StatisticsSection'
 import PurposeSection from '../components/sections/PurposeSection'
 import PracticeAreasSection from '../components/sections/PracticeAreasSection'
 import WhyChooseUsSection from '../components/sections/WhyChooseUsSection'
@@ -10,15 +10,19 @@ import CoreValuesSection from '../components/sections/CoreValuesSection'
 import CTASection from '../components/sections/CTASection'
 import SettlementsSection from '../components/sections/SettlementsSection'
 import FAQSection from '../components/sections/FAQSection'
+import PartnersSection from '../components/sections/PartnersSection'
+import OurApproachSection from '../components/sections/OurApproachSection'
 
 const Home = () => {
+  const { t } = useTranslation()
 
   return (
     <>
       <HeroSection />
-      <StatisticsSection />
-      <PurposeSection />
+      <PartnersSection />
+      <OurApproachSection />
       <PracticeAreasSection />
+
       <SettlementsSection />
       <section className="py-20 bg-brand-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,7 +34,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              CLIENT TESTIMONIALS
+              {t('testimonials.title')}
             </motion.h2>
             <motion.div 
               className="w-24 h-1 bg-brand-red mx-auto mb-8"
@@ -46,7 +50,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Hear from our satisfied clients who have experienced the Yu Law Firm difference firsthand.
+              {t('testimonials.description')}
             </motion.p>
           </div>
         </div>
@@ -55,7 +59,6 @@ const Home = () => {
           <StaggerTestimonials />
         </div>
       </section>
-      {/* <BrandStorySection /> */}
       <WhyChooseUsSection />
       {/* <CoreValuesSection /> */}
       <CTASection />

@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 const SettlementsSection = () => {
+  const { t } = useTranslation()
   const settlements = [
     {
       case: "Personal Injury - Motor Vehicle Accident",
@@ -52,7 +54,7 @@ const SettlementsSection = () => {
       {/* Elegant Background with Spotlights */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-brand-black to-gray-800"></div>
       {/* Central blue spotlight */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400 opacity-[0.04] rounded-full blur-3xl"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400 opacity-[0.04] blur-3xl"></div>
       
       {/* Gradient Overlays for Smooth Edges - Moved to parent section */}
       <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-brand-black to-transparent pointer-events-none z-20"></div>
@@ -68,7 +70,7 @@ const SettlementsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            SETTLEMENTS BY YU
+            {t('settlements.title', 'SETTLEMENTS BY YU')}
           </motion.h2>
           <motion.div 
             className="w-24 h-1 bg-brand-red mx-auto mb-8"
@@ -84,7 +86,7 @@ const SettlementsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Real results for real people. See how we've secured life-changing settlements for our clients.
+            {t('settlements.description', "Real results for real people. See how we've secured life-changing settlements for our clients.")}
           </motion.p>
         </div>
 
@@ -93,9 +95,9 @@ const SettlementsSection = () => {
       {/* Full Width Marquee Container */}
       <div className="w-full relative z-10 mb-16">
         {/* Left red spotlight */}
-        <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-brand-red opacity-[0.06] rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-brand-red opacity-[0.06] blur-3xl"></div>
         {/* Right red spotlight */}
-        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-brand-red opacity-[0.06] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-brand-red opacity-[0.06] blur-3xl"></div>
         
         <div className="flex overflow-hidden">
           <motion.div
@@ -116,7 +118,7 @@ const SettlementsSection = () => {
             {[...settlements, ...settlements].map((settlement, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[450px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 group"
+                className="flex-shrink-0 w-[450px] bg-white/5 backdrop-blur-sm border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 group"
               >
                 {/* Case Type - At Top */}
                 <h3 className="text-lg font-lancea text-white mb-6 text-center group-hover:text-brand-cream transition-colors duration-300">
@@ -151,14 +153,14 @@ const SettlementsSection = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <p className="text-brand-cream font-acherus text-lg mb-6">
-            Ready to secure the settlement you deserve?
+            {t('settlements.ctaText', 'Ready to secure the settlement you deserve?')}
           </p>
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <button className="btn-primary">
-              Get Started Now
+              {t('header.getStarted')}
             </button>
           </motion.div>
         </motion.div>

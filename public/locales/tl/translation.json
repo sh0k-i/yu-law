@@ -1,0 +1,117 @@
+{
+  "header": {
+    "home": "Tahanan",
+    "about": "Tungkol Sa Amin",
+    "services": "Mga Serbisyo",
+    "contact": "Makipag-ugnayan",
+    "getStarted": "Simulan Na Ngayon",
+    "language": "Wika"
+  },
+  "hero": {
+    "title": "Paano Ka Matutulungan ng YU?",
+    "description": "Ang aming law firm ay nakatuon sa paglilingkod sa iyo at pagkamit ng katarungang nararapat sa iyo! Kung ikaw o ang iyong mahal sa buhay ay naapektuhan ng mga legal na hamon, tawagan kami sa",
+    "cta": "Simulan Na Ngayon"
+  },
+  "practiceAreas": {
+    "title": "MGA LARANGAN NG PRAKTIS",
+    "description": "Kami ay nag-specialize sa tatlong pangunahing larangan ng batas, na nagbibigay ng dalubhasang patnubay at mahabagin na suporta. Ang aming mga may karanasang abogado ay nakatuon sa pagkamit ng pinakamahusay na posibleng resulta para sa aming mga kliyente.",
+    "personalInjury": {
+      "title": "Personal na Pinsala",
+      "description": "Lumalaban para sa kabayarang nararapat sa iyo matapos makaranas ng mga pinsala dahil sa kapabayaan o maling gawain ng iba.",
+      "detailedDescription": "Ang aming mga abogado sa personal na pinsala ay humahawak ng mga aksidente sa sasakyan, kapabayaan medikal, pinsala sa trabaho, at mga claim sa maling pagkamatay nang may dedikasyon.",
+      "services": ["Mga Aksidente sa Sasakyan", "Kapabayaan Medikal", "Mga Pinsala sa Trabaho", "Maling Pagkamatay"]
+    },
+    "familyLaw": {
+      "title": "Batas Pampamilya",
+      "description": "Paglalayag sa mga kumplikadong usapin ng pamilya nang may habag at kadalubhasaan. Nauunawaan namin na ang mga isyu ng pamilya ay lubhang personal at nangangailangan ng sensitibong pamamahala.",
+      "detailedDescription": "Ang aming praktika sa batas pampamilya ay sumasaklaw sa diborsyo, kustodiya ng bata, pag-ampon, proteksyon sa karahasan sa tahanan, at paghahati ng ari-arian nang may pagmamalasakit at propesyonalismo.",
+      "services": ["Diborsyo at Paghihiwalay", "Kustodiya ng Bata", "Pag-ampon", "Proteksyon sa Karahasan sa Tahanan"]
+    },
+    "estatePlanning": {
+      "title": "Pagpaplano ng Ari-arian",
+      "description": "Pagsiguro ng kinabukasan ng iyong pamilya sa pamamagitan ng komprehensibong solusyon sa pagpaplano ng ari-arian na iniayon sa iyong natatanging pangangailangan.",
+      "detailedDescription": "Nagbibigay kami ng dalubhasang patnubay sa mga habilin, trust, power of attorney, at mga direktiba sa pangangalagang pangkalusugan upang protektahan ang iyong pamana at mga minamahal.",
+      "services": ["Mga Habilin at Trust", "Power of Attorney", "Mga Direktiba sa Pangangalagang Pangkalusugan", "Pangangasiwa ng Ari-arian"]
+    }
+  },
+  "testimonials": {
+    "title": "MGA PATOTOO NG KLIYENTE",
+    "description": "Pakinggan mula sa aming mga nasiyahang kliyente na nakaranas ng kaibahan ng Yu Law Firm nang una-unang kamay."
+  },
+  "faq": {
+    "title": "ANG IYONG MGA KATANUNGAN",
+    "description": "Kumuha ng mga sagot sa karaniwang mga katanungan tungkol sa aming mga legal na serbisyo, mga proseso, at kung paano kami makakatulong sa iyong kaso.",
+    "subDescription": "Matapos ang isang aksidente, laging may mas maraming katanungan kaysa sa mga sagot. Sa Yu Law Firm, nandito kami para sagutin ang anumang katanungan na mayroon ka tungkol sa iyong kaso ng pinsala.",
+    "contactButton": "Makipag-ugnayan 24-7"
+  },
+  "services": {
+    "title": "AMING MGA SERBISYO",
+    "description": "Mga dalubhasang legal na serbisyo sa Personal na Pinsala, Batas Pampamilya, at Pagpaplano ng Ari-arian na may matatag na dedikasyon sa iyong tagumpay.",
+    "practiceAreaLabel": "LARANGAN NG PRAKTIS",
+    "servicesInclude": "Kasama sa mga Serbisyo:",
+    "ctaTitle": "Handa nang Talakayin ang Iyong Kaso?",
+    "ctaDescription": "Bawat legal na hamon ay kakaiba. Hayaan kaming bigyan ka ng isang personal na konsultasyon upang talakayin ang iyong mga tiyak na pangangailangan at kung paano kami makakatulong.",
+    "callNow": "Tumawag: 940-239-9837"
+  },
+  "statistics": {
+    "moreThan": "HIGIT SA",
+    "casesHandled": "MGA KASO NA MATAGUMPAY NA HINAHAWAKAN",
+    "recovered": "NAKUHA PARA SA AMING MGA KLIYENTE"
+  },
+  "purpose": {
+    "title": "AMING LAYUNIN",
+    "description": "Nag-specialize sa Personal na Pinsala, Batas Pampamilya, at Pagpaplano ng Ari-arian, ang aming law firm ay nakatuon sa paglilingkod bilang isang hindi matitinag na sistema ng suporta. Nagbibigay kami ng matatag na legal na patnubay para sa mga indibidwal na lumalayag sa masalimuot na mga larangan ng mga lugar na ito, ipinoposisyon ang aming sarili bilang iyong dedikadong kaalyado. Ang aming pangako ay tinitiyak sa iyo na walang hamong itinuturing na hindi malalampasan sa aming suporta. Ang iyong kapayapaan ng isip ang aming pangunahing prioridad, at handa kaming pasimplehin ang masalimuot na mga legal na usapin, nakatayong matatag sa iyong tabi sa bawat yugto ng iyong paglalakbay."
+  },
+  "whyChooseUs": {
+    "title": "BAKIT PILIIN ANG YU LAW FIRM?",
+    "description": "Ang aming pangako sa kahusayan, personal na serbisyo, at napatunayang mga resulta ang nagpapaiba sa amin. Alamin kung bakit pinagkakatiwalaan ng mga kliyente ang Yu Law Firm sa kanilang pinakamahalagang legal na usapin.",
+    "ctaText": "Maranasan ang pagkakaiba ng Yu Law Firm para sa iyong sarili.",
+    "reasons": {
+      "expertExperience": {
+        "title": "Dalubhasang Karanasan",
+        "description": "Mga taon ng espesyalisadong karanasan sa aming mga larangan ng praktika na may napatunayang track record."
+      },
+      "personalAttention": {
+        "title": "Personal na Atensyon",
+        "description": "Bawat kliyente ay tumatanggap ng personalized na pangangalaga at dedikadong atensyon sa buong kaso nila."
+      },
+      "openCommunication": {
+        "title": "Bukas na Komunikasyon",
+        "description": "Pinananatili ka naming napapabalitaan sa buong iyong legal na paglalakbay na may malinaw na komunikasyon."
+      },
+      "provenResults": {
+        "title": "Napatunayang mga Resulta",
+        "description": "Tuloy-tuloy na track record ng matagumpay na mga kinalabasan at nasiyahang mga kliyente sa lahat ng larangan ng praktika."
+      }
+    }
+  },
+  "settlements": {
+    "title": "MGA SETTLEMENT NG YU",
+    "description": "Tunay na mga resulta para sa tunay na mga tao. Tingnan kung paano kami nakapagkuha ng mga settlement na nagbabago ng buhay para sa aming mga kliyente.",
+    "ctaText": "Handa bang makuha ang settlement na nararapat sa iyo?"
+  },
+  "cta": {
+    "title": "Handa nang Magsimula?",
+    "description": "Huwag harapin ang iyong mga legal na hamon nang mag-isa. Makipag-ugnayan sa Yu Law Firm ngayon para sa isang libreng konsultasyon at hayaan kaming tulungan kang lumayag sa iyong landas patungo sa katarungan.",
+    "callNow": "Tumawag Ngayon: 940-239-9837"
+  },
+  "footer": {
+    "aboutUs": "Tungkol Sa Amin",
+    "practiceAreas": "Mga Larangan ng Praktis",
+    "quickLinks": "Mga Mabilisang Link",
+    "contact": {
+      "phone": "Telepono:",
+      "email": "Email:",
+      "address": "Address:"
+    },
+    "copyright": "© {{year}} Yu Law Firm. Lahat ng karapatan ay nakalaan.",
+    "privacy": "Patakaran sa Privacy",
+    "terms": "Mga Tuntunin ng Serbisyo"
+  },
+  "languageNames": {
+    "en": "English",
+    "es": "Español",
+    "tl": "Tagalog",
+    "ceb": "Cebuano"
+  }
+}

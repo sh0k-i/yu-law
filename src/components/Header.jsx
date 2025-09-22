@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import Logo from './Logo'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const location = useLocation()
+  const { t } = useTranslation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,20 +22,23 @@ const Header = () => {
   }, [])
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '/contact' },
+    { name: t('header.home'), href: '/' },
+    { name: t('header.about'), href: '/about' },
+    { name: t('header.services'), href: '/services' },
+    { name: t('header.contact'), href: '/contact' },
   ]
 
   const isActive = (path) => location.pathname === path
+
+  // Determine if we're on the home page
+  const isHomePage = location.pathname === '/';
 
   return (
     <motion.header 
       className="sticky top-0 z-50 transition-all duration-300"
       animate={{
-        backgroundColor: isScrolled ? 'rgba(171, 21, 34, 1)' : 'rgba(255, 255, 255, 0)',
-        boxShadow: isScrolled ? '0 1px 3px 0 rgba(0, 0, 0, 0.1)' : '0 0 0 0 rgba(0, 0, 0, 0)'
+        backgroundColor: isHomePage ? 'rgba(171, 21, 34, 1)' : (isScrolled ? 'rgba(171, 21, 34, 1)' : 'rgba(255, 255, 255, 0)'),
+        boxShadow: (isHomePage || isScrolled) ? '0 1px 3px 0 rgba(0, 0, 0, 0.1)' : '0 0 0 0 rgba(0, 0, 0, 0)'
       }}
       transition={{ duration: 0.3 }}
     >
@@ -66,6 +72,11 @@ const Header = () => {
             </div>
           </div>
 
+          {/* Language Switcher */}
+          <div className="hidden md:block mr-4">
+            <LanguageSwitcher isScrolled={isScrolled} />
+          </div>
+
           {/* Phone Number */}
           <div className="hidden md:flex items-center mr-4">
             <a
@@ -91,7 +102,7 @@ const Header = () => {
                   : 'bg-brand-red text-white hover:bg-red-700 focus:ring-brand-red focus:ring-offset-transparent'
               }`}
             >
-              Get Started Now
+              {t('header.getStarted')}
             </Link>
           </div>
 
@@ -99,7 +110,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md transition-colors duration-200 text-white hover:text-brand-cream hover:bg-white hover:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center p-2 transition-colors duration-200 text-white hover:text-brand-cream hover:bg-white hover:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
               <span className="sr-only">Open main menu</span>
               {!isMenuOpen ? (
@@ -139,8 +150,11 @@ const Header = () => {
                   className="btn-primary w-full text-center block"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Get Started Now
+                  {t('header.getStarted')}
                 </Link>
+              </div>
+              <div className="pt-2 pb-2 flex items-center justify-center">
+                <LanguageSwitcher />
               </div>
             </div>
           </div>

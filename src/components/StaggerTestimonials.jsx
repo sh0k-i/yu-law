@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const SQRT_5000 = Math.sqrt(5000);
 
@@ -182,7 +183,8 @@ const TestimonialCard = ({
   position, 
   testimonial, 
   handleMove, 
-  cardSize 
+  cardSize,
+  t
 }) => {
   const isCenter = position === 0;
 
@@ -231,19 +233,20 @@ const TestimonialCard = ({
         "text-base sm:text-xl font-medium font-acherus",
         isCenter ? "text-white" : "text-gray-900"
       )}>
-        "{testimonial.testimonial}"
+        "{t(`testimonials.items.${testimonial.tempId}.text`, testimonial.testimonial)}"
       </h3>
       <p className={cn(
         "absolute bottom-8 left-8 right-8 mt-2 text-sm italic font-acherus",
         isCenter ? "text-white/90" : "text-gray-600"
       )}>
-        - {testimonial.by}
+        - {t(`testimonials.items.${testimonial.tempId}.by`, testimonial.by)}
       </p>
     </div>
   );
 };
 
 export const StaggerTestimonials = () => {
+  const { t } = useTranslation();
   const [cardSize, setCardSize] = useState(365);
   const [testimonialsList, setTestimonialsList] = useState(testimonials);
 
@@ -292,6 +295,7 @@ export const StaggerTestimonials = () => {
             handleMove={handleMove}
             position={position}
             cardSize={cardSize}
+            t={t}
           />
         );
       })}

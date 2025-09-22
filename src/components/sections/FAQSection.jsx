@@ -1,33 +1,36 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const FAQSection = () => {
   const [openFAQ, setOpenFAQ] = useState(null)
+  const { t } = useTranslation()
 
+  // Use dynamic translations with namespaces
   const faqs = [
     {
-      question: "How Does the \"No Win No Fee\" Promise Work?",
-      answer: "We work on a contingency fee basis, which means you don't pay attorney fees unless we win your case. We offer free initial consultations to evaluate your case and discuss your legal options without any upfront costs."
+      question: t('faq.items.noWinNoFee.question', "How Does the \"No Win No Fee\" Promise Work?"),
+      answer: t('faq.items.noWinNoFee.answer', "We work on a contingency fee basis, which means you don't pay attorney fees unless we win your case. We offer free initial consultations to evaluate your case and discuss your legal options without any upfront costs.")
     },
     {
-      question: "Do I Have to Pay to Speak with an Injury Attorney?",
-      answer: "No, we offer completely free consultations. There are no upfront costs or fees to discuss your case with our experienced legal team."
+      question: t('faq.items.freeConsultation.question', "Do I Have to Pay to Speak with an Injury Attorney?"),
+      answer: t('faq.items.freeConsultation.answer', "No, we offer completely free consultations. There are no upfront costs or fees to discuss your case with our experienced legal team.")
     },
     {
-      question: "Do I Need a Personal Injury Attorney Help Me Settle My Case?",
-      answer: "While not required by law, having an experienced attorney significantly increases your chances of receiving fair compensation. Insurance companies often offer lower settlements to unrepresented individuals."
+      question: t('faq.items.needAttorney.question', "Do I Need a Personal Injury Attorney Help Me Settle My Case?"),
+      answer: t('faq.items.needAttorney.answer', "While not required by law, having an experienced attorney significantly increases your chances of receiving fair compensation. Insurance companies often offer lower settlements to unrepresented individuals.")
     },
     {
-      question: "What is a Contingency Fee?",
-      answer: "A contingency fee means our payment is contingent on winning your case. You pay nothing upfront, and we only get paid when we secure compensation for you."
+      question: t('faq.items.contingencyFee.question', "What is a Contingency Fee?"),
+      answer: t('faq.items.contingencyFee.answer', "A contingency fee means our payment is contingent on winning your case. You pay nothing upfront, and we only get paid when we secure compensation for you.")
     },
     {
-      question: "How Much Does it Cost to Hire a Personal Injury Attorney?",
-      answer: "There are no upfront costs. We work on contingency, meaning you only pay if we win your case. Our fee comes from the settlement or judgment we secure for you."
+      question: t('faq.items.attorneyCost.question', "How Much Does it Cost to Hire a Personal Injury Attorney?"),
+      answer: t('faq.items.attorneyCost.answer', "There are no upfront costs. We work on contingency, meaning you only pay if we win your case. Our fee comes from the settlement or judgment we secure for you.")
     },
     {
-      question: "How Much Is My Personal Injury Case Worth?",
-      answer: "Case value depends on factors like medical expenses, lost wages, pain and suffering, and future costs. We provide free case evaluations to estimate your potential compensation."
+      question: t('faq.items.caseWorth.question', "How Much Is My Personal Injury Case Worth?"),
+      answer: t('faq.items.caseWorth.answer', "Case value depends on factors like medical expenses, lost wages, pain and suffering, and future costs. We provide free case evaluations to estimate your potential compensation.")
     }
   ]
 
@@ -48,7 +51,7 @@ const FAQSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              YOUR QUESTIONS
+              {t('faq.title')}
               <br />
               <span className="text-brand-red">ANSWERED</span>
             </motion.h2>
@@ -60,7 +63,7 @@ const FAQSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              We have straight answers to difficult questions to help you make critical decisions, navigate legal process and help you get justice.
+              {t('faq.description')}
             </motion.p>
 
             <motion.p 
@@ -70,7 +73,7 @@ const FAQSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Following an accident, there are always more questions than answers. At Yu Law Firm, we're here to answer any questions you have about your injury case.
+              {t('faq.subDescription', 'Following an accident, there are always more questions than answers. At Yu Law Firm, we\'re here to answer any questions you have about your injury case.')}
             </motion.p>
 
             <motion.div
@@ -79,9 +82,14 @@ const FAQSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <button className="btn-primary">
-                Contact 24-7
-              </button>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <button className="btn-primary">
+                  {t('faq.contactButton', 'Contact 24-7')}
+                </button>
+              </motion.div>
             </motion.div>
           </div>
 

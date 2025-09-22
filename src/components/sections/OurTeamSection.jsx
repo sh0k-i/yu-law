@@ -3,32 +3,58 @@ import { motion } from 'framer-motion'
 const OurTeamSection = () => {
   const teamMembers = [
     {
-      name: 'Liezyl Yu',
-      title: 'Founding Attorney',
-      specialization: 'Family Law, Immigration, Personal Injury',
-      description: 'With years of experience in family law and immigration, Liezyl founded Yu Law Firm with a mission to provide compassionate legal advocacy to those who need it most.',
-      image: '/images/team/liezyl-yu.png' // Placeholder path
+      name: 'Liezyl Yu Masinag',
+      title: 'Owner | Attorney',
+      description: 'Leading Yu Law Firm with expertise in personal injury law and unwavering dedication to client advocacy. Committed to fighting for justice and maximum compensation for every client.',
+      image: '/images/team/liezyl.png'
     },
     {
-      name: 'Sarah Martinez',
-      title: 'Senior Associate',
-      specialization: 'Immigration Law',
-      description: 'Sarah brings extensive experience in immigration law, helping families navigate complex visa processes and citizenship applications with dedication and expertise.',
-      image: '/images/team/sarah-martinez.png' // Placeholder path
+      name: 'Carla Cano Cantu',
+      title: 'Case Manager',
+      description: 'Expert case management professional ensuring smooth client communication and efficient case progression. Dedicated to keeping clients informed throughout their legal journey.',
+      image: '/images/team/carla.png'
     },
     {
-      name: 'Michael Chen',
-      title: 'Personal Injury Attorney',
-      specialization: 'Personal Injury, Medical Malpractice',
-      description: 'Michael specializes in personal injury cases, fighting tirelessly to ensure clients receive the compensation they deserve for their injuries and suffering.',
-      image: '/images/team/michael-chen.png' // Placeholder path
+      name: 'Kaye Brier',
+      title: 'Paralegal',
+      description: 'Skilled paralegal providing comprehensive legal support and document preparation. Committed to thorough case preparation and exceptional client service.',
+      image: '/images/team/kaye.png'
     },
     {
-      name: 'Jessica Rodriguez',
-      title: 'Family Law Attorney',
-      specialization: 'Family Law, Child Custody',
-      description: 'Jessica focuses on family law matters, providing compassionate guidance through divorce, custody, and adoption proceedings with sensitivity and professionalism.',
-      image: '/images/team/jessica-rodriguez.png' // Placeholder path
+      name: 'Caren Marie Montelibano',
+      title: 'Discovery Clerk',
+      description: 'Detail-oriented discovery specialist managing case documentation and evidence organization. Ensuring comprehensive case preparation for optimal outcomes.',
+      image: '/images/team/caren.png'
+    },
+    {
+      name: 'Arian Loyd Yu Hinayon',
+      title: 'Intake Specialist',
+      description: 'Compassionate intake specialist providing the first point of contact for potential clients. Dedicated to understanding client needs and connecting them with appropriate legal resources.',
+      image: '/images/team/arian.png'
+    },
+    {
+      name: 'Leila Trono',
+      title: 'Medical Clerk',
+      description: 'Specialized medical records coordinator managing complex medical documentation for personal injury cases. Expert in organizing critical medical evidence.',
+      image: '/images/team/leila.png'
+    },
+    {
+      name: 'Tanya Almendarez',
+      title: 'Compliance Officer',
+      description: 'Ensuring all legal processes meet regulatory standards and ethical requirements. Committed to maintaining the highest standards of legal practice.',
+      image: null
+    },
+    {
+      name: 'Marilyn Sario',
+      title: 'Closing Coordinator',
+      description: 'Expert coordinator managing case closures and final settlements. Ensuring smooth completion of legal matters and client satisfaction.',
+      image: null
+    },
+    {
+      name: 'Bear',
+      title: 'Barketing Manager',
+      description: 'Our beloved office companion providing emotional support and stress relief for both clients and staff. Specializing in tail wags and unconditional loyalty.',
+      image: null
     }
   ]
 
@@ -88,7 +114,7 @@ const OurTeamSection = () => {
         </div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -100,73 +126,79 @@ const OurTeamSection = () => {
               variants={itemVariants}
               className="group"
             >
-              <div className="bg-brand-cream rounded-md overflow-hidden card-hover hover:shadow-[0_25px_50px_-12px_rgba(171,21,34,0.25)] transition-shadow duration-300">
-                {/* Photo Container with Black Background */}
-                <div className="relative bg-brand-black p-8 flex justify-center items-center h-80">
-                  <motion.div
-                    className="relative w-48 h-48 rounded-full overflow-hidden bg-brand-black border-4 border-brand-cream"
-                    whileHover={{ 
-                      scale: 1.05,
-                      rotate: 2,
-                      transition: { duration: 0.3, ease: "easeOut" }
-                    }}
-                  >
-                    {/* Placeholder for actual photo */}
-                    <div className="w-full h-full bg-gradient-to-br from-brand-gray to-brand-black flex items-center justify-center">
-                      <div className="text-white text-6xl font-lancea opacity-30">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </div>
-                    </div>
-                    
-                    {/* Hover Overlay */}
+              <div className="bg-white shadow-lg overflow-hidden hover:shadow-[0_25px_50px_-12px_rgba(171,21,34,0.25)] transition-all duration-300 group-hover:-translate-y-2">
+                {/* Photo Container with Dark Background */}
+                <div className="relative bg-gradient-to-br from-gray-800 via-brand-black to-gray-900 h-80 flex justify-center items-end overflow-hidden">
+                  {/* Floating Photo */}
+                  {member.image ? (
                     <motion.div
-                      className="absolute inset-0 bg-brand-red bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
+                      className="relative"
+                      initial={{ y: 10, scale: 0.98 }}
+                      whileInView={{ y: 0, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      whileHover={{ 
+                        y: -15, 
+                        scale: 1.05,
+                        transition: { duration: 0.3, ease: "easeOut" }
+                      }}
                     >
-                      <div className="text-white text-sm font-acherus font-medium">
-                        View Profile
-                      </div>
+                      <img 
+                        src={member.image}
+                        alt={member.name}
+                        className="h-72 w-auto object-contain object-bottom filter drop-shadow-2xl"
+                        style={{
+                          filter: 'drop-shadow(0 10px 25px rgba(0,0,0,0.3)) drop-shadow(0 0 15px rgba(171,21,34,0.1))'
+                        }}
+                      />
+                      
+                      {/* Subtle glow effect on hover */}
+                      <motion.div
+                        className="absolute inset-0 bg-brand-red opacity-0 group-hover:opacity-5 transition-opacity duration-300 blur-xl"
+                        style={{ transform: 'scale(1.2)' }}
+                      />
                     </motion.div>
-                  </motion.div>
+                  ) : (
+                    <motion.div
+                      className="w-32 h-32 bg-gradient-to-br from-brand-red to-red-700 flex items-center justify-center text-white text-4xl font-lancea mb-8 shadow-2xl"
+                      whileHover={{ 
+                        y: -10, 
+                        scale: 1.1,
+                        rotate: 5,
+                        transition: { duration: 0.3, ease: "easeOut" }
+                      }}
+                    >
+                      {member.name === 'Bear' ? '🐕' : member.name.split(' ').map(n => n[0]).join('')}
+                    </motion.div>
+                  )}
 
-                  {/* Decorative Elements */}
-                  <div className="absolute top-4 right-4 w-8 h-8 border-2 border-brand-red opacity-20 rotate-45"></div>
-                  <div className="absolute bottom-4 left-4 w-6 h-6 border-2 border-brand-cream opacity-30 rotate-12"></div>
+                  {/* Subtle background pattern */}
+                  <div className="absolute inset-0 opacity-5">
+                    <div className="absolute top-10 right-10 w-20 h-20 border border-brand-red transform rotate-45"></div>
+                    <div className="absolute bottom-10 left-10 w-16 h-16 border border-white transform rotate-12"></div>
+                  </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-8">
-                  <h3 className="text-2xl font-lancea text-brand-black mb-2">
+                <div className="p-6">
+                  <h3 className="text-xl font-lancea text-brand-black mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-brand-red font-acherus font-medium mb-2">
+                  <p className="text-brand-red font-acherus font-medium mb-3">
                     {member.title}
                   </p>
-                  <p className="text-sm font-acherus text-brand-gray mb-4 italic">
-                    {member.specialization}
-                  </p>
-                  <p className="text-brand-black font-acherus leading-relaxed">
+                  <p className="text-brand-gray font-acherus leading-relaxed text-sm">
                     {member.description}
                   </p>
 
-                  {/* Contact Button */}
-                  <div className="mt-6">
-                    <motion.button
-                      className="text-brand-red font-acherus font-medium hover:text-brand-black transition-colors duration-200 flex items-center group"
-                      whileHover={{ x: 5 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      Contact {member.name.split(' ')[0]}
-                      <motion.span
-                        className="ml-2 group-hover:ml-3 transition-all duration-200"
-                        initial={{ x: 0 }}
-                        whileHover={{ x: 3 }}
-                      >
-                        →
-                      </motion.span>
-                    </motion.button>
-                  </div>
+                  {/* Decorative accent */}
+                  <motion.div
+                    className="w-12 h-0.5 bg-brand-red mt-4"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: 48 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 + 0.3 }}
+                  />
                 </div>
               </div>
             </motion.div>

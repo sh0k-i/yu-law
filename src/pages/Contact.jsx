@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Component as EtherealShadows } from '../components/EtherealShadows'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -36,25 +35,13 @@ const Contact = () => {
     <>
       {/* Hero Section */}
       <section className="bg-brand-black text-white pt-32 pb-24 -mt-20 relative overflow-hidden">
-        {/* Dynamic Background Gradient */}
+        {/* Beautiful Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-brand-black to-gray-800"></div>
-        {/* Central blue spotlight */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400 opacity-[0.06] rounded-full blur-3xl"></div>
-        {/* Left red spotlight */}
-        <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-brand-red opacity-[0.08] rounded-full blur-3xl"></div>
-        {/* Right red spotlight */}
-        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-brand-red opacity-[0.08] rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-brand-black/20"></div>
         
-        {/* Ethereal Shadows Overlay */}
-        <div className="absolute inset-0 z-5">
-          <EtherealShadows
-            color="rgba(128, 128, 128, 1)"
-            animation={{ scale: 100, speed: 90 }}
-            noise={{ opacity: 1, scale: 1.2 }}
-            sizing="fill"
-            className="w-full h-full"
-          />
-        </div>
+        {/* Subtle accent gradients */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brand-red/5 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-1/2 h-full bg-gradient-to-tr from-blue-900/10 to-transparent"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
