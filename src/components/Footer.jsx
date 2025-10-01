@@ -33,13 +33,20 @@ const Footer = () => {
             </div>
             <div className="mt-6">
               <p className="text-brand-cream font-acherus mb-2">
-                <span className="font-medium">{t('footer.contact.phone')}</span> 940-239-9837
+                <span className="font-medium">{t('footer.contact.phone')}</span> (940) 239-9840
               </p>
               <p className="text-brand-cream font-acherus mb-2">
                 <span className="font-medium">{t('footer.contact.email')}</span> info@yulawfirm.com
               </p>
-              <p className="text-brand-cream font-acherus">
-                <span className="font-medium">{t('footer.contact.address')}</span> Texas, United States
+              <p className="text-brand-cream font-acherus mb-2">
+                <span className="font-medium">{t('footer.contact.address')}</span>
+              </p>
+              <p className="text-brand-cream font-acherus leading-relaxed">
+                2201 Midway Road, Suite 102,<br />
+                Carrollton, Texas 75006
+              </p>
+              <p className="text-brand-cream font-acherus mt-2">
+                <span className="font-medium">Office Hours:</span> Monday - Friday 9:00 AM - 5:00 PM
               </p>
             </div>
           </div>

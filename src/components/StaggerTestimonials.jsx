@@ -59,124 +59,58 @@ const StarRating = ({ rating = 5, isCenter = false }) => (
 const testimonials = [
   {
     tempId: 0,
-    testimonial: "Yu Law Firm provided exceptional representation during my divorce. Their compassionate approach made a difficult time bearable.",
-    by: "Sarah M., Houston",
+    testimonial: "Liezyl helped me after a very traumatic car accident. She set me up right away with excellent medical care and was very attentive to me and my needs. I would recommend her time and time again!...",
+    by: "Hannah R.",
     imgSrc: "https://i.pravatar.cc/150?img=1"
   },
   {
     tempId: 1,
-    testimonial: "I'm confident my family's future is secure thanks to Yu Law Firm's expert estate planning services.",
-    by: "Robert K., Dallas",
+    testimonial: "She is truly an outstanding attorney and advocate. I had the pleasure of working with Attorney Liezyl from Yu Law Firm, and I cannot speak highly enough of her professionalism, dedication, and expertise...",
+    by: "Yohannis G.",
     imgSrc: "https://i.pravatar.cc/150?img=2"
   },
   {
     tempId: 2,
-    testimonial: "I was lost in the immigration process before I found Yu Law Firm. Can't thank them enough for their guidance!",
-    by: "Maria L., Austin",
+    testimonial: "Made me feel like they were truly on my side and cared. I was fortunate enough to work with Yu Law Firm and Attorney Liezyl after a car accident, and they were truly incredible...",
+    by: "Erika C.",
     imgSrc: "https://i.pravatar.cc/150?img=3"
   },
   {
     tempId: 3,
-    testimonial: "Yu Law Firm's business law expertise made our company formation seamless. Can't recommend them enough!",
-    by: "David C., San Antonio",
+    testimonial: "Impressed by the dedication and professionalism of Atty Liezyl. I am truly impressed by the dedication and professionalism of Atty. Liezyl Marasigan from Yu Law Firm. She responded quickly to my call and immediately took action on my concern...",
+    by: "Lynne",
     imgSrc: "https://i.pravatar.cc/150?img=4"
   },
   {
     tempId: 4,
-    testimonial: "If I could give 11 stars for their personal injury representation, I'd give 12.",
-    by: "Jennifer R., Fort Worth",
+    testimonial: "I 100% recommend for other small business. The Yu Law Firm was so helpful with helping me create and draft a contract that was not only to best interest of my clients but for the protection and well being of my small business...",
+    by: "Tanya F.",
     imgSrc: "https://i.pravatar.cc/150?img=5"
   },
   {
     tempId: 5,
-    testimonial: "SO SO SO HAPPY WE FOUND YU LAW FIRM!!!! They saved us countless hours and stress.",
-    by: "Michael T., El Paso",
+    testimonial: "I will definitely be a returning client. A great law firm with exceptional customer service. Attorney Masinag is prompt to return phone calls and e-mails with personalized attention and detail to my needs...",
+    by: "T. Tovar",
     imgSrc: "https://i.pravatar.cc/150?img=6"
   },
   {
     tempId: 6,
-    testimonial: "Took some convincing to hire a lawyer, but now that we're with Yu Law Firm, we're never going back.",
-    by: "Lisa W., Arlington",
+    testimonial: "Yu Law Firm has made my case trouble-free that I didn't have to worry about a single thing throughout the process as a first timer of having to deal with legal experts about my accident in my previous workplace...",
+    by: "Arian H.",
     imgSrc: "https://i.pravatar.cc/150?img=7"
   },
   {
     tempId: 7,
-    testimonial: "I would be lost without Yu Law Firm's detailed legal analysis. The value they provide is EASILY 100X what we paid.",
-    by: "James P., Plano",
+    testimonial: "Atty. Liezyl was very helpful and knowledgeable in the process of creating and drafting a business contract. Not only did she find a way to include my primary focal points but also prompted me...",
+    by: "Tanya A.",
     imgSrc: "https://i.pravatar.cc/150?img=8"
   },
   {
     tempId: 8,
-    testimonial: "Yu Law Firm is just the best legal representation. Period.",
-    by: "Amanda S., Irving",
-    imgSrc: "https://i.pravatar.cc/150?img=9"
+    testimonial: "Attorney Liezyl exhibited a profound understanding of family law and its complexities. Her expertise was apparent in her strategic handling of my case, ensuring that every decision made was well-informed and in my best interest...",
+    by: "Christina D.",
+    imgSrc: "https://i.pravatar.cc/150?img=8"
   },
-  {
-    tempId: 9,
-    testimonial: "I switched to Yu Law Firm 3 years ago and never looked back. Outstanding service every time.",
-    by: "Carlos M., Garland",
-    imgSrc: "https://i.pravatar.cc/150?img=10"
-  },
-  {
-    tempId: 10,
-    testimonial: "I've been searching for a law firm like Yu Law Firm for YEARS. So glad I finally found one!",
-    by: "Patricia H., Grand Prairie",
-    imgSrc: "https://i.pravatar.cc/150?img=11"
-  },
-  {
-    tempId: 11,
-    testimonial: "Their approach is so clear and straightforward, we understood our legal options in minutes.",
-    by: "Thomas B., McKinney",
-    imgSrc: "https://i.pravatar.cc/150?img=12"
-  },
-  {
-    tempId: 12,
-    testimonial: "Yu Law Firm's client support is unparalleled. They're always there when we need them most.",
-    by: "Michelle D., Frisco",
-    imgSrc: "https://i.pravatar.cc/150?img=13"
-  },
-  {
-    tempId: 13,
-    testimonial: "The results we've seen since hiring Yu Law Firm are off the charts! Highly recommended.",
-    by: "Kevin J., Richardson",
-    imgSrc: "https://i.pravatar.cc/150?img=14"
-  },
-  {
-    tempId: 14,
-    testimonial: "Yu Law Firm has revolutionized how we handle our legal matters. It's a game-changer!",
-    by: "Nicole A., Lewisville",
-    imgSrc: "https://i.pravatar.cc/150?img=15"
-  },
-  {
-    tempId: 15,
-    testimonial: "The comprehensive approach of Yu Law Firm is impressive. They handle everything seamlessly.",
-    by: "Ryan G., Carrollton",
-    imgSrc: "https://i.pravatar.cc/150?img=16"
-  },
-  {
-    tempId: 16,
-    testimonial: "I appreciate how Yu Law Firm stays current with legal developments. They're always one step ahead.",
-    by: "Stephanie F., Denton",
-    imgSrc: "https://i.pravatar.cc/150?img=17"
-  },
-  {
-    tempId: 17,
-    testimonial: "The value we've received from Yu Law Firm is incredible. Worth every penny and more.",
-    by: "Brandon L., Allen",
-    imgSrc: "https://i.pravatar.cc/150?img=18"
-  },
-  {
-    tempId: 18,
-    testimonial: "Yu Law Firm's expertise is so comprehensive, yet easy to understand. It's the perfect balance.",
-    by: "Rachel N., Mesquite",
-    imgSrc: "https://i.pravatar.cc/150?img=19"
-  },
-  {
-    tempId: 19,
-    testimonial: "We've tried other law firms, but Yu Law Firm stands out in terms of reliability and results.",
-    by: "Christopher E., Cedar Hill",
-    imgSrc: "https://i.pravatar.cc/150?img=20"
-  }
 ];
 
 const TestimonialCard = ({ 
@@ -199,7 +133,7 @@ const TestimonialCard = ({
       )}
       style={{
         width: cardSize,
-        height: cardSize,
+        height: '350px',
         backgroundColor: isCenter ? '#AB1522' : 'white',
         clipPath: `polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0)`,
         transform: `
@@ -220,14 +154,14 @@ const TestimonialCard = ({
           height: 2
         }}
       />
-      <img
+      {/* <img
         src={testimonial.imgSrc}
         alt={`${testimonial.by.split(',')[0]}`}
         className="mb-4 h-14 w-12 bg-gray-100 object-cover object-top"
         style={{
           boxShadow: "3px 3px 0px white"
         }}
-      />
+      /> */}
       <StarRating rating={5} isCenter={isCenter} />
       <h3 className={cn(
         "text-base sm:text-xl font-medium font-acherus",

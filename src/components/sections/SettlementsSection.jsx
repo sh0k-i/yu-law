@@ -5,45 +5,45 @@ const SettlementsSection = () => {
   const { t } = useTranslation()
   const settlements = [
     {
-      case: "Personal Injury - Motor Vehicle Accident",
-      amount: "$2,500,000",
-      description: "Secured maximum compensation for client with severe spinal injuries after truck collision"
+      case: "Motor Vehicle Collision",
+      amount: "$60,000",
+      description: "At-fault driver made an unsafe left turn"
     },
     {
-      case: "Medical Malpractice - Surgical Error",
-      amount: "$1,850,000",
-      description: "Successfully represented family in wrongful death case due to hospital negligence"
+      case: "Motor Vehicle Collision",
+      amount: "$57,000",
+      description: "At-fault driver rear-ended my Client's vehicle and was then pushed into the vehicle in front of them"
     },
     {
-      case: "Product Liability - Defective Equipment",
-      amount: "$3,200,000",
-      description: "Won landmark case against manufacturer for defective industrial machinery"
+      case: "Premises Liability",
+      amount: "$20,000",
+      description: "At-fault employer failed to maintain a safe working environment"
     },
     {
-      case: "Workers' Compensation - Workplace Injury",
-      amount: "$950,000",
-      description: "Obtained full benefits and compensation for construction worker injury"
+      case: "Motor Vehicle Collision",
+      amount: "$47,000",
+      description: "At-fault driver ran a red light and T-boned our Client's vehicle"
     },
     {
-      case: "Premises Liability - Slip and Fall",
-      amount: "$675,000",
-      description: "Achieved favorable settlement for client injured on commercial property"
+      case: "18-Wheeler/Trucking Collision",
+      amount: "$500,000",
+      description: "At-fault driver ran a red light and T-boned our Client"
     },
     {
-      case: "Auto Accident - Multiple Vehicles",
-      amount: "$1,400,000",
-      description: "Negotiated comprehensive settlement covering all medical expenses and damages"
+      case: "Motor Vehicle Collision",
+      amount: "$30,000",
+      description: "At-fault driver rear-ended our Client's car"
     },
     {
-      case: "Wrongful Death - Medical Negligence",
-      amount: "$2,100,000",
-      description: "Secured justice for family after preventable hospital error resulted in tragic loss"
+      case: "Motor Vehicle Collision",
+      amount: "$30,000",
+      description: "At-fault driver ran a stop sign and T-boned our Client's"
     },
     {
-      case: "Construction Accident - Safety Violation",
-      amount: "$1,750,000",
-      description: "Maximum recovery for worker injured due to contractor safety violations"
-    }
+      case: "Motor Vehicle Collision",
+      amount: "$35,000",
+      description: "At-fault driver ran a red light and T-boned the car our Client was a passenger in"
+    },
   ]
 
   // Duplicate settlements for continuous scroll

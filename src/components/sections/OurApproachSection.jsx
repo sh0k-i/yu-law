@@ -47,7 +47,7 @@ const OurApproachSection = () => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end">
           
           {/* Left Column - Content */}
           <div>
@@ -74,15 +74,8 @@ const OurApproachSection = () => {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="relative group"
             >
-              <div className="relative h-96 bg-gradient-to-br from-brand-gray to-brand-black flex items-center justify-center overflow-hidden">
-                {/* Placeholder for consultation image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-red/20 to-brand-black/80"></div>
-                <div className="relative z-10 text-center">
-                  <svg className="w-16 h-16 text-white mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                  <p className="text-white font-acherus text-lg opacity-90">Attorney-Client Consultation</p>
-                </div>
+              <div className="relative h-full bg-gradient-to-br from-brand-gray to-brand-black flex items-center justify-center overflow-hidden">
+                <img src="/images/media1.jpg" alt="Consultation" className="w-full h-full object-cover" />
                 
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-black/60 via-transparent to-transparent"></div>
@@ -111,7 +104,7 @@ const OurApproachSection = () => {
               {/* Steps Header */}
               <motion.div
                 variants={itemVariants}
-                className="mb-12"
+                className="mb-44"
               >
               </motion.div>
 

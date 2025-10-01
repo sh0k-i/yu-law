@@ -101,23 +101,6 @@ const PartnersSection = () => {
 
         </motion.div>
 
-        {/* Call to Action */}
-        <motion.div 
-          className="text-center mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <button className="bg-white text-brand-red px-8 py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-brand-cream hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red">
-              {t('partners.button', 'Get Started Today')}
-            </button>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   )

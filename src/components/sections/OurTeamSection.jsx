@@ -131,30 +131,26 @@ const OurTeamSection = () => {
                 <div className="relative bg-gradient-to-br from-gray-800 via-brand-black to-gray-900 h-80 flex justify-center items-end overflow-hidden">
                   {/* Floating Photo */}
                   {member.image ? (
-                    <motion.div
+                    <motion.div 
                       className="relative"
-                      initial={{ y: 10, scale: 0.98 }}
-                      whileInView={{ y: 0, scale: 1 }}
+                      initial={{ y: 10, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
-                      whileHover={{ 
-                        y: -15, 
-                        scale: 1.05,
-                        transition: { duration: 0.3, ease: "easeOut" }
-                      }}
                     >
                       <img 
                         src={member.image}
                         alt={member.name}
-                        className="h-72 w-auto object-contain object-bottom filter drop-shadow-2xl"
+                        className="h-72 w-auto object-contain object-bottom filter drop-shadow-2xl transition-all duration-300 ease-out group-hover:scale-110 translate-y-1"
+                        // change the drop shadow to white/70
                         style={{
-                          filter: 'drop-shadow(0 10px 25px rgba(0,0,0,0.3)) drop-shadow(0 0 15px rgba(171,21,34,0.1))'
+                          filter: 'drop-shadow(0 10px 25px rgba(255,255,255,0.1))'
                         }}
                       />
                       
                       {/* Subtle glow effect on hover */}
                       <motion.div
-                        className="absolute inset-0 bg-brand-red opacity-0 group-hover:opacity-5 transition-opacity duration-300 blur-xl"
+                        className="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 transition-opacity duration-300 blur-xl"
                         style={{ transform: 'scale(1.2)' }}
                       />
                     </motion.div>
@@ -171,12 +167,6 @@ const OurTeamSection = () => {
                       {member.name === 'Bear' ? '🐕' : member.name.split(' ').map(n => n[0]).join('')}
                     </motion.div>
                   )}
-
-                  {/* Subtle background pattern */}
-                  <div className="absolute inset-0 opacity-5">
-                    <div className="absolute top-10 right-10 w-20 h-20 border border-brand-red transform rotate-45"></div>
-                    <div className="absolute bottom-10 left-10 w-16 h-16 border border-white transform rotate-12"></div>
-                  </div>
                 </div>
 
                 {/* Content */}

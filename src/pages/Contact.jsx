@@ -223,10 +223,10 @@ const Contact = () => {
                     <h3 className="text-xl font-lancea text-brand-black mb-2">Phone</h3>
                     <p className="font-acherus text-brand-gray mb-2">Call us for immediate assistance</p>
                     <a 
-                      href="tel:940-239-9837" 
+                      href="tel:940-239-9840" 
                       className="text-brand-red font-acherus font-medium hover:text-brand-black transition-colors"
                     >
-                      940-239-9837
+                      (940) 239-9840
                     </a>
                   </div>
                 </div>
@@ -258,7 +258,10 @@ const Contact = () => {
                   <div>
                     <h3 className="text-xl font-lancea text-brand-black mb-2">Location</h3>
                     <p className="font-acherus text-brand-gray mb-2">Serving clients throughout Texas</p>
-                    <p className="text-brand-black font-acherus">Texas, United States</p>
+                    <p className="text-brand-black font-acherus leading-relaxed">
+                      2201 Midway Road, Suite 102,<br />
+                      Carrollton, Texas 75006
+                    </p>
                   </div>
                 </div>
 
@@ -271,9 +274,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-lancea text-brand-black mb-2">Office Hours</h3>
-                    <p className="font-acherus text-brand-gray mb-2">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p className="font-acherus text-brand-gray mb-2">Saturday: 10:00 AM - 4:00 PM</p>
-                    <p className="font-acherus text-brand-gray">Sunday: By appointment only</p>
+                    <p className="font-acherus text-brand-gray">Monday - Friday: 9:00 AM - 5:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -284,10 +285,10 @@ const Contact = () => {
                   If you have a legal emergency outside of business hours, please call our emergency line.
                 </p>
                 <a 
-                  href="tel:940-239-9837" 
+                  href="tel:940-239-9840" 
                   className="btn-primary inline-block"
                 >
-                  Emergency Line
+                  Call (940) 239-9840
                 </a>
               </div>
             </div>

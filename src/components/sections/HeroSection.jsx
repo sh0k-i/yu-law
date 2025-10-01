@@ -52,7 +52,7 @@ const HeroSection = () => {
   }, [isInView])
 
   return (
-    <section className="relative bg-gradient-to-br from-brand-cream to-brand-cream text-brand-black overflow-hidden -mt-20 pt-20 h-[800px]" >
+    <section className="relative bg-gradient-to-br from-brand-cream to-gray-200 text-brand-black overflow-hidden -mt-20 pt-20 h-[800px]" >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-center h-full">
           <div className="flex h-full">
@@ -149,19 +149,30 @@ const HeroSection = () => {
           </div>
           
           {/* Right Column - Hero Image (Content-hugging width) */}
-          <div className="flex items-end h-full overflow-hidden flex-shrink-0">
+          <div className="flex items-end h-full overflow-hidden flex-shrink-0 relative">
+            {/* Subtle gradient spotlight behind photo */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-radial from-white/100 via-brand-cream/20 to-transparent"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, delay: 0.2 }}
+              style={{
+                background: 'radial-gradient(ellipse 500px 700px at 50% 60%, rgba(255,255,255,0.3), rgba(250,245,235,0.3) 40%, transparent 70%)'
+              }}
+            />
+            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="flex items-end h-full"
+              className="flex items-end h-full relative z-10"
             >
               <img 
                 src="/images/hero-photo.png" 
                 alt="Attorney at Yu Law Firm" 
                 className="object-contain object-bottom block"
                 style={{ 
-                  height: '90%',
+                  height: '95%',
                   width: 'auto',
                   transform: 'translateY(2px)'
                 }}

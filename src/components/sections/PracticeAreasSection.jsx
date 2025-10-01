@@ -28,9 +28,9 @@ const PracticeAreasSection = () => {
       icon: "warning"
     },
     {
-      title: "Medical Malpractice",
-      description: "Holding healthcare providers accountable for negligent care that results in injury, illness, or worsened medical conditions.",
-      icon: "medical"
+      title: "Animal Liability",
+      description: "Representing victims of dog bites and animal attacks. We hold negligent pet owners accountable for injuries caused by their animals.",
+      icon: "animal"
     },
     {
       title: "Product Liability",
@@ -138,7 +138,7 @@ const PracticeAreasSection = () => {
                 
                 {/* Icon */}
                 <div className="mb-6 flex items-center">
-                  <div className="w-12 h-12 bg-brand-cream flex items-center justify-center mr-4 group-hover:bg-brand-red/10 transition-colors duration-300">
+                  <div className=" flex items-center  mr-4 group-hover:bg-brand-red/10 transition-colors duration-300">
                     {type.icon === "car" && (
                       <svg className="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -149,9 +149,9 @@ const PracticeAreasSection = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                       </svg>
                     )}
-                    {type.icon === "medical" && (
-                      <svg className="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    {type.icon === "animal" && (
+                      <svg className="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                       </svg>
                     )}
                     {type.icon === "briefcase" && (

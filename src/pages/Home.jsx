@@ -56,7 +56,7 @@ const Home = () => {
         </div>
         {/* Full width testimonials */}
         <div className="w-full">
-          <StaggerTestimonials />
+          <StaggerTestimonials/>
         </div>
       </section>
       {/* <WhyChooseUsSection /> */}
