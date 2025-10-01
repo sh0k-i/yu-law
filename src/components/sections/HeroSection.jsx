@@ -77,7 +77,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
                 {t('hero.description')}{' '}
-                <a href="tel:940-239-9837" className="text-brand-red font-medium hover:underline transition-all">940-239-9837</a>
+                <a href="tel:940-239-9840" className="text-brand-red font-medium hover:underline transition-all">940-239-9840</a>
               </motion.p>
 
               {/* Languages Spoken */}

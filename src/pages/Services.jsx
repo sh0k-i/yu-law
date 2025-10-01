@@ -216,10 +216,10 @@ const Services = () => {
               {t('header.getStarted')}
             </Link>
             <a
-              href="tel:940-239-9837"
+              href="tel:940-239-9840"
               className="border-2 border-white text-white px-8 py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-white hover:text-brand-red focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red"
             >
-              {t('services.callNow', 'Call: 940-239-9837')}
+              {t('services.callNow', 'Call: 940-239-9840')}
             </a>
           </div>
         </div>

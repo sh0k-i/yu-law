@@ -48,10 +48,10 @@ const CTASection = () => {
             whileTap={{ scale: 0.95 }}
           >
             <a
-              href="tel:940-239-9837"
+              href="tel:940-239-9840"
               className="border-2 border-white text-white px-8 py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-white hover:text-brand-red hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red text-center block w-full sm:w-auto min-w-[160px]"
             >
-              {t('cta.callNow', 'Call Now: 940-239-9837')}
+              {t('cta.callNow', 'Call Now: 940-239-9840')}
             </a>
           </motion.div>
         </motion.div>

@@ -132,7 +132,7 @@ This website strictly follows Yu Law Firm's brand guidelines:
 
 ## 📞 Contact Information
 
-**Phone:** 940-239-9837  
+**Phone:** 940-239-9840  
 **Email:** info@yulawfirm.com  
 **Location:** Texas, United States
 
