@@ -50,7 +50,7 @@ const SettlementsSection = () => {
   const duplicatedSettlements = [...settlements, ...settlements]
 
   return (
-    <section className="py-20 bg-brand-black overflow-hidden relative">
+    <section className="section-padding bg-brand-black overflow-hidden relative">
       {/* Elegant Background with Spotlights */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-brand-black to-gray-800"></div>
       {/* Central blue spotlight */}
@@ -60,11 +60,11 @@ const SettlementsSection = () => {
       <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-brand-black to-transparent pointer-events-none z-20"></div>
       <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-brand-black to-transparent pointer-events-none z-20"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container-responsive relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.h2 
-            className="text-4xl md:text-5xl font-lancea text-white mb-6"
+            className="heading-lg text-white mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -73,14 +73,14 @@ const SettlementsSection = () => {
             {t('settlements.title', 'SETTLEMENTS BY YU')}
           </motion.h2>
           <motion.div 
-            className="w-24 h-1 bg-brand-red mx-auto mb-8"
+            className="accent-line bg-brand-red mx-auto mb-6 sm:mb-8"
             initial={{ width: 0 }}
             whileInView={{ width: 96 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           ></motion.div>
           <motion.p 
-            className="text-lg font-acherus text-brand-cream max-w-3xl mx-auto"
+            className="body-lg text-brand-cream max-w-3xl mx-auto px-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -118,23 +118,23 @@ const SettlementsSection = () => {
             {[...settlements, ...settlements].map((settlement, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[450px] bg-white/5 backdrop-blur-sm border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 group"
+                className="flex-shrink-0 w-[300px] sm:w-[350px] md:w-[450px] bg-white/5 backdrop-blur-sm border border-white/10 card-padding hover:bg-white/10 transition-all duration-300 group"
               >
                 {/* Case Type - At Top */}
-                <h3 className="text-lg font-lancea text-white mb-6 text-center group-hover:text-brand-cream transition-colors duration-300">
+                <h3 className="heading-sm text-white mb-4 sm:mb-6 text-center group-hover:text-brand-cream transition-colors duration-300">
                   {settlement.case}
                 </h3>
 
                 {/* Settlement Amount - Large and Centered */}
-                <div className="text-center mb-6">
-                  <div className="text-4xl md:text-5xl font-lancea text-brand-red font-bold mb-4 group-hover:scale-105 transition-transform duration-300">
+                <div className="text-center mb-4 sm:mb-6">
+                  <div className="stat-number text-brand-red font-bold mb-3 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
                     {settlement.amount}
                   </div>
-                  <div className="w-20 h-1 bg-brand-red mx-auto opacity-80"></div>
+                  <div className="w-16 sm:w-20 h-1 bg-brand-red mx-auto opacity-80"></div>
                 </div>
 
                 {/* Description - At Bottom */}
-                <p className="text-brand-cream font-acherus text-center leading-relaxed group-hover:text-white transition-colors duration-300">
+                <p className="body-md text-brand-cream text-center group-hover:text-white transition-colors duration-300">
                   {settlement.description}
                 </p>
               </div>
@@ -144,7 +144,7 @@ const SettlementsSection = () => {
       </div>
 
       {/* Call to Action - Moved Below Marquee */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container-responsive relative z-10">
         <motion.div 
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -152,7 +152,7 @@ const SettlementsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <p className="text-brand-cream font-acherus text-lg mb-6">
+          <p className="body-lg text-brand-cream mb-4 sm:mb-6">
             {t('settlements.ctaText', 'Ready to secure the settlement you deserve?')}
           </p>
           <motion.div

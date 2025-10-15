@@ -25,8 +25,6 @@ const Contact = () => {
   }
 
   const services = [
-    'Family Law',
-    'Immigration Law',
     'Personal Injury',
     'Other'
   ]
@@ -34,7 +32,7 @@ const Contact = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-brand-black text-white pt-32 pb-24 -mt-20 relative overflow-hidden">
+      <section className="bg-brand-black text-white pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 -mt-20 relative overflow-hidden">
         {/* Beautiful Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-brand-black to-gray-800"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-brand-black/20"></div>
@@ -43,10 +41,10 @@ const Contact = () => {
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brand-red/5 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-1/2 h-full bg-gradient-to-tr from-blue-900/10 to-transparent"></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container-responsive relative z-10">
           <div className="text-center">
             <motion.h1 
-              className="text-5xl md:text-6xl font-lancea text-white mb-6"
+              className="heading-xl text-white mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -55,14 +53,14 @@ const Contact = () => {
               CONTACT US
             </motion.h1>
             <motion.div 
-              className="w-24 h-1 bg-brand-red mx-auto mb-8"
+              className="accent-line bg-brand-red mx-auto mb-6 sm:mb-8"
               initial={{ width: 0 }}
               whileInView={{ width: 96 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             ></motion.div>
             <motion.p 
-              className="text-xl font-acherus text-brand-cream max-w-3xl mx-auto leading-relaxed"
+              className="body-lg text-brand-cream max-w-3xl mx-auto px-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -75,13 +73,13 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section className="section-padding bg-white">
+        <div className="container-responsive">
+          <div className="grid-responsive-2">
             {/* Contact Form */}
             <div>
               <motion.h2 
-                className="text-4xl font-lancea text-brand-black mb-6"
+                className="heading-lg text-brand-black mb-4 sm:mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -90,17 +88,17 @@ const Contact = () => {
                 Get Your Free Consultation
               </motion.h2>
               <motion.div 
-                className="w-24 h-1 bg-brand-red mb-8"
+                className="accent-line mb-6 sm:mb-8"
                 initial={{ width: 0 }}
                 whileInView={{ width: 96 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               ></motion.div>
-              <p className="text-lg font-acherus text-brand-gray mb-8 leading-relaxed">
+              <p className="body-lg text-brand-gray mb-6 sm:mb-8">
                 Fill out the form below and we'll get back to you within 24 hours to discuss your case.
               </p>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-acherus font-medium text-brand-black mb-2">
                     Full Name *
@@ -112,7 +110,7 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus text-sm sm:text-base"
                     placeholder="Your full name"
                   />
                 </div>
@@ -128,7 +126,7 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus text-sm sm:text-base"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -143,7 +141,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus text-sm sm:text-base"
                     placeholder="(555) 123-4567"
                   />
                 </div>
@@ -157,7 +155,7 @@ const Contact = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus text-sm sm:text-base"
                   >
                     <option value="">Select a service</option>
                     {services.map((service) => (
@@ -179,7 +177,7 @@ const Contact = () => {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus text-sm sm:text-base"
                     placeholder="Please provide details about your legal situation..."
                   />
                 </div>
@@ -196,7 +194,7 @@ const Contact = () => {
             {/* Contact Information */}
             <div>
               <motion.h2 
-                className="text-4xl font-lancea text-brand-black mb-6"
+                className="heading-lg text-brand-black mb-4 sm:mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -205,23 +203,23 @@ const Contact = () => {
                 Get In Touch
               </motion.h2>
               <motion.div 
-                className="w-24 h-1 bg-brand-red mb-8"
+                className="accent-line mb-6 sm:mb-8"
                 initial={{ width: 0 }}
                 whileInView={{ width: 96 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               ></motion.div>
 
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 <div className="flex items-start">
-                  <div className="text-brand-red w-12 h-12 flex items-center justify-center mr-4 mt-1">
+                  <div className="text-brand-red w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mr-3 sm:mr-4 mt-1 flex-shrink-0">
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-lancea text-brand-black mb-2">Phone</h3>
-                    <p className="font-acherus text-brand-gray mb-2">Call us for immediate assistance</p>
+                    <h3 className="heading-sm text-brand-black mb-1 sm:mb-2">Phone</h3>
+                    <p className="body-md text-brand-gray mb-1 sm:mb-2">Call us for immediate assistance</p>
                     <a 
                       href="tel:940-239-9840" 
                       className="text-brand-red font-acherus font-medium hover:text-brand-black transition-colors"
@@ -232,14 +230,14 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="text-brand-red w-12 h-12 flex items-center justify-center mr-4 mt-1">
+                  <div className="text-brand-red w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mr-3 sm:mr-4 mt-1 flex-shrink-0">
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-lancea text-brand-black mb-2">Email</h3>
-                    <p className="font-acherus text-brand-gray mb-2">Send us an email anytime</p>
+                    <h3 className="heading-sm text-brand-black mb-1 sm:mb-2">Email</h3>
+                    <p className="body-md text-brand-gray mb-1 sm:mb-2">Send us an email anytime</p>
                     <a 
                       href="mailto:info@yulawfirm.com" 
                       className="text-brand-red font-acherus font-medium hover:text-brand-black transition-colors"
@@ -250,15 +248,15 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="text-brand-red w-12 h-12 flex items-center justify-center mr-4 mt-1">
+                  <div className="text-brand-red w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mr-3 sm:mr-4 mt-1 flex-shrink-0">
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-lancea text-brand-black mb-2">Location</h3>
-                    <p className="font-acherus text-brand-gray mb-2">Serving clients throughout Texas</p>
-                    <p className="text-brand-black font-acherus leading-relaxed">
+                    <h3 className="heading-sm text-brand-black mb-1 sm:mb-2">Location</h3>
+                    <p className="body-md text-brand-gray mb-1 sm:mb-2">Serving clients throughout Texas</p>
+                    <p className="body-md text-brand-black">
                       2201 Midway Road, Suite 102,<br />
                       Carrollton, Texas 75006
                     </p>
@@ -266,30 +264,17 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="text-brand-red w-12 h-12 flex items-center justify-center mr-4 mt-1">
+                  <div className="text-brand-red w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mr-3 sm:mr-4 mt-1 flex-shrink-0">
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
                       <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-lancea text-brand-black mb-2">Office Hours</h3>
-                    <p className="font-acherus text-brand-gray">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                    <h3 className="heading-sm text-brand-black mb-1 sm:mb-2">Office Hours</h3>
+                    <p className="body-md text-brand-gray">Monday - Friday: 9:00 AM - 5:00 PM</p>
                   </div>
                 </div>
-              </div>
-
-              <div className="mt-12 p-6 bg-brand-cream rounded-md">
-                <h3 className="text-2xl font-lancea text-brand-black mb-4">Emergency Contact</h3>
-                <p className="font-acherus text-brand-gray mb-4">
-                  If you have a legal emergency outside of business hours, please call our emergency line.
-                </p>
-                <a 
-                  href="tel:940-239-9840" 
-                  className="btn-primary inline-block"
-                >
-                  Call (940) 239-9840
-                </a>
               </div>
             </div>
           </div>
@@ -297,11 +282,11 @@ const Contact = () => {
       </section>
 
       {/* Map Section Placeholder */}
-      <section className="py-20 bg-brand-cream">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="section-padding bg-brand-cream">
+        <div className="container-responsive">
           <div className="text-center">
             <motion.h2 
-              className="text-4xl font-lancea text-brand-black mb-6"
+              className="heading-lg text-brand-black mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -310,14 +295,14 @@ const Contact = () => {
               Visit Our Office
             </motion.h2>
             <motion.div 
-              className="w-24 h-1 bg-brand-red mx-auto mb-8"
+              className="accent-line mx-auto mb-6 sm:mb-8"
               initial={{ width: 0 }}
               whileInView={{ width: 96 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             ></motion.div>
-            <div className="bg-brand-gray bg-opacity-20 h-96 rounded-md flex items-center justify-center">
-              <p className="font-acherus text-brand-gray text-lg">
+            <div className="bg-brand-gray bg-opacity-20 h-64 sm:h-80 md:h-96 flex items-center justify-center">
+              <p className="body-lg text-brand-gray">
                 Interactive Map Coming Soon
               </p>
             </div>

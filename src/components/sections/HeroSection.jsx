@@ -52,26 +52,26 @@ const HeroSection = () => {
   }, [isInView])
 
   return (
-    <section className="relative bg-gradient-to-br from-brand-cream to-gray-200 text-brand-black overflow-hidden -mt-20 pt-20 h-[800px]" >
+    <section className="relative bg-gradient-to-br from-brand-cream to-gray-200 text-brand-black overflow-hidden -mt-20 pt-20 min-h-[600px] md:h-[800px]">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="flex justify-center h-full">
-          <div className="flex h-full">
+        <div className="flex flex-col md:flex-row justify-center h-full">
+          <div className="flex flex-col md:flex-row h-full w-full md:w-auto">
             {/* Left Column - Content */}
-            <div className="flex flex-col justify-center z-10 pr-12 max-w-2xl">
+            <div className="flex flex-col justify-center z-10 md:pr-12 max-w-2xl pt-8 md:pt-0">
               <motion.h1 
-                className="text-5xl md:text-6xl lg:text-7xl font-lancea text-brand-black mb-6 leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-lancea text-brand-black mb-4 md:mb-6 leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <span className="block relative">
                   {t('hero.title')}
-                  <span className="absolute -bottom-1 left-0 w-20 h-1 bg-brand-red"></span>
+                  <span className="absolute -bottom-1 left-0 w-16 sm:w-20 h-1 bg-brand-red"></span>
                 </span>
               </motion.h1>
               
               <motion.p 
-                className="text-lg md:text-xl font-acherus text-brand-gray mb-6 leading-relaxed"
+                className="text-base sm:text-lg md:text-xl font-acherus text-brand-gray mb-4 md:mb-6 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -82,21 +82,21 @@ const HeroSection = () => {
 
               {/* Languages Spoken */}
               <motion.div 
-                className="mb-8 flex items-center space-x-2"
+                className="mb-6 md:mb-8 flex items-center space-x-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               >
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-brand-red"></div>
-                  <span className="text-sm font-acherus text-brand-gray font-medium">
+                  <span className="text-xs sm:text-sm font-acherus text-brand-gray font-medium">
                     {t('hero.languages', 'We speak English, Spanish, Tagalog & Cebuano')}
                   </span>
                 </div>
               </motion.div>
               
               <motion.div 
-                className="flex flex-col sm:flex-row gap-4 mb-12"
+                className="flex flex-col sm:flex-row gap-4 mb-8 md:mb-12"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -121,7 +121,7 @@ const HeroSection = () => {
               >
                 <Link
                   to="/services"
-                  className="border-2 border-brand-black text-brand-black px-8 py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-brand-black hover:text-white hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-black focus:ring-offset-2 focus:ring-offset-white text-center block w-full sm:w-auto min-w-[160px]"
+                  className="btn-secondary text-center block w-full sm:w-auto min-w-[160px]"
                 >
                   Our Services
                 </Link>
@@ -131,25 +131,25 @@ const HeroSection = () => {
             {/* Stats Section */}
             <motion.div
               ref={statsRef}
-              className="grid grid-cols-2"
+              className="grid grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
               <div className="text-left">
-                <div className="text-4xl md:text-5xl lg:text-6xl font-lancea text-brand-red mb-2">{formatNumber(cases)}</div>
-                <div className="text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">Cases Successfully Handled</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-lancea text-brand-red mb-2">{formatNumber(cases)}</div>
+                <div className="text-xs sm:text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">Cases Successfully Handled</div>
               </div>
               
               <div className="text-left">
-                <div className="text-4xl md:text-5xl lg:text-6xl font-lancea text-brand-red mb-2">{formatMoney(recovered)}</div>
-                <div className="text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">Recovered for Clients</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-lancea text-brand-red mb-2">{formatMoney(recovered)}</div>
+                <div className="text-xs sm:text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">Recovered for Clients</div>
               </div>
             </motion.div>
           </div>
           
-          {/* Right Column - Hero Image (Content-hugging width) */}
-          <div className="flex items-end h-full overflow-hidden flex-shrink-0 relative">
+          {/* Right Column - Hero Image (Desktop: side by side, Mobile: below) */}
+          <div className="hidden md:flex items-end h-full overflow-hidden flex-shrink-0 relative">
             {/* Subtle gradient spotlight behind photo */}
             <motion.div
               className="absolute inset-0 bg-gradient-radial from-white/100 via-brand-cream/20 to-transparent"
@@ -179,6 +179,22 @@ const HeroSection = () => {
               />
             </motion.div>
           </div>
+        </div>
+        
+        {/* Mobile Photo - Below content */}
+        <div className="md:hidden flex justify-center items-end mt-8 relative h-64 sm:h-80">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="flex items-end h-full relative z-10"
+          >
+            <img 
+              src="/images/hero-photo.png" 
+              alt="Attorney at Yu Law Firm" 
+              className="object-contain object-bottom block h-full w-auto"
+            />
+          </motion.div>
         </div>
       </div>
       </div>

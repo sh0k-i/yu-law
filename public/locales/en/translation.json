@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About",
     "services": "Services",
+    "reviews": "Reviews",
     "contact": "Contact",
     "getStarted": "Get Started Now",
     "language": "Language"
@@ -142,5 +143,12 @@
     "es": "Español",
     "tl": "Tagalog",
     "ceb": "Cebuano"
+  },
+  "reviews": {
+    "title": "CLIENT REVIEWS",
+    "description": "Read what our clients have to say about their experience with Yu Law Firm. Real stories from real people who trusted us with their legal matters.",
+    "ctaTitle": "Ready to Share Your Experience?",
+    "ctaDescription": "We value your feedback and would love to hear about your experience with Yu Law Firm.",
+    "ctaButton": "Contact Us"
   }
 }

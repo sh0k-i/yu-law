@@ -25,6 +25,7 @@ const Header = () => {
     { name: t('header.home'), href: '/' },
     { name: t('header.about'), href: '/about' },
     { name: t('header.services'), href: '/services' },
+    { name: t('header.reviews'), href: '/reviews' },
     { name: t('header.contact'), href: '/contact' },
   ]
 
@@ -110,16 +111,16 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 transition-colors duration-200 text-white hover:text-brand-cream hover:bg-white hover:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center p-2 transition-all duration-300 text-white hover:text-brand-cream focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red"
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">{isMenuOpen ? 'Close menu' : 'Open menu'}</span>
               {!isMenuOpen ? (
-                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="block h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               ) : (
-                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg className="block h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               )}
             </button>
@@ -128,36 +129,98 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-100">
-              {navigation.map((item) => (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
+          className="absolute top-full left-0 right-0 md:hidden shadow-2xl z-50"
+        >
+          <div className="px-4 pt-4 pb-6 space-y-2 bg-white">
+            {/* Navigation Links */}
+            {navigation.map((item, index) => (
+              <motion.div
+                key={item.name}
+                initial={{ opacity: 0, x: -20 }}
+                animate={isMenuOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                transition={{ delay: index * 0.05, duration: 0.3 }}
+              >
                 <Link
-                  key={item.name}
                   to={item.href}
-                  className={`block px-3 py-2 text-base font-acherus font-medium transition-colors duration-200 ${
+                  className={`block px-4 py-3 text-lg font-acherus font-medium transition-all duration-200 border-l-4 ${
                     isActive(item.href)
-                      ? 'text-brand-red bg-red-50'
-                      : 'text-brand-black hover:text-brand-red hover:bg-gray-50'
+                      ? 'text-brand-red bg-red-50 border-brand-red'
+                      : 'text-brand-black hover:text-brand-red hover:bg-gray-50 border-transparent hover:border-brand-red'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
-              ))}
-              <div className="pt-4 pb-2">
-                <Link
-                  to="/contact"
-                  className="btn-primary w-full text-center block"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {t('header.getStarted')}
-                </Link>
-              </div>
-              <div className="pt-2 pb-2 flex items-center justify-center">
-                <LanguageSwitcher />
-              </div>
+              </motion.div>
+            ))}
+            
+            {/* Divider */}
+            <div className="pt-4 pb-2">
+              <div className="h-px bg-gray-200"></div>
             </div>
+            
+            {/* Phone Number */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+              transition={{ delay: 0.3, duration: 0.3 }}
+              className="px-4 py-2"
+            >
+              <a
+                href="tel:940-239-9840"
+                className="flex items-center text-brand-black hover:text-brand-red transition-colors duration-200 group"
+              >
+                <svg className="w-5 h-5 mr-3 text-brand-red group-hover:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span className="text-base font-acherus font-medium">
+                  940-239-9840
+                </span>
+              </a>
+            </motion.div>
+            
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+              transition={{ delay: 0.35, duration: 0.3 }}
+              className="pt-2 px-4"
+            >
+              <Link
+                to="/contact"
+                className="btn-primary w-full text-center block py-4 text-base font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('header.getStarted')}
+              </Link>
+            </motion.div>
+            
+            {/* Language Switcher */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.3 }}
+              className="pt-3 pb-2"
+            >
+              <div className="bg-gray-50 px-4 py-3 border border-gray-200">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 mr-2 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                    </svg>
+                    <span className="text-brand-black font-acherus font-medium text-sm">Language</span>
+                  </div>
+                  <LanguageSwitcher />
+                </div>
+              </div>
+            </motion.div>
           </div>
+        </motion.div>
         )}
       </nav>
     </motion.header>

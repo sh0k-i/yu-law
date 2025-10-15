@@ -45,9 +45,9 @@ const OurApproachSection = () => {
   }
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end">
+    <section className="section-padding bg-white">
+      <div className="container-responsive">
+        <div className="grid-responsive-2 items-end">
           
           {/* Left Column - Content */}
           <div>
@@ -57,11 +57,11 @@ const OurApproachSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl md:text-5xl font-lancea text-brand-black mb-6">
+              <h2 className="heading-lg text-brand-black mb-4 sm:mb-6">
                 {t('approach.title', 'Our Approach')}
               </h2>
-              <div className="w-24 h-1 bg-brand-red mb-8"></div>
-              <p className="text-lg font-acherus text-brand-gray leading-relaxed mb-12">
+              <div className="accent-line mb-6 sm:mb-8"></div>
+              <p className="body-lg text-brand-gray mb-8 sm:mb-12">
                 {t('approach.description', 'Our proven legal strategy guides every case from initial consultation to final resolution — ensuring comprehensive representation and maximum compensation for our clients.')}
               </p>
             </motion.div>
@@ -72,10 +72,10 @@ const OurApproachSection = () => {
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="relative group"
+              className="relative group h-64 sm:h-80 md:h-96"
             >
               <div className="relative h-full bg-gradient-to-br from-brand-gray to-brand-black flex items-center justify-center overflow-hidden">
-                <img src="/images/media1.jpg" alt="Consultation" className="w-full h-full object-cover" />
+                <img src="/images/media1.jpg" alt="Consultation" className="img-responsive h-full" />
                 
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-black/60 via-transparent to-transparent"></div>
@@ -92,9 +92,9 @@ const OurApproachSection = () => {
               viewport={{ once: true }}
               className="space-y-1 relative"
             >
-              {/* Vertical connecting line */}
+              {/* Vertical connecting line - Hidden on mobile */}
               <motion.div 
-                className="absolute left-[20px] top-16 bottom-16 w-0.5 bg-brand-red"
+                className="hidden md:block absolute left-[20px] top-16 bottom-16 w-0.5 bg-brand-red"
                 initial={{ scaleY: 0 }}
                 whileInView={{ scaleY: 1 }}
                 viewport={{ once: true }}
@@ -104,7 +104,7 @@ const OurApproachSection = () => {
               {/* Steps Header */}
               <motion.div
                 variants={itemVariants}
-                className="mb-44"
+                className="mb-8 md:mb-44"
               >
               </motion.div>
 
@@ -120,7 +120,7 @@ const OurApproachSection = () => {
                     delay: 1.0 + index * 0.2,
                     ease: "easeOut"
                   }}
-                  className="flex items-start space-x-6 py-6 group hover:bg-white/50 transition-all duration-300 p-6 -mx-6 relative"
+                  className="flex items-start space-x-4 sm:space-x-6 py-4 sm:py-6 group hover:bg-white/50 transition-all duration-300 card-padding -mx-4 sm:-mx-6 relative"
                 >
                   {/* Step Number */}
                   <motion.div 
@@ -146,10 +146,10 @@ const OurApproachSection = () => {
                   
                   {/* Step Content */}
                   <div className="flex-1">
-                    <h3 className="text-xl font-lancea text-brand-black mb-3 group-hover:text-brand-red transition-colors duration-300">
+                    <h3 className="heading-sm text-brand-black mb-2 sm:mb-3 group-hover:text-brand-red transition-colors duration-300">
                       {step.title}
                     </h3>
-                    <p className="font-acherus text-brand-gray leading-relaxed">
+                    <p className="body-md text-brand-gray">
                       {step.description}
                     </p>
                   </div>

@@ -42,7 +42,7 @@ const PartnersSection = () => {
   ]
 
   return (
-    <section className="relative bg-brand-red py-16 overflow-hidden">
+    <section className="relative bg-brand-red section-padding-sm overflow-hidden">
       {/* Background Pattern */}
       
       <div className="relative z-10">
@@ -54,11 +54,11 @@ const PartnersSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-lancea text-white mb-4">
+          <h2 className="heading-md text-white mb-3 sm:mb-4 px-4">
             {t('partners.title', 'Trusted by Leading Organizations')}
           </h2>
-          <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
-          <p className="text-lg font-acherus text-white/90 max-w-2xl mx-auto">
+          <div className="accent-line bg-white mx-auto mb-4 sm:mb-6"></div>
+          <p className="body-md text-white/90 max-w-2xl mx-auto px-4">
             {t('partners.description', 'We are proud to partner with industry-leading organizations in our commitment to excellence and justice.')}
           </p>
         </motion.div>
@@ -78,7 +78,7 @@ const PartnersSection = () => {
             {partnerLogos.map((partner, index) => (
               <div 
                 key={index}
-                className="mx-8 flex items-center justify-center h-20 w-40 relative group"
+                className="mx-4 sm:mx-6 md:mx-8 flex items-center justify-center h-16 sm:h-20 w-32 sm:w-40 relative group"
               >
                 {/* White/Cream Overlay Layer for Uniform Look */}
                 <div className="absolute inset-0 backdrop-blur-sm opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>

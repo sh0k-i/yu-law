@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import HeroSection from '../components/sections/HeroSection'
 import PurposeSection from '../components/sections/PurposeSection'
 import PracticeAreasSection from '../components/sections/PracticeAreasSection'
@@ -24,11 +25,11 @@ const Home = () => {
       <PracticeAreasSection />
 
       <SettlementsSection />
-      <section className="py-20 bg-brand-cream">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+      <section className="section-padding bg-brand-cream">
+        <div className="container-responsive">
+          <div className="text-center mb-12 sm:mb-16">
             <motion.h2 
-              className="text-4xl md:text-5xl font-lancea text-brand-black mb-6"
+              className="heading-lg text-brand-black mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -37,14 +38,14 @@ const Home = () => {
               {t('testimonials.title')}
             </motion.h2>
             <motion.div 
-              className="w-24 h-1 bg-brand-red mx-auto mb-8"
+              className="accent-line mx-auto mb-6 sm:mb-8"
               initial={{ width: 0 }}
               whileInView={{ width: 96 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             ></motion.div>
             <motion.p 
-              className="text-lg font-acherus text-brand-gray max-w-3xl mx-auto leading-relaxed"
+              className="body-lg text-brand-gray max-w-3xl mx-auto px-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -57,6 +58,26 @@ const Home = () => {
         {/* Full width testimonials */}
         <div className="w-full">
           <StaggerTestimonials/>
+        </div>
+        
+        {/* View All Reviews Button */}
+        <div className="container-responsive mt-8 sm:mt-12 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Link
+              to="/reviews"
+              className="inline-flex items-center gap-2 text-brand-red font-acherus font-medium text-lg hover:text-brand-red/80 transition-colors duration-200 border-b-2 border-brand-red hover:border-brand-red/80 pb-1"
+            >
+              View All Reviews
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </motion.div>
         </div>
       </section>
       {/* <WhyChooseUsSection /> */}

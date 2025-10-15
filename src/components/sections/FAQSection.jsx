@@ -39,13 +39,13 @@ const FAQSection = () => {
   }
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <section className="section-padding bg-white">
+      <div className="container-responsive">
+        <div className="grid-responsive-2 items-start">
           {/* Left Column - Heading and Description */}
-          <div className="lg:sticky lg:top-8">
+          <div className="lg:sticky lg:top-24">
             <motion.h2 
-              className="text-5xl md:text-6xl font-lancea text-brand-black mb-8 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-lancea text-brand-black mb-6 sm:mb-8 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -57,7 +57,7 @@ const FAQSection = () => {
             </motion.h2>
             
             <motion.p 
-              className="text-lg font-acherus text-brand-gray leading-relaxed mb-8"
+              className="body-lg text-brand-gray mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -67,7 +67,7 @@ const FAQSection = () => {
             </motion.p>
 
             <motion.p 
-              className="text-base font-acherus text-brand-gray leading-relaxed mb-8"
+              className="body-md text-brand-gray mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -106,9 +106,9 @@ const FAQSection = () => {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200 group"
+                  className="w-full py-4 sm:py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200 group touch-target"
                 >
-                  <h3 className="text-lg font-acherus text-brand-black pr-4 group-hover:text-brand-red transition-colors duration-200">
+                  <h3 className="text-base sm:text-lg font-acherus text-brand-black pr-4 group-hover:text-brand-red transition-colors duration-200">
                     {faq.question}
                   </h3>
                   <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
@@ -137,8 +137,8 @@ const FAQSection = () => {
                   }}
                   className="overflow-hidden"
                 >
-                  <div className="pb-6 pr-10">
-                    <p className="text-brand-gray font-acherus leading-relaxed">
+                  <div className="pb-4 sm:pb-6 pr-8 sm:pr-10">
+                    <p className="body-md text-brand-gray">
                       {faq.answer}
                     </p>
                   </div>

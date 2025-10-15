@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Hannah R.",
+    "subject": "Exceptional Care After Car Accident",
+    "body": "Liezyl helped me after a very traumatic car accident. She set me up right away with excellent medical care and was very attentive to me and my needs. Throughout the entire process, she kept me informed and made sure I understood every step. Her compassion and professionalism made a difficult time much easier to handle. I would recommend her time and time again! If you're looking for an attorney who truly cares about their clients, Yu Law Firm is the place to go.",
+    "rating": 5,
+    "date": "2024-09-15",
+    "caseType": "Car Accident"
+  },
+  {
+    "id": 2,
+    "name": "Yohannis G.",
+    "subject": "Outstanding Attorney and Advocate",
+    "body": "She is truly an outstanding attorney and advocate. I had the pleasure of working with Attorney Liezyl from Yu Law Firm, and I cannot speak highly enough of her professionalism, dedication, and expertise. From our first consultation, she demonstrated a deep understanding of personal injury law and a genuine commitment to achieving the best possible outcome for my case. Her attention to detail and strategic approach were evident throughout the entire process. I felt supported and confident every step of the way.",
+    "rating": 5,
+    "date": "2024-08-22",
+    "caseType": "Personal Injury"
+  },
+  {
+    "id": 3,
+    "name": "Erika C.",
+    "subject": "Truly Cared About My Case",
+    "body": "Made me feel like they were truly on my side and cared. I was fortunate enough to work with Yu Law Firm and Attorney Liezyl after a car accident, and they were truly incredible. From the moment I contacted them, I felt heard and understood. They took the time to explain the legal process in terms I could understand and were always available to answer my questions. The settlement they secured for me exceeded my expectations, and I'm grateful for their dedication to my case.",
+    "rating": 5,
+    "date": "2024-07-30",
+    "caseType": "Car Accident"
+  },
+  {
+    "id": 4,
+    "name": "Lynne",
+    "subject": "Quick Response and Immediate Action",
+    "body": "Impressed by the dedication and professionalism of Atty Liezyl. I am truly impressed by the dedication and professionalism of Atty. Liezyl Marasigan from Yu Law Firm. She responded quickly to my call and immediately took action on my concern. Her proactive approach and clear communication made me feel confident that my case was in good hands. She fought tirelessly for my rights and achieved an outcome that I'm very satisfied with. I highly recommend Yu Law Firm to anyone seeking legal representation.",
+    "rating": 5,
+    "date": "2024-06-18",
+    "caseType": "Personal Injury"
+  },
+  {
+    "id": 5,
+    "name": "Tanya F.",
+    "subject": "Perfect for Small Business Needs",
+    "body": "I 100% recommend for other small business. The Yu Law Firm was so helpful with helping me create and draft a contract that was not only to best interest of my clients but for the protection and well being of my small business. Attorney Liezyl took the time to understand my business needs and provided practical legal solutions that made sense for my situation. Her expertise in contract law and her ability to explain complex legal concepts in simple terms was invaluable. I now have peace of mind knowing my business is properly protected.",
+    "rating": 5,
+    "date": "2024-05-10",
+    "caseType": "Business Contract"
+  },
+  {
+    "id": 6,
+    "name": "T. Tovar",
+    "subject": "Exceptional Customer Service",
+    "body": "I will definitely be a returning client. A great law firm with exceptional customer service. Attorney Masinag is prompt to return phone calls and e-mails with personalized attention and detail to my needs. She never made me feel like just another case number. Her responsiveness and genuine care for my well-being set her apart from other attorneys I've worked with in the past. The outcome of my case was favorable, and I credit that to her diligent work and expertise.",
+    "rating": 5,
+    "date": "2024-04-25",
+    "caseType": "Personal Injury"
+  },
+  {
+    "id": 7,
+    "name": "Arian H.",
+    "subject": "Stress-Free Process for First-Timer",
+    "body": "Yu Law Firm has made my case trouble-free that I didn't have to worry about a single thing throughout the process as a first timer of having to deal with legal experts about my accident in my previous workplace. They handled everything from start to finish with professionalism and care. As someone who had never been through a legal process before, I appreciated how they explained everything clearly and kept me updated regularly. The team at Yu Law Firm made what could have been a stressful experience surprisingly smooth.",
+    "rating": 5,
+    "date": "2024-03-12",
+    "caseType": "Workplace Injury"
+  },
+  {
+    "id": 8,
+    "name": "Tanya A.",
+    "subject": "Knowledgeable Contract Drafting",
+    "body": "Atty. Liezyl was very helpful and knowledgeable in the process of creating and drafting a business contract. Not only did she find a way to include my primary focal points but also prompted me to consider important aspects I hadn't thought about. Her thoroughness and attention to detail ensured that my contract was comprehensive and legally sound. She made the entire process easy to understand and was patient with all my questions. I'm confident in the legal documents she prepared for my business.",
+    "rating": 5,
+    "date": "2024-02-20",
+    "caseType": "Business Contract"
+  },
+  {
+    "id": 9,
+    "name": "Christina D.",
+    "subject": "Expert Family Law Representation",
+    "body": "Attorney Liezyl exhibited a profound understanding of family law and its complexities. Her expertise was apparent in her strategic handling of my case, ensuring that every decision made was well-informed and in my best interest. She approached my sensitive family matter with compassion and professionalism, making a difficult time more manageable. Her dedication to achieving the best outcome for me and my family was evident throughout the entire process. I'm grateful for her guidance and support.",
+    "rating": 5,
+    "date": "2024-01-15",
+    "caseType": "Family Law"
+  }
+]

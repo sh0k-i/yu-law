@@ -29,7 +29,7 @@ const Services = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-brand-black text-white pt-32 pb-24 -mt-20 relative overflow-hidden">
+      <section className="bg-brand-black text-white pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 -mt-20 relative overflow-hidden">
         {/* Beautiful Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-brand-black to-gray-800"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-brand-black/20"></div>
@@ -38,10 +38,10 @@ const Services = () => {
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brand-red/5 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-1/2 h-full bg-gradient-to-tr from-blue-900/10 to-transparent"></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container-responsive relative z-10">
           <div className="text-center">
             <motion.h1 
-              className="text-5xl md:text-6xl font-lancea text-white mb-6"
+              className="heading-xl text-white mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -50,14 +50,14 @@ const Services = () => {
               {t('services.title', 'OUR SERVICES')}
             </motion.h1>
             <motion.div 
-              className="w-24 h-1 bg-brand-red mx-auto mb-8"
+              className="accent-line bg-brand-red mx-auto mb-6 sm:mb-8"
               initial={{ width: 0 }}
               whileInView={{ width: 96 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             ></motion.div>
             <motion.p 
-              className="text-xl font-acherus text-brand-cream max-w-3xl mx-auto leading-relaxed"
+              className="body-lg text-brand-cream max-w-3xl mx-auto px-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -70,13 +70,13 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-32">
+      <section className="section-padding bg-white">
+        <div className="container-responsive">
+          <div className="space-y-16 sm:space-y-24 md:space-y-32">
             {services.map((service, index) => (
               <motion.div 
                 key={index} 
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
+                className={`grid-responsive-2 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -90,20 +90,20 @@ const Services = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  <div className="mb-6">
-                    <span className="inline-block px-4 py-2 bg-brand-red text-white text-sm font-acherus font-medium mb-4">
+                  <div className="mb-4 sm:mb-6">
+                    <span className="inline-block px-3 sm:px-4 py-2 bg-brand-red text-white text-xs sm:text-sm font-acherus font-medium mb-3 sm:mb-4">
                       {t('services.practiceAreaLabel', 'PRACTICE AREA')}
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-lancea text-brand-black mb-4">{service.title}</h2>
-                    <div className="w-24 h-1 bg-brand-red mb-6"></div>
+                    <h2 className="heading-lg text-brand-black mb-3 sm:mb-4">{service.title}</h2>
+                    <div className="accent-line mb-4 sm:mb-6"></div>
                   </div>
                   
-                  <div className="mb-8">
-                    <p className="text-lg font-acherus text-brand-gray leading-relaxed mb-6">
+                  <div className="mb-6 sm:mb-8">
+                    <p className="body-lg text-brand-gray mb-4 sm:mb-6">
                       {service.description}
                     </p>
-                    <div className="bg-brand-cream p-6 border-l-4 border-brand-red">
-                      <p className="font-acherus text-brand-black italic text-lg">
+                    <div className="bg-brand-cream card-padding border-l-4 border-brand-red">
+                      <p className="body-lg text-brand-black italic">
                         "{service.highlight}"
                       </p>
                     </div>
@@ -131,8 +131,8 @@ const Services = () => {
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
                   {/* Photo Container */}
-                  <div className="relative mb-8 group">
-                    <div className="relative h-80 overflow-hidden">
+                  <div className="relative mb-6 sm:mb-8 group">
+                    <div className="relative h-64 sm:h-80 overflow-hidden">
                       {/* Placeholder for actual photo */}
                       <div 
                         className="w-full h-full bg-gradient-to-br from-brand-gray to-brand-black flex items-center justify-center relative"
@@ -146,11 +146,11 @@ const Services = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-40"></div>
                         
                         {/* Placeholder text until real photos are added */}
-                        <div className="relative z-10 text-white text-center">
-                          <div className="text-3xl font-lancea mb-2 opacity-80">
+                        <div className="relative z-10 text-white text-center px-4">
+                          <div className="text-2xl sm:text-3xl font-lancea mb-2 opacity-80">
                             {service.title}
                           </div>
-                          <div className="text-sm font-acherus opacity-60">
+                          <div className="text-xs sm:text-sm font-acherus opacity-60">
                             Professional Photo Coming Soon
                           </div>
                         </div>
@@ -169,8 +169,8 @@ const Services = () => {
                   </div>
 
                   {/* Services List */}
-                  <div className="bg-white p-8 shadow-lg border border-gray-100">
-                    <h3 className="text-2xl font-lancea text-brand-black mb-6 flex items-center">
+                  <div className="bg-white card-padding shadow-lg border border-gray-100">
+                    <h3 className="heading-sm text-brand-black mb-4 sm:mb-6 flex items-center">
                       <span className="w-2 h-2 bg-brand-red mr-3"></span>
                       {t('services.servicesInclude', 'Services Include:')}
                     </h3>
@@ -200,24 +200,24 @@ const Services = () => {
 
 
       {/* CTA Section */}
-      <section className="py-20 bg-brand-red text-white">
+      <section className="section-padding bg-brand-red text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-lancea text-white mb-6">
+          <h2 className="heading-lg text-white mb-4 sm:mb-6">
             {t('services.ctaTitle', 'Ready to Discuss Your Case?')}
           </h2>
-          <p className="text-xl font-acherus text-white mb-8 leading-relaxed">
+          <p className="body-lg text-white mb-6 sm:mb-8">
             {t('services.ctaDescription', 'Every legal challenge is unique. Let us provide you with a personalized consultation to discuss your specific needs and how we can help.')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex-responsive justify-center">
             <Link
               to="/contact"
-              className="bg-white text-brand-red px-8 py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red"
+              className="bg-white text-brand-red px-6 sm:px-8 py-3 sm:py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red btn-mobile"
             >
               {t('header.getStarted')}
             </Link>
             <a
               href="tel:940-239-9840"
-              className="border-2 border-white text-white px-8 py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-white hover:text-brand-red focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red"
+              className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-white hover:text-brand-red focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red btn-mobile"
             >
               {t('services.callNow', 'Call: 940-239-9840')}
             </a>
