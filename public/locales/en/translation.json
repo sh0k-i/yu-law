@@ -187,5 +187,24 @@
     "ctaTitle": "Ready to Share Your Experience?",
     "ctaDescription": "We value your feedback and would love to hear about your experience with Yu Law Firm.",
     "ctaButton": "Contact Us"
+  },
+  "approach": {
+    "title": "Our Approach",
+    "description": "Our proven legal strategy guides every case from initial consultation to final resolution, ensuring comprehensive representation and maximum compensation for our clients.",
+    "steps": {
+      "evaluation": {
+        "title": "Case Evaluation and Consultation",
+        "description": "We thoroughly analyze the details of your case, gather evidence, and provide you with a clear understanding of your legal options and potential outcomes."
+      },
+      "planning": {
+        "title": "Strategic Legal Planning",
+        "description": "Our experienced team develops a comprehensive legal strategy tailored to your specific situation, ensuring maximum compensation for your injuries."
+      },
+      "resolution": {
+        "title": "Negotiation and Resolution",
+        "description": "We aggressively negotiate with insurance companies and opposing parties to secure the best possible settlement or take your case to trial if necessary."
+      }
+    },
+    "cta": "Schedule Your Free Consultation"
   }
 }

@@ -8,18 +8,18 @@ const OurApproachSection = () => {
   const approachSteps = [
     {
       number: '1',
-      title: 'Case Evaluation and Consultation',
-      description: 'We thoroughly analyze your case details, gather evidence, and provide you with a clear understanding of your legal options and potential outcomes.'
+      title: t('approach.steps.evaluation.title'),
+      description: t('approach.steps.evaluation.description')
     },
     {
       number: '2', 
-      title: 'Strategic Legal Planning',
-      description: 'Our experienced team develops a comprehensive legal strategy tailored to your specific situation, ensuring maximum compensation for your injuries.'
+      title: t('approach.steps.planning.title'),
+      description: t('approach.steps.planning.description')
     },
     {
       number: '3',
-      title: 'Negotiation and Resolution',
-      description: 'We aggressively negotiate with insurance companies and opposing parties to secure the best possible settlement or take your case to trial if necessary.'
+      title: t('approach.steps.resolution.title'),
+      description: t('approach.steps.resolution.description')
     }
   ]
 

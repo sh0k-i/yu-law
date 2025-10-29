@@ -179,24 +179,5 @@
     "es": "Español",
     "tl": "Tagalog",
     "ceb": "Cebuano"
-  },
-  "approach": {
-    "title": "Nuestro Enfoque",
-    "description": "Nuestra estrategia legal probada guía cada caso desde la consulta inicial hasta la resolución final, asegurando representación integral y compensación máxima para nuestros clientes.",
-    "steps": {
-      "evaluation": {
-        "title": "Evaluación de Caso y Consulta",
-        "description": "Analizamos minuciosamente los detalles de su caso, recopilamos evidencia y le proporcionamos una comprensión clara de sus opciones legales y resultados potenciales."
-      },
-      "planning": {
-        "title": "Planificación Legal Estratégica",
-        "description": "Nuestro equipo experimentado desarrolla una estrategia legal integral adaptada a su situación específica, asegurando la máxima compensación por sus lesiones."
-      },
-      "resolution": {
-        "title": "Negociación y Resolución",
-        "description": "Negociamos agresivamente con compañías de seguros y partes opuestas para asegurar el mejor acuerdo posible o llevamos su caso a juicio si es necesario."
-      }
-    },
-    "cta": "Programe Su Consulta Gratuita"
   }
 }
