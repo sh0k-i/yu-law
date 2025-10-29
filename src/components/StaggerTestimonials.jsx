@@ -88,7 +88,7 @@ const TestimonialCard = ({
       )}
       style={{
         width: cardSize,
-        height: '350px',
+        height: '300px',
         backgroundColor: isCenter ? '#AB1522' : 'white',
         clipPath: `polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0)`,
         transform: `
@@ -193,7 +193,7 @@ export const StaggerTestimonials = () => {
   return (
     <div
       className="relative w-full overflow-hidden bg-brand-cream/30"
-      style={{ height: 600 }}
+      style={{ height: 520 }}
     >
       {testimonialsList.map((testimonial, index) => {
         const position = testimonialsList.length % 2

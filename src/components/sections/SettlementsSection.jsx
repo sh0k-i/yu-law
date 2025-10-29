@@ -70,7 +70,7 @@ const SettlementsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {t('settlements.title', 'SETTLEMENTS BY YU')}
+            {t('settlements.title')}
           </motion.h2>
           <motion.div 
             className="accent-line bg-brand-red mx-auto mb-6 sm:mb-8"
@@ -86,7 +86,7 @@ const SettlementsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            {t('settlements.description', "Real results for real people. See how we've secured life-changing settlements for our clients.")}
+            {t('settlements.description')}
           </motion.p>
         </div>
 
@@ -153,7 +153,7 @@ const SettlementsSection = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <p className="body-lg text-brand-cream mb-4 sm:mb-6">
-            {t('settlements.ctaText', 'Ready to secure the settlement you deserve?')}
+            {t('settlements.ctaText')}
           </p>
           <motion.div
             whileHover={{ scale: 1.05 }}

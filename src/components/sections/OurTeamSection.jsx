@@ -42,19 +42,19 @@ const OurTeamSection = () => {
       name: 'Tanya Almendarez',
       title: 'Compliance Officer',
       description: 'Ensuring all legal processes meet regulatory standards and ethical requirements. Committed to maintaining the highest standards of legal practice.',
-      image: null
+      image: '/images/team/tanya.png'
     },
     {
       name: 'Marilyn Sario',
       title: 'Closing Coordinator',
       description: 'Expert coordinator managing case closures and final settlements. Ensuring smooth completion of legal matters and client satisfaction.',
-      image: null
+      image: '/images/team/marilyn.png'
     },
     {
       name: 'Bear',
       title: 'Barketing Manager',
       description: 'Our beloved office companion providing emotional support and stress relief for both clients and staff. Specializing in tail wags and unconditional loyalty.',
-      image: null
+      image: '/images/team/bear.png'
     }
   ]
 
@@ -126,9 +126,9 @@ const OurTeamSection = () => {
               variants={itemVariants}
               className="group"
             >
-              <div className="bg-white shadow-lg overflow-hidden hover:shadow-[0_25px_50px_-12px_rgba(171,21,34,0.25)] transition-all duration-300 group-hover:-translate-y-2">
+              <div className="bg-white shadow-lg overflow-hidden hover:shadow-[0_25px_50px_-12px_rgba(171,21,34,0.25)] transition-all duration-300 group-hover:-translate-y-2 h-full flex flex-col">
                 {/* Photo Container with Dark Background */}
-                <div className="relative bg-gradient-to-br from-gray-800 via-brand-black to-gray-900 h-80 flex justify-center items-end overflow-hidden">
+                <div className="relative bg-gradient-to-br from-gray-800 via-brand-black to-gray-900 h-80 flex justify-center items-end overflow-hidden flex-shrink-0">
                   {/* Floating Photo */}
                   {member.image ? (
                     <motion.div 
@@ -170,14 +170,14 @@ const OurTeamSection = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 flex-grow flex flex-col">
                   <h3 className="text-xl font-lancea text-brand-black mb-1">
                     {member.name}
                   </h3>
                   <p className="text-brand-red font-acherus font-medium mb-3">
                     {member.title}
                   </p>
-                  <p className="text-brand-gray font-acherus leading-relaxed text-sm">
+                  <p className="text-brand-gray font-acherus leading-relaxed text-sm flex-grow">
                     {member.description}
                   </p>
 

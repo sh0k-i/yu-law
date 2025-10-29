@@ -10,16 +10,53 @@
   "hero": {
     "title": "¿Cómo Puede YU Ayudar?",
     "description": "Nuestro bufete de abogados está comprometido a servirle y obtener la justicia que merece. Si usted o un ser querido ha sido impactado por desafíos legales, llámenos al",
-    "cta": "Comience Ahora"
+    "cta": "Comience Ahora",
+    "languages": "Hablamos Inglés, Español, Tagalo y Cebuano",
+    "ourServices": "Nuestros Servicios",
+    "casesHandled": "Casos Manejados con Éxito",
+    "recoveredForClients": "Recuperado para Clientes"
   },
   "practiceAreas": {
     "title": "ÁREAS DE PRÁCTICA",
+    "sectionTitle": "LEY DE LESIONES PERSONALES",
+    "sectionDescription": "En Yu Law Firm, nos especializamos exclusivamente en Ley de Lesiones Personales. Nuestro equipo dedicado lucha incansablemente por clientes que han sufrido lesiones debido a la negligencia de otros, asegurando que reciba la compensación y justicia que merece.",
     "description": "Nos especializamos en tres áreas clave del derecho, brindando orientación experta y apoyo compasivo. Nuestros abogados experimentados están dedicados a lograr los mejores resultados posibles para nuestros clientes.",
     "personalInjury": {
       "title": "Lesiones Personales",
       "description": "Luchando por la compensación que merece después de sufrir lesiones debido a la negligencia o mala conducta de otros.",
       "detailedDescription": "Nuestros abogados de lesiones personales manejan accidentes automovilísticos, negligencia médica, lesiones laborales y reclamos por muerte injusta con dedicación.",
       "services": ["Accidentes Automovilísticos", "Negligencia Médica", "Lesiones Laborales", "Muerte Injusta"]
+    },
+    "injuryTypes": {
+      "carAccidents": {
+        "title": "Accidentes Automovilísticos",
+        "description": "Si ha sido lastimado en un accidente automovilístico, le ayudaremos a obtener dinero para sus facturas médicas, ingresos perdidos y dolor. Manejamos todo tipo de accidentes vehiculares."
+      },
+      "slipAndFall": {
+        "title": "Resbalones y Caídas",
+        "description": "¿Lesionado en la propiedad de otra persona? Probaremos que tuvieron la culpa y le ayudaremos a obtener el dinero que merece por sus lesiones."
+      },
+      "dogBites": {
+        "title": "Mordeduras de Perros y Ataques de Animales",
+        "description": "¿Mordido o atacado por un perro u otro animal? Responsabilizaremos al dueño de la mascota y lucharemos por su compensación."
+      },
+      "truckAccidents": {
+        "title": "Accidentes de Camiones de 18 Ruedas y Semirremolques",
+        "description": "Los accidentes de camiones a menudo causan lesiones graves. Sabemos cómo manejar casos complejos de accidentes de camiones y luchar contra grandes compañías de transporte."
+      },
+      "workplaceInjuries": {
+        "title": "Lesiones Laborales",
+        "description": "¿Lastimado en el trabajo? Le ayudaremos a identificar quién es responsable más allá de su empleador y obtener la compensación completa que merece."
+      },
+      "wrongfulDeath": {
+        "title": "Muerte Injusta",
+        "description": "¿Perdió a un ser querido debido al descuido o acciones de otra persona? Brindamos apoyo compasivo mientras luchamos por justicia y compensación para su familia."
+      }
+    },
+    "cta": {
+      "title": "¿Lesionado? Podemos Ayudar.",
+      "description": "No enfrente a las compañías de seguros solo. Nuestro equipo experimentado está listo para luchar por la compensación que merece. Consulta gratuita – sin honorarios a menos que ganemos.",
+      "button": "Obtenga una Consulta Gratuita"
     },
     "familyLaw": {
       "title": "Derecho Familiar",
@@ -142,5 +179,24 @@
     "es": "Español",
     "tl": "Tagalog",
     "ceb": "Cebuano"
+  },
+  "approach": {
+    "title": "Nuestro Enfoque",
+    "description": "Nuestra estrategia legal probada guía cada caso desde la consulta inicial hasta la resolución final, asegurando representación integral y compensación máxima para nuestros clientes.",
+    "steps": {
+      "evaluation": {
+        "title": "Evaluación de Caso y Consulta",
+        "description": "Analizamos minuciosamente los detalles de su caso, recopilamos evidencia y le proporcionamos una comprensión clara de sus opciones legales y resultados potenciales."
+      },
+      "planning": {
+        "title": "Planificación Legal Estratégica",
+        "description": "Nuestro equipo experimentado desarrolla una estrategia legal integral adaptada a su situación específica, asegurando la máxima compensación por sus lesiones."
+      },
+      "resolution": {
+        "title": "Negociación y Resolución",
+        "description": "Negociamos agresivamente con compañías de seguros y partes opuestas para asegurar el mejor acuerdo posible o llevamos su caso a juicio si es necesario."
+      }
+    },
+    "cta": "Programe Su Consulta Gratuita"
   }
 }

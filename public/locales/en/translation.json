@@ -11,16 +11,53 @@
   "hero": {
     "title": "How Can YU Help?",
     "description": "Our law firm is committed to serving you and getting the justice you deserve! If you or a loved one has been impacted by legal challenges, call us at",
-    "cta": "Get Started Now"
+    "cta": "Get Started Now",
+    "languages": "We speak English, Spanish, Tagalog & Cebuano",
+    "ourServices": "Our Services",
+    "casesHandled": "Cases Successfully Handled",
+    "recoveredForClients": "Recovered for Clients"
   },
   "practiceAreas": {
     "title": "PRACTICE AREAS",
+    "sectionTitle": "PERSONAL INJURY LAW",
+    "sectionDescription": "At Yu Law Firm, we specialize exclusively in Personal Injury Law. Our dedicated team fights tirelessly for clients who have suffered injuries due to others' negligence, ensuring you receive the compensation and justice you deserve.",
     "description": "We specialize in three key areas of law, providing expert guidance and compassionate support. Our experienced attorneys are dedicated to achieving the best possible outcomes for our clients.",
     "personalInjury": {
       "title": "Personal Injury",
       "description": "Fighting for the compensation you deserve after suffering injuries due to others' negligence or wrongdoing.",
       "detailedDescription": "Our personal injury attorneys handle car accidents, medical malpractice, workplace injuries, and wrongful death claims with dedication.",
       "services": ["Car Accidents", "Medical Malpractice", "Workplace Injuries", "Wrongful Death"]
+    },
+    "injuryTypes": {
+      "carAccidents": {
+        "title": "Car Accidents",
+        "description": "If you've been hurt in a car crash, we'll help you get money for your medical bills, lost income, and pain. We handle all types of vehicle accidents."
+      },
+      "slipAndFall": {
+        "title": "Slip and Fall",
+        "description": "Injured on someone else's property? We'll prove they were at fault and help you get the money you deserve for your injuries."
+      },
+      "dogBites": {
+        "title": "Dog Bites & Animal Attacks",
+        "description": "Bitten or attacked by a dog or other animal? We'll hold the pet owner responsible and fight for your compensation."
+      },
+      "truckAccidents": {
+        "title": "18-Wheeler & Semi-Truck Accidents",
+        "description": "Truck accidents often cause serious injuries. We know how to handle complex truck accident cases and fight against big trucking companies."
+      },
+      "workplaceInjuries": {
+        "title": "Workplace Injuries",
+        "description": "Hurt at work? We'll help you identify who's responsible beyond your employer and get you the full compensation you deserve."
+      },
+      "wrongfulDeath": {
+        "title": "Wrongful Death",
+        "description": "Lost a loved one due to someone else's carelessness or actions? We provide compassionate support while fighting for justice and compensation for your family."
+      }
+    },
+    "cta": {
+      "title": "Injured? We Can Help.",
+      "description": "Don't face the insurance companies alone. Our experienced team is ready to fight for the compensation you deserve. Free consultation – no fee unless we win.",
+      "button": "Get A Free Consultation"
     },
     "familyLaw": {
       "title": "Family Law",

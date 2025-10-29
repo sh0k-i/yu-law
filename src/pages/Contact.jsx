@@ -1,14 +1,40 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import emailjs from '@emailjs/browser'
+import Map from '../components/Map'
 
 const Contact = () => {
+  const [selectedLocation, setSelectedLocation] = useState('carrollton')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    service: '',
     message: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' })
+
+  const locations = {
+    carrollton: {
+      name: 'Carrollton',
+      latitude: 32.967371,
+      longitude: -96.8408679,
+      address: '2201 Midway Road, Suite 102<br/>Carrollton, Texas 75006',
+      phone: '(940) 239-9840',
+      email: 'info@yulawfirm.com'
+    },
+    austin: {
+      name: 'Austin',
+      latitude: 30.34148,
+      longitude: -97.754922,
+      address: '5900 Balcones Drive # 12813<br/>Austin, TX 78731',
+      phone: '(940) 239-9840',
+      email: 'info@yulawfirm.com'
+    }
+  }
+
+  const currentLocation = locations[selectedLocation]
 
   const handleChange = (e) => {
     setFormData({
@@ -17,17 +43,49 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-    // You would typically send this to your backend
-  }
+    setIsSubmitting(true)
+    setSubmitStatus({ type: '', message: '' })
 
-  const services = [
-    'Personal Injury',
-    'Other'
-  ]
+    try {
+      // EmailJS configuration from environment variables
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        to_email: 'leila@attorneyyu.com'
+      }
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey)
+
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you for contacting us! We will get back to you soon.'
+      })
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      })
+    } catch (error) {
+      console.error('Email send error:', error)
+      setSubmitStatus({
+        type: 'error',
+        message: 'Sorry, there was an error sending your message. Please try calling us directly at (940) 239-9840.'
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <>
@@ -147,26 +205,6 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="service" className="block text-sm font-acherus font-medium text-brand-black mb-2">
-                    Service Needed
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent font-acherus text-sm sm:text-base"
-                  >
-                    <option value="">Select a service</option>
-                    {services.map((service) => (
-                      <option key={service} value={service}>
-                        {service}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
                   <label htmlFor="message" className="block text-sm font-acherus font-medium text-brand-black mb-2">
                     Tell us about your case *
                   </label>
@@ -184,10 +222,26 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="btn-primary w-full"
+                  disabled={isSubmitting}
+                  className={`btn-primary w-full ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
+
+                {/* Status Message */}
+                {submitStatus.message && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`p-4 mt-4 font-acherus text-sm ${
+                      submitStatus.type === 'success'
+                        ? 'bg-green-50 text-green-800 border border-green-200'
+                        : 'bg-red-50 text-red-800 border border-red-200'
+                    }`}
+                  >
+                    {submitStatus.message}
+                  </motion.div>
+                )}
               </form>
             </div>
 
@@ -254,12 +308,24 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="heading-sm text-brand-black mb-1 sm:mb-2">Location</h3>
-                    <p className="body-md text-brand-gray mb-1 sm:mb-2">Serving clients throughout Texas</p>
-                    <p className="body-md text-brand-black">
-                      2201 Midway Road, Suite 102,<br />
-                      Carrollton, Texas 75006
-                    </p>
+                    <h3 className="heading-sm text-brand-black mb-1 sm:mb-2">Locations</h3>
+                    <p className="body-md text-brand-gray mb-2 sm:mb-3">Serving clients throughout Texas</p>
+                    <div className="space-y-3">
+                      <div>
+                        <p className="body-md text-brand-black font-medium mb-1">Carrollton Office</p>
+                        <p className="body-md text-brand-gray text-sm">
+                          2201 Midway Road, Suite 102,<br />
+                          Carrollton, Texas 75006
+                        </p>
+                      </div>
+                      <div>
+                        <p className="body-md text-brand-black font-medium mb-1">Austin Office</p>
+                        <p className="body-md text-brand-gray text-sm">
+                          5900 Balcones Drive # 12813<br />
+                          Austin, TX 78731
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -301,11 +367,44 @@ const Contact = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             ></motion.div>
-            <div className="bg-brand-gray bg-opacity-20 h-64 sm:h-80 md:h-96 flex items-center justify-center">
-              <p className="body-lg text-brand-gray">
-                Interactive Map Coming Soon
-              </p>
-            </div>
+            
+            {/* Location Toggle */}
+            <motion.div 
+              className="flex justify-center gap-4 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <button
+                onClick={() => setSelectedLocation('carrollton')}
+                className={`px-6 py-3 font-acherus font-medium text-base transition-all duration-300 ${
+                  selectedLocation === 'carrollton'
+                    ? 'bg-brand-red text-white shadow-lg'
+                    : 'bg-white text-brand-black border-2 border-gray-200 hover:border-brand-red'
+                }`}
+              >
+                Carrollton Office
+              </button>
+              <button
+                onClick={() => setSelectedLocation('austin')}
+                className={`px-6 py-3 font-acherus font-medium text-base transition-all duration-300 ${
+                  selectedLocation === 'austin'
+                    ? 'bg-brand-red text-white shadow-lg'
+                    : 'bg-white text-brand-black border-2 border-gray-200 hover:border-brand-red'
+                }`}
+              >
+                Austin Office
+              </button>
+            </motion.div>
+            
+            <Map 
+              latitude={currentLocation.latitude} 
+              longitude={currentLocation.longitude} 
+              zoom={15}
+              address={currentLocation.address}
+              city={currentLocation.name}
+            />
           </div>
         </div>
       </section>

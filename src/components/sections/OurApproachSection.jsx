@@ -58,11 +58,11 @@ const OurApproachSection = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="heading-lg text-brand-black mb-4 sm:mb-6">
-                {t('approach.title', 'Our Approach')}
+                {t('approach.title')}
               </h2>
               <div className="accent-line mb-6 sm:mb-8"></div>
               <p className="body-lg text-brand-gray mb-8 sm:mb-12">
-                {t('approach.description', 'Our proven legal strategy guides every case from initial consultation to final resolution — ensuring comprehensive representation and maximum compensation for our clients.')}
+                {t('approach.description')}
               </p>
             </motion.div>
 
@@ -169,7 +169,7 @@ const OurApproachSection = () => {
                     to="/contact"
                     className="btn-primary inline-block"
                   >
-                    {t('approach.cta', 'Schedule a Consultation')}
+                    {t('approach.cta')}
                   </Link>
                 </motion.div>
               </motion.div>

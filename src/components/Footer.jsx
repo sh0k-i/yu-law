@@ -34,7 +34,7 @@ const Footer = () => {
           {/* Column 2 - Contact Information */}
           <div>
             <h4 className="text-lg font-lancea text-white mb-4">Contact Information</h4>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <p className="text-brand-cream font-acherus text-sm">
                 <span className="font-medium">{t('footer.contact.phone')}</span><br />
                 (940) 239-9840
@@ -43,11 +43,25 @@ const Footer = () => {
                 <span className="font-medium">{t('footer.contact.email')}</span><br />
                 info@yulawfirm.com
               </p>
-              <p className="text-brand-cream font-acherus text-sm leading-relaxed">
-                <span className="font-medium">{t('footer.contact.address')}</span><br />
-                2201 Midway Road, Suite 102,<br />
-                Carrollton, Texas 75006
-              </p>
+              <div className="text-brand-cream font-acherus text-sm leading-relaxed">
+                <span className="font-medium">{t('footer.contact.address')}</span>
+                <div className="mt-2 space-y-2">
+                  <div>
+                    <p className="font-medium text-white text-xs mb-1">Carrollton Office</p>
+                    <p className="text-brand-cream/90">
+                      2201 Midway Road, Suite 102,<br />
+                      Carrollton, Texas 75006
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-white text-xs mb-1">Austin Office</p>
+                    <p className="text-brand-cream/90">
+                      5900 Balcones Drive # 12813<br />
+                      Austin, TX 78731
+                    </p>
+                  </div>
+                </div>
+              </div>
               <p className="text-brand-cream font-acherus text-sm">
                 <span className="font-medium">Hours:</span><br />
                 Mon-Fri 9AM-5PM

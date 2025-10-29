@@ -9,28 +9,28 @@ const FAQSection = () => {
   // Use dynamic translations with namespaces
   const faqs = [
     {
-      question: t('faq.items.noWinNoFee.question', "How Does the \"No Win No Fee\" Promise Work?"),
-      answer: t('faq.items.noWinNoFee.answer', "We work on a contingency fee basis, which means you don't pay attorney fees unless we win your case. We offer free initial consultations to evaluate your case and discuss your legal options without any upfront costs.")
+      question: t('faq.items.noWinNoFee.question'),
+      answer: t('faq.items.noWinNoFee.answer')
     },
     {
-      question: t('faq.items.freeConsultation.question', "Do I Have to Pay to Speak with an Injury Attorney?"),
-      answer: t('faq.items.freeConsultation.answer', "No, we offer completely free consultations. There are no upfront costs or fees to discuss your case with our experienced legal team.")
+      question: t('faq.items.freeConsultation.question'),
+      answer: t('faq.items.freeConsultation.answer')
     },
     {
-      question: t('faq.items.needAttorney.question', "Do I Need a Personal Injury Attorney Help Me Settle My Case?"),
-      answer: t('faq.items.needAttorney.answer', "While not required by law, having an experienced attorney significantly increases your chances of receiving fair compensation. Insurance companies often offer lower settlements to unrepresented individuals.")
+      question: t('faq.items.needAttorney.question'),
+      answer: t('faq.items.needAttorney.answer')
     },
     {
-      question: t('faq.items.contingencyFee.question', "What is a Contingency Fee?"),
-      answer: t('faq.items.contingencyFee.answer', "A contingency fee means our payment is contingent on winning your case. You pay nothing upfront, and we only get paid when we secure compensation for you.")
+      question: t('faq.items.contingencyFee.question'),
+      answer: t('faq.items.contingencyFee.answer')
     },
     {
-      question: t('faq.items.attorneyCost.question', "How Much Does it Cost to Hire a Personal Injury Attorney?"),
-      answer: t('faq.items.attorneyCost.answer', "There are no upfront costs. We work on contingency, meaning you only pay if we win your case. Our fee comes from the settlement or judgment we secure for you.")
+      question: t('faq.items.attorneyCost.question'),
+      answer: t('faq.items.attorneyCost.answer')
     },
     {
-      question: t('faq.items.caseWorth.question', "How Much Is My Personal Injury Case Worth?"),
-      answer: t('faq.items.caseWorth.answer', "Case value depends on factors like medical expenses, lost wages, pain and suffering, and future costs. We provide free case evaluations to estimate your potential compensation.")
+      question: t('faq.items.caseWorth.question'),
+      answer: t('faq.items.caseWorth.answer')
     }
   ]
 
@@ -73,7 +73,7 @@ const FAQSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              {t('faq.subDescription', 'Following an accident, there are always more questions than answers. At Yu Law Firm, we\'re here to answer any questions you have about your injury case.')}
+              {t('faq.subDescription')}
             </motion.p>
 
             <motion.div
@@ -87,7 +87,7 @@ const FAQSection = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <button className="btn-primary">
-                  {t('faq.contactButton', 'Contact 24-7')}
+                  {t('faq.contactButton')}
                 </button>
               </motion.div>
             </motion.div>

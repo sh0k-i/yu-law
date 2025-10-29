@@ -27,7 +27,7 @@ const Home = () => {
       <SettlementsSection />
       <section className="section-padding bg-brand-cream">
         <div className="container-responsive">
-          <div className="text-center mb-12 sm:mb-16">
+          <div className="text-center">
             <motion.h2 
               className="heading-lg text-brand-black mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}

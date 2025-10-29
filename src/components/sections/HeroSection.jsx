@@ -89,9 +89,9 @@ const HeroSection = () => {
               >
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-brand-red"></div>
-                  <span className="text-xs sm:text-sm font-acherus text-brand-gray font-medium">
-                    {t('hero.languages', 'We speak English, Spanish, Tagalog & Cebuano')}
-                  </span>
+                  <div className="text-xs sm:text-sm font-acherus text-brand-gray font-medium">
+                    {t('hero.languages')}
+                  </div>
                 </div>
               </motion.div>
               
@@ -123,7 +123,7 @@ const HeroSection = () => {
                   to="/services"
                   className="btn-secondary text-center block w-full sm:w-auto min-w-[160px]"
                 >
-                  Our Services
+                  {t('hero.ourServices')}
                 </Link>
               </motion.div>
             </motion.div>
@@ -131,19 +131,19 @@ const HeroSection = () => {
             {/* Stats Section */}
             <motion.div
               ref={statsRef}
-              className="grid grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-0"
+              className="grid grid-cols-2 gap-4 md:gap-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
               <div className="text-left">
                 <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-lancea text-brand-red mb-2">{formatNumber(cases)}</div>
-                <div className="text-xs sm:text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">Cases Successfully Handled</div>
+                <div className="text-xs sm:text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">{t('hero.casesHandled')}</div>
               </div>
               
               <div className="text-left">
                 <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-lancea text-brand-red mb-2">{formatMoney(recovered)}</div>
-                <div className="text-xs sm:text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">Recovered for Clients</div>
+                <div className="text-xs sm:text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">{t('hero.recoveredForClients')}</div>
               </div>
             </motion.div>
           </div>
