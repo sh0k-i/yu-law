@@ -262,15 +262,7 @@ const Reviews = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="grid-responsive-3 text-center">
-              <div>
-                <div className="stat-number text-brand-red mb-1 sm:mb-2">
-                  {testimonialsData.length}+
-                </div>
-                <p className="font-acherus text-brand-gray">
-                  Happy Clients
-                </p>
-              </div>
+            <div className="grid-responsive-2 text-center">
               <div>
                 <div className="stat-number text-brand-red mb-1 sm:mb-2">
                   5.0

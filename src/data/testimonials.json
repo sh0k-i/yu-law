@@ -36,15 +36,6 @@
     "caseType": "Personal Injury"
   },
   {
-    "id": 5,
-    "name": "Tanya F.",
-    "subject": "Perfect for Small Business Needs",
-    "body": "I 100% recommend for other small business. The Yu Law Firm was so helpful with helping me create and draft a contract that was not only to best interest of my clients but for the protection and well being of my small business. Attorney Liezyl took the time to understand my business needs and provided practical legal solutions that made sense for my situation. Her expertise in contract law and her ability to explain complex legal concepts in simple terms was invaluable. I now have peace of mind knowing my business is properly protected.",
-    "rating": 5,
-    "date": "2024-05-10",
-    "caseType": "Business Contract"
-  },
-  {
     "id": 6,
     "name": "T. Tovar",
     "subject": "Exceptional Customer Service",
@@ -63,21 +54,12 @@
     "caseType": "Workplace Injury"
   },
   {
-    "id": 8,
-    "name": "Tanya A.",
-    "subject": "Knowledgeable Contract Drafting",
-    "body": "Atty. Liezyl was very helpful and knowledgeable in the process of creating and drafting a business contract. Not only did she find a way to include my primary focal points but also prompted me to consider important aspects I hadn't thought about. Her thoroughness and attention to detail ensured that my contract was comprehensive and legally sound. She made the entire process easy to understand and was patient with all my questions. I'm confident in the legal documents she prepared for my business.",
-    "rating": 5,
-    "date": "2024-02-20",
-    "caseType": "Business Contract"
-  },
-  {
     "id": 9,
     "name": "Christina D.",
-    "subject": "Expert Family Law Representation",
+    "subject": "Expert Legal Representation",
     "body": "Attorney Liezyl exhibited a profound understanding of family law and its complexities. Her expertise was apparent in her strategic handling of my case, ensuring that every decision made was well-informed and in my best interest. She approached my sensitive family matter with compassion and professionalism, making a difficult time more manageable. Her dedication to achieving the best outcome for me and my family was evident throughout the entire process. I'm grateful for her guidance and support.",
     "rating": 5,
     "date": "2024-01-15",
-    "caseType": "Family Law"
+    "caseType": "Legal"
   }
 ]
