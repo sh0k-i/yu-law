@@ -20,11 +20,12 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-      <PartnersSection />
+      <SettlementsSection />
+      
       <OurApproachSection />
       <PracticeAreasSection />
 
-      <SettlementsSection />
+      <PartnersSection />
       <section className="section-padding bg-brand-cream">
         <div className="container-responsive">
           <div className="text-center">

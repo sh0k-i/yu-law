@@ -8,36 +8,24 @@ const PartnersSection = () => {
   // Partner logos with working placeholder images
   const partnerLogos = [
     {
-      name: 'Microsoft',
-      logo: '/images/micro.png', 
+      name: 'Texas Trial Lawyers Association',
+      logo: '/images/ttla.png',
+      whiteOverlay: false
     },
     {
-      name: 'Google', 
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/150px-Google_2015_logo.svg.png',
+      name: 'Philippine American Chamber of Commerce', 
+      logo: '/images/pacc.png',
+      whiteOverlay: false
     },
     {
-      name: 'Amazon',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/150px-Amazon_logo.svg.png',
+      name: 'Pilipino American Community Endeavor',
+      logo: '/images/pace.png',
+      whiteOverlay: true
     },
     {
-      name: 'Netflix',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/150px-Netflix_2015_logo.svg.png',
-    },
-    {
-      name: 'Tesla',
-      logo: '/images/tesla.png',
-    },
-    {
-      name: 'Meta',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/150px-Meta_Platforms_Inc._logo.svg.png',
-    },
-    {
-      name: 'Adobe',
-      logo: '/images/adobe.png',
-    },
-    {
-      name: 'Apple',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/80px-Apple_logo_black.svg.png',
+      name: 'Dallas Bar Association',
+      logo: '/images/dba.png',
+      whiteOverlay: true
     },
   ]
 
@@ -78,22 +66,22 @@ const PartnersSection = () => {
             {partnerLogos.map((partner, index) => (
               <div 
                 key={index}
-                className="mx-4 sm:mx-6 md:mx-8 flex items-center justify-center h-16 sm:h-20 w-32 sm:w-40 relative group"
+                className="mx-4 sm:mx-6 md:mx-8 flex items-center gap-4 group"
               >
-                {/* White/Cream Overlay Layer for Uniform Look */}
-                <div className="absolute inset-0 backdrop-blur-sm opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
                 {/* Partner Logo */}
-                <div className="relative z-10 flex items-center justify-center w-full h-full p-4">
+                <div className="flex items-center justify-center h-16 sm:h-20 relative">
                   <img 
                     src={partner.logo}
                     alt={`${partner.name} logo`}
-                    className="max-w-full max-h-full object-contain filter brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ 
-                      mixBlendMode: 'normal',
-                      filter: 'brightness(0) invert(1) opacity(0.9)'
-                    }}
+                    className={`h-full w-auto object-contain group-hover:scale-110 transition-all duration-300 ${
+                      partner.whiteOverlay ? 'filter brightness-0 invert opacity-90 group-hover:opacity-100' : ''
+                    }`}
                   />
+                </div>
+                
+                {/* Organization Name */}
+                <div className="text-white font-acherus text-sm sm:text-base font-medium whitespace-nowrap">
+                  {partner.name}
                 </div>
               </div>
             ))}

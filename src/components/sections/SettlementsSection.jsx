@@ -50,15 +50,10 @@ const SettlementsSection = () => {
   const duplicatedSettlements = [...settlements, ...settlements]
 
   return (
-    <section className="section-padding bg-brand-black overflow-hidden relative">
-      {/* Elegant Background with Spotlights */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-brand-black to-gray-800"></div>
-      {/* Central blue spotlight */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400 opacity-[0.04] blur-3xl"></div>
-      
-      {/* Gradient Overlays for Smooth Edges - Moved to parent section */}
-      <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-brand-black to-transparent pointer-events-none z-20"></div>
-      <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-brand-black to-transparent pointer-events-none z-20"></div>
+    <section className="section-padding bg-brand-red overflow-hidden relative">
+      {/* Gradient Overlays for Smooth Edges */}
+      <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-brand-red to-transparent pointer-events-none z-20"></div>
+      <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-brand-red to-transparent pointer-events-none z-20"></div>
       
       <div className="container-responsive relative z-10">
         {/* Section Header */}
@@ -93,12 +88,7 @@ const SettlementsSection = () => {
       </div>
 
       {/* Full Width Marquee Container */}
-      <div className="w-full relative z-10 mb-16">
-        {/* Left red spotlight */}
-        <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-brand-red opacity-[0.06] blur-3xl"></div>
-        {/* Right red spotlight */}
-        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-brand-red opacity-[0.06] blur-3xl"></div>
-        
+      <div className="w-full relative z-10 ">
         <div className="flex overflow-hidden">
           <motion.div
             className="flex gap-8 min-w-max"
@@ -121,49 +111,26 @@ const SettlementsSection = () => {
                 className="flex-shrink-0 w-[300px] sm:w-[350px] md:w-[450px] bg-white/5 backdrop-blur-sm border border-white/10 card-padding hover:bg-white/10 transition-all duration-300 group"
               >
                 {/* Case Type - At Top */}
-                <h3 className="heading-sm text-white mb-4 sm:mb-6 text-center group-hover:text-brand-cream transition-colors duration-300">
+                <h3 className="heading-sm text-white/50 mb-4 sm:mb-6 text-center group-hover:text-brand-cream transition-colors duration-300">
                   {settlement.case}
                 </h3>
 
                 {/* Settlement Amount - Large and Centered */}
                 <div className="text-center mb-4 sm:mb-6">
-                  <div className="stat-number text-brand-red font-bold mb-3 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
+                  <div className="stat-number text-white font-bold mb-3 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
                     {settlement.amount}
                   </div>
-                  <div className="w-16 sm:w-20 h-1 bg-brand-red mx-auto opacity-80"></div>
+                  <div className="w-16 sm:w-20 h-1 bg-white mx-auto opacity-80"></div>
                 </div>
 
                 {/* Description - At Bottom */}
-                <p className="body-md text-brand-cream text-center group-hover:text-white transition-colors duration-300">
+                <p className="body-md text-white/50 text-center group-hover:text-white transition-colors duration-300">
                   {settlement.description}
                 </p>
               </div>
             ))}
           </motion.div>
         </div>
-      </div>
-
-      {/* Call to Action - Moved Below Marquee */}
-      <div className="container-responsive relative z-10">
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <p className="body-lg text-brand-cream mb-4 sm:mb-6">
-            {t('settlements.ctaText')}
-          </p>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <button className="btn-primary">
-              {t('header.getStarted')}
-            </button>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   )
