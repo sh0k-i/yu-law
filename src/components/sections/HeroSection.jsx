@@ -11,8 +11,8 @@ const HeroSection = () => {
   const [recovered, setRecovered] = useState(0)
   
   // Target values
-  const targetCases = 500
-  const targetRecovered = 1000000 // $1,000,000
+  const targetCases = 200
+  const targetRecovered = 3000000 // $1,000,000
   
   // References
   const statsRef = useRef(null)
@@ -35,11 +35,11 @@ const HeroSection = () => {
   
   // Format functions
   const formatMoney = (num) => {
-    return `$${num >= 1000000 ? '1M+' : num.toLocaleString()}`
+    return `$${num >= 3000000 ? '3M+' : num.toLocaleString()}`
   }
 
   const formatNumber = (num) => {
-    return num >= 500 ? '500+' : num.toLocaleString()
+    return num >= 200 ? '200+' : num.toLocaleString()
   }
 
   
