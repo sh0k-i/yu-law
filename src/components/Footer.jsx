@@ -1,16 +1,14 @@
 import { Link } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import Logo from './Logo'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
-  const { t } = useTranslation()
 
   const quickLinks = [
-    { name: t('footer.aboutUs'), href: '/about' },
-    { name: t('header.services'), href: '/services' },
-    { name: t('header.reviews'), href: '/reviews' },
-    { name: t('header.contact'), href: '/contact' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Reviews', href: '/reviews' },
+    { name: 'Contact', href: '/contact' },
   ]
 
   const resources = [
@@ -36,15 +34,15 @@ const Footer = () => {
             <h4 className="text-lg font-lancea text-white mb-4">Contact Information</h4>
             <div className="space-y-3">
               <p className="text-brand-cream font-acherus text-sm">
-                <span className="font-medium">{t('footer.contact.phone')}</span><br />
+                <span className="font-medium">Phone:</span><br />
                 (940) 239-9840
               </p>
               <p className="text-brand-cream font-acherus text-sm">
-                <span className="font-medium">{t('footer.contact.email')}</span><br />
+                <span className="font-medium">Email:</span><br />
                 info@yulawfirm.com
               </p>
               <div className="text-brand-cream font-acherus text-sm leading-relaxed">
-                <span className="font-medium">{t('footer.contact.address')}</span>
+                <span className="font-medium">Address:</span>
                 <div className="mt-2 space-y-2">
                   <div>
                     <p className="font-medium text-white text-xs mb-1">Carrollton Office</p>
@@ -71,7 +69,7 @@ const Footer = () => {
 
           {/* Column 3 - Quick Links */}
           <div>
-            <h4 className="text-lg font-lancea text-white mb-4">{t('footer.quickLinks')}</h4>
+            <h4 className="text-lg font-lancea text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -110,7 +108,7 @@ const Footer = () => {
                 to="/contact"
                 className="btn-primary inline-block w-full text-center text-sm py-3"
               >
-                {t('header.getStarted')}
+                Get Started Now
               </Link>
             </div>
           </div>
@@ -120,20 +118,20 @@ const Footer = () => {
         <div className="border-t border-brand-gray mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-brand-cream font-acherus text-sm">
-              {t('footer.copyright', { year: currentYear })}
+              © {currentYear} Yu Law Firm. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link
                 to="/privacy"
                 className="text-brand-cream font-acherus text-sm hover:text-brand-red transition-colors duration-200"
               >
-                {t('footer.privacy')}
+                Privacy Policy
               </Link>
               <Link
                 to="/terms"
                 className="text-brand-cream font-acherus text-sm hover:text-brand-red transition-colors duration-200"
               >
-                {t('footer.terms')}
+                Terms of Service
               </Link>
             </div>
           </div>

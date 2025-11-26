@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { useTranslation } from 'react-i18next'
 
 const Services = () => {
-  const { t } = useTranslation()
   // Only offering Personal Injury services
   const services = [
     {
@@ -21,7 +19,7 @@ const Services = () => {
         'Truck Accidents',
         'Brain & Spinal Injuries'
       ],
-      image: '/images/services/personal-injury-service.jpg',
+      image: '/images/car-accident.png',
       highlight: 'Aggressive advocacy to secure the compensation you rightfully deserve.'
     }
   ]
@@ -47,7 +45,7 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              {t('services.title', 'OUR SERVICES')}
+              OUR SERVICES
             </motion.h1>
             <motion.div 
               className="accent-line bg-brand-red mx-auto mb-6 sm:mb-8"
@@ -63,7 +61,7 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              {t('services.description', 'Expert legal services in Personal Injury with unwavering dedication to your success and recovery. We focus exclusively on getting you the compensation you deserve.')}
+              Professional legal services in Personal Injury with unwavering dedication to your success.
             </motion.p>
           </div>
         </div>
@@ -92,7 +90,7 @@ const Services = () => {
                 >
                   <div className="mb-4 sm:mb-6">
                     <span className="inline-block px-3 sm:px-4 py-2 bg-brand-red text-white text-xs sm:text-sm font-acherus font-medium mb-3 sm:mb-4">
-                      {t('services.practiceAreaLabel', 'PRACTICE AREA')}
+                      PRACTICE AREA
                     </span>
                     <h2 className="heading-lg text-brand-black mb-3 sm:mb-4">{service.title}</h2>
                     <div className="accent-line mb-4 sm:mb-6"></div>
@@ -117,7 +115,7 @@ const Services = () => {
                       to="/contact"
                       className="btn-primary inline-block"
                     >
-                      {t('header.getStarted')}
+                      Get Started Now
                     </Link>
                   </motion.div>
                 </motion.div>
@@ -133,34 +131,7 @@ const Services = () => {
                   {/* Photo Container */}
                   <div className="relative mb-6 sm:mb-8 group">
                     <div className="relative h-64 sm:h-80 overflow-hidden">
-                      {/* Placeholder for actual photo */}
-                      <div 
-                        className="w-full h-full bg-gradient-to-br from-brand-gray to-brand-black flex items-center justify-center relative"
-                        style={{
-                          backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.6), rgba(171,21,34,0.4)), url(${service.image})`,
-                          backgroundSize: 'cover',
-                          backgroundPosition: 'center'
-                        }}
-                      >
-                        {/* Overlay gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-40"></div>
-                        
-                        {/* Placeholder text until real photos are added */}
-                        <div className="relative z-10 text-white text-center px-4">
-                          <div className="text-2xl sm:text-3xl font-lancea mb-2 opacity-80">
-                            {service.title}
-                          </div>
-                          <div className="text-xs sm:text-sm font-acherus opacity-60">
-                            Professional Photo Coming Soon
-                          </div>
-                        </div>
-
-                        {/* Hover overlay */}
-                        <motion.div
-                          className="absolute inset-0 bg-brand-red bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                          initial={{ opacity: 0 }}
-                        ></motion.div>
-                      </div>
+                      <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
 
                       {/* Decorative corner elements */}
                       <div className="absolute -top-4 -right-4 w-8 h-8 border-2 border-brand-red opacity-60 rotate-45"></div>
@@ -172,7 +143,7 @@ const Services = () => {
                   <div className="bg-white card-padding shadow-lg border border-gray-100">
                     <h3 className="heading-sm text-brand-black mb-4 sm:mb-6 flex items-center">
                       <span className="w-2 h-2 bg-brand-red mr-3"></span>
-                      {t('services.servicesInclude', 'Services Include:')}
+                      Services Include:
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {service.services.map((item, itemIndex) => (
@@ -203,23 +174,23 @@ const Services = () => {
       <section className="section-padding bg-brand-red text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="heading-lg text-white mb-4 sm:mb-6">
-            {t('services.ctaTitle', 'Ready to Discuss Your Case?')}
+            Ready to Discuss Your Case?
           </h2>
           <p className="body-lg text-white mb-6 sm:mb-8">
-            {t('services.ctaDescription', 'Every legal challenge is unique. Let us provide you with a personalized consultation to discuss your specific needs and how we can help.')}
+            Every legal challenge is unique. Let us provide you with a personalized consultation to discuss your specific needs and how we can help.
           </p>
           <div className="flex-responsive justify-center">
             <Link
               to="/contact"
               className="bg-white text-brand-red px-6 sm:px-8 py-3 sm:py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red btn-mobile"
             >
-              {t('header.getStarted')}
+              Get Started Now
             </Link>
             <a
               href="tel:940-239-9840"
               className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-white hover:text-brand-red focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red btn-mobile"
             >
-              {t('services.callNow', 'Call: 940-239-9840')}
+              Call: 940-239-9840
             </a>
           </div>
         </div>

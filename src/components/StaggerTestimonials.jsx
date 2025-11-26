@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import testimonialsData from '../data/testimonials.json';
 
@@ -72,7 +71,6 @@ const TestimonialCard = ({
   testimonial, 
   handleMove, 
   cardSize,
-  t,
   originalTestimonial
 }) => {
   const isCenter = position === 0;
@@ -157,7 +155,6 @@ const TestimonialCard = ({
 };
 
 export const StaggerTestimonials = () => {
-  const { t } = useTranslation();
   const [cardSize, setCardSize] = useState(365);
   const [testimonialsList, setTestimonialsList] = useState(testimonials);
 
@@ -209,7 +206,6 @@ export const StaggerTestimonials = () => {
             handleMove={handleMove}
             position={position}
             cardSize={cardSize}
-            t={t}
           />
         );
       })}

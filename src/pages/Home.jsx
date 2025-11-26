@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import HeroSection from '../components/sections/HeroSection'
 import PurposeSection from '../components/sections/PurposeSection'
@@ -15,8 +14,6 @@ import PartnersSection from '../components/sections/PartnersSection'
 import OurApproachSection from '../components/sections/OurApproachSection'
 
 const Home = () => {
-  const { t } = useTranslation()
-
   return (
     <>
       <HeroSection />
@@ -36,7 +33,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              {t('testimonials.title')}
+              CLIENT TESTIMONIALS
             </motion.h2>
             <motion.div 
               className="accent-line mx-auto mb-6 sm:mb-8"
@@ -52,7 +49,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              {t('testimonials.description')}
+              Hear from our satisfied clients who have experienced the Yu Law Firm difference firsthand.
             </motion.p>
           </div>
         </div>

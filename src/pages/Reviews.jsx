@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { useTranslation } from 'react-i18next'
 import { Link, useSearchParams } from 'react-router-dom'
 import testimonialsData from '../data/testimonials.json'
 import ReviewModal from '../components/ReviewModal'
 
 const Reviews = () => {
-  const { t } = useTranslation()
   const [searchParams, setSearchParams] = useSearchParams()
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedReview, setSelectedReview] = useState(null)
@@ -116,7 +114,7 @@ const Reviews = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              {t('reviews.title', 'CLIENT REVIEWS')}
+              CLIENT REVIEWS
             </motion.h1>
             <motion.div 
               className="accent-line bg-brand-red mx-auto mb-6 sm:mb-8"
@@ -132,7 +130,7 @@ const Reviews = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              {t('reviews.description', 'Read what our clients have to say about their experience with Yu Law Firm. Real stories from real people who trusted us with their legal matters.')}
+              Read what our clients have to say about their experience with Yu Law Firm. Real stories from real people who trusted us with their legal matters.
             </motion.p>
           </div>
         </div>
@@ -291,17 +289,17 @@ const Reviews = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <h3 className="heading-md text-brand-black mb-3 sm:mb-4">
-              {t('reviews.ctaTitle', 'Ready to Share Your Experience?')}
+              Ready to Share Your Experience?
             </h3>
             <p className="body-lg text-brand-gray mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-              {t('reviews.ctaDescription', 'We value your feedback and would love to hear about your experience with Yu Law Firm.')}
+              We value your feedback and would love to hear about your experience with Yu Law Firm.
             </p>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <Link to="/contact" className="btn-primary">
-                {t('reviews.ctaButton', 'Contact Us')}
+                Contact Us
               </Link>
             </motion.div>
           </motion.div>

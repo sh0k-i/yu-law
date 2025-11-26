@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
-import { useTranslation } from 'react-i18next'
 
 const PurposeSection = () => {
-  const { t } = useTranslation()
   return (
     <section className="py-12 bg-brand-red">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,7 +12,7 @@ const PurposeSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {t('purpose.title', 'OUR PURPOSE')}
+            OUR PURPOSE
           </motion.h2>
           <motion.div 
             className="w-24 h-1 bg-white mx-auto mb-8"
@@ -26,7 +24,7 @@ const PurposeSection = () => {
         </div>
         <div className="max-w-4xl mx-auto">
           <p className="text-lg md:text-xl font-acherus text-white leading-relaxed text-center">
-            {t('purpose.description', 'Specializing in Personal Injury, Family Law, and Estate Planning, our law firm is dedicated to serving as an unwavering support system. We provide steadfast legal guidance for individuals navigating the nuanced domains of these areas, positioning ourselves as your dedicated ally. Our commitment assures you that no challenge is deemed insurmountable with our support. Your peace of mind is our utmost priority, and we stand ready to simplify intricate legal matters, standing firmly by your side through every phase of your journey.')}
+            Specializing in Personal Injury, Family Law, and Estate Planning, our law firm is dedicated to serving as an unwavering support system. We provide steadfast legal guidance for individuals navigating the nuanced domains of these areas, positioning ourselves as your dedicated ally. Our commitment assures you that no challenge is deemed insurmountable with our support. Your peace of mind is our utmost priority, and we stand ready to simplify intricate legal matters, standing firmly by your side through every phase of your journey.
           </p>
         </div>
       </div>

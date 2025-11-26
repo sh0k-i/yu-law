@@ -1,50 +1,47 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { useTranslation } from 'react-i18next'
 
 const PracticeAreasSection = () => {
-  const { t } = useTranslation()
-  
   // Focus exclusively on Personal Injury
   const personalInjury = {
     id: 'personalInjury',
-    title: t('practiceAreas.personalInjury.title'),
-    description: t('practiceAreas.personalInjury.description'),
-    detailedDescription: t('practiceAreas.personalInjury.detailedDescription'),
+    title: 'Personal Injury',
+    description: 'Fighting for the compensation you deserve after suffering injuries due to others\' negligence or wrongdoing.',
+    detailedDescription: 'Our personal injury attorneys handle car accidents, medical malpractice, workplace injuries, and wrongful death claims with dedication.',
     image: '/images/practice-areas/personal-injury.jpg',
-    services: t('practiceAreas.personalInjury.services', { returnObjects: true })
+    services: ['Car Accidents', 'Medical Malpractice', 'Workplace Injuries', 'Wrongful Death']
   }
   
   // Additional Personal Injury information
   const injuryTypes = [
     {
-      title: t('practiceAreas.injuryTypes.carAccidents.title'),
-      description: t('practiceAreas.injuryTypes.carAccidents.description'),
+      title: 'Car Accidents',
+      description: "If you've been hurt in a car crash, we'll help you get money for your medical bills, lost income, and pain. We handle all types of vehicle accidents.",
       icon: "car"
     },
     {
-      title: t('practiceAreas.injuryTypes.slipAndFall.title'),
-      description: t('practiceAreas.injuryTypes.slipAndFall.description'),
+      title: 'Slip and Fall',
+      description: "Injured on someone else's property? We'll prove they were at fault and help you get the money you deserve for your injuries.",
       icon: "warning"
     },
     {
-      title: t('practiceAreas.injuryTypes.dogBites.title'),
-      description: t('practiceAreas.injuryTypes.dogBites.description'),
+      title: 'Dog Bites & Animal Attacks',
+      description: "Bitten or attacked by a dog or other animal? We'll hold the pet owner responsible and fight for your compensation.",
       icon: "animal"
     },
     {
-      title: t('practiceAreas.injuryTypes.truckAccidents.title'),
-      description: t('practiceAreas.injuryTypes.truckAccidents.description'),
+      title: '18-Wheeler & Semi-Truck Accidents',
+      description: 'Truck accidents often cause serious injuries. We know how to handle complex truck accident cases and fight against big trucking companies.',
       icon: "truck"
     },
     {
-      title: t('practiceAreas.injuryTypes.workplaceInjuries.title'),
-      description: t('practiceAreas.injuryTypes.workplaceInjuries.description'),
+      title: 'Workplace Injuries',
+      description: "Hurt at work? We'll help you identify who's responsible beyond your employer and get you the full compensation you deserve.",
       icon: "briefcase"
     },
     {
-      title: t('practiceAreas.injuryTypes.wrongfulDeath.title'),
-      description: t('practiceAreas.injuryTypes.wrongfulDeath.description'),
+      title: 'Wrongful Death',
+      description: "Lost a loved one due to someone else's carelessness or actions? We provide compassionate support while fighting for justice and compensation for your family.",
       icon: "shield"
     }
   ]
@@ -96,7 +93,7 @@ const PracticeAreasSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {t('practiceAreas.sectionTitle')}
+            PERSONAL INJURY LAW
           </motion.h2>
           <motion.div 
             className="accent-line mx-auto mb-6 sm:mb-8"
@@ -112,7 +109,7 @@ const PracticeAreasSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            {t('practiceAreas.sectionDescription')}
+            At Yu Law Firm, we specialize exclusively in Personal Injury Law. Our dedicated team fights tirelessly for clients who have suffered injuries due to others' negligence, ensuring you receive the compensation and justice you deserve.
           </motion.p>
         </div>
 
@@ -193,7 +190,7 @@ const PracticeAreasSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                {t('practiceAreas.cta.title')}
+                Injured? We Can Help.
               </motion.h3>
               <motion.p
                 className="body-lg text-white/80 max-w-2xl mx-auto md:mx-0"
@@ -202,7 +199,7 @@ const PracticeAreasSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                {t('practiceAreas.cta.description')}
+                Don't face the insurance companies alone. Our experienced team is ready to fight for the compensation you deserve. Free consultation – no fee unless we win.
               </motion.p>
             </div>
             <motion.div
@@ -218,7 +215,7 @@ const PracticeAreasSection = () => {
                 to="/contact"
                 className="bg-white text-brand-red py-3 sm:py-4 px-6 sm:px-8 font-acherus font-medium text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center justify-center w-full sm:w-auto"
               >
-                {t('practiceAreas.cta.button')}
+                Get A Free Consultation
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

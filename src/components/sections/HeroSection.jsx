@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
-import { useTranslation } from 'react-i18next'
 import { useRef, useState, useEffect } from 'react'
 
 const HeroSection = () => {
-  const { t } = useTranslation()
   
   // State for animated counters
   const [cases, setCases] = useState(0)
@@ -65,7 +63,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <span className="block relative">
-                  {t('hero.title')}
+                  How Can YU Help?
                   <span className="absolute -bottom-1 left-0 w-16 sm:w-20 h-1 bg-brand-red"></span>
                 </span>
               </motion.h1>
@@ -76,7 +74,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
-                {t('hero.description')}{' '}
+                Our law firm is committed to serving you and getting the justice you deserve! If you or a loved one has been impacted by legal challenges, call us at{' '}
                 <a href="tel:940-239-9840" className="text-brand-red font-medium hover:underline transition-all">940-239-9840</a>
               </motion.p>
 
@@ -90,7 +88,7 @@ const HeroSection = () => {
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-brand-red"></div>
                   <div className="text-xs sm:text-sm font-acherus text-brand-gray font-medium">
-                    {t('hero.languages')}
+                    We speak English, Spanish, Tagalog & Cebuano
                   </div>
                 </div>
               </motion.div>
@@ -110,7 +108,7 @@ const HeroSection = () => {
                   to="/contact"
                   className="btn-primary text-center block w-full sm:w-auto min-w-[160px]"
                 >
-                  {t('hero.cta')}
+                  Get Started Now
                 </Link>
               </motion.div>
               
@@ -123,7 +121,7 @@ const HeroSection = () => {
                   to="/services"
                   className="btn-secondary text-center block w-full sm:w-auto min-w-[160px]"
                 >
-                  {t('hero.ourServices')}
+                  Our Services
                 </Link>
               </motion.div>
             </motion.div>
@@ -138,12 +136,12 @@ const HeroSection = () => {
             >
               <div className="text-left">
                 <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-lancea text-brand-red mb-2">{formatNumber(cases)}</div>
-                <div className="text-xs sm:text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">{t('hero.casesHandled')}</div>
+                <div className="text-xs sm:text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">Cases Successfully Handled</div>
               </div>
               
               <div className="text-left">
                 <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-lancea text-brand-red mb-2">{formatMoney(recovered)}</div>
-                <div className="text-xs sm:text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">{t('hero.recoveredForClients')}</div>
+                <div className="text-xs sm:text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">Recovered for Clients</div>
               </div>
             </motion.div>
           </div>

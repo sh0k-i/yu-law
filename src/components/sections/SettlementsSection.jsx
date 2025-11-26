@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
-import { useTranslation } from 'react-i18next'
 
 const SettlementsSection = () => {
-  const { t } = useTranslation()
   const settlements = [
     {
       case: "Motor Vehicle Collision",
@@ -65,7 +63,7 @@ const SettlementsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {t('settlements.title')}
+            SETTLEMENTS BY YU
           </motion.h2>
           <motion.div 
             className="accent-line bg-brand-red mx-auto mb-6 sm:mb-8"
@@ -81,7 +79,7 @@ const SettlementsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            {t('settlements.description')}
+            Real results for real people. See how we've secured life-changing settlements for our clients.
           </motion.p>
         </div>
 

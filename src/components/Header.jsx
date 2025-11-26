@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { useTranslation } from 'react-i18next'
 import Logo from './Logo'
-import LanguageSwitcher from './LanguageSwitcher'
+import GoogleTranslate from './GoogleTranslate'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const location = useLocation()
-  const { t } = useTranslation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,11 +20,11 @@ const Header = () => {
   }, [])
 
   const navigation = [
-    { name: t('header.home'), href: '/' },
-    { name: t('header.about'), href: '/about' },
-    { name: t('header.services'), href: '/services' },
-    { name: t('header.reviews'), href: '/reviews' },
-    { name: t('header.contact'), href: '/contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Reviews', href: '/reviews' },
+    { name: 'Contact', href: '/contact' },
   ]
 
   const isActive = (path) => location.pathname === path
@@ -75,7 +73,7 @@ const Header = () => {
 
           {/* Language Switcher */}
           <div className="hidden md:block mr-4">
-            <LanguageSwitcher isScrolled={isScrolled} />
+            <GoogleTranslate isScrolled={isScrolled} />
           </div>
 
           {/* Phone Number */}
@@ -103,7 +101,7 @@ const Header = () => {
                   : 'bg-brand-red text-white hover:bg-red-700 focus:ring-brand-red focus:ring-offset-transparent'
               }`}
             >
-              {t('header.getStarted')}
+              Get Started Now
             </Link>
           </div>
 
@@ -196,7 +194,7 @@ const Header = () => {
                 className="btn-primary w-full text-center block py-4 text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('header.getStarted')}
+                Get Started Now
               </Link>
             </motion.div>
             
@@ -215,7 +213,7 @@ const Header = () => {
                     </svg>
                     <span className="text-brand-black font-acherus font-medium text-sm">Language</span>
                   </div>
-                  <LanguageSwitcher />
+                  <GoogleTranslate />
                 </div>
               </div>
             </motion.div>

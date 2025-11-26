@@ -1,9 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
 
 const StatisticsSection = () => {
-  const { t } = useTranslation()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
   
@@ -65,7 +63,7 @@ const StatisticsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              {t('statistics.moreThan', 'MORE THAN')}
+              MORE THAN
             </motion.p>
             <motion.div 
               className="text-5xl md:text-6xl lg:text-7xl font-lancea mb-3 text-white"
@@ -83,7 +81,7 @@ const StatisticsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              {t('statistics.casesHandled', 'CASES SUCCESSFULLY HANDLED')}
+              CASES SUCCESSFULLY HANDLED
             </motion.p>
           </motion.div>
 
@@ -102,7 +100,7 @@ const StatisticsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              {t('statistics.moreThan', 'MORE THAN')}
+              MORE THAN
             </motion.p>
             <motion.div 
               className="text-5xl md:text-6xl lg:text-7xl font-lancea mb-3 text-white"
@@ -120,7 +118,7 @@ const StatisticsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 1.0 }}
             >
-              {t('statistics.recovered', 'RECOVERED FOR OUR CLIENTS')}
+              RECOVERED FOR OUR CLIENTS
             </motion.p>
           </motion.div>
         </div>

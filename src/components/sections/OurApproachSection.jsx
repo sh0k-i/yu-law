@@ -1,25 +1,22 @@
 import { motion } from 'framer-motion'
-import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 const OurApproachSection = () => {
-  const { t } = useTranslation()
-
   const approachSteps = [
     {
       number: '1',
-      title: t('approach.steps.evaluation.title'),
-      description: t('approach.steps.evaluation.description')
+      title: 'Case Evaluation and Consultation',
+      description: 'We thoroughly analyze the details of your case, gather evidence, and provide you with a clear understanding of your legal options and potential outcomes.'
     },
     {
       number: '2', 
-      title: t('approach.steps.planning.title'),
-      description: t('approach.steps.planning.description')
+      title: 'Strategic Legal Planning',
+      description: 'Our experienced team develops a comprehensive legal strategy tailored to your specific situation, ensuring maximum compensation for your injuries.'
     },
     {
       number: '3',
-      title: t('approach.steps.resolution.title'),
-      description: t('approach.steps.resolution.description')
+      title: 'Negotiation and Resolution',
+      description: 'We aggressively negotiate with insurance companies and opposing parties to secure the best possible settlement or take your case to trial if necessary.'
     }
   ]
 
@@ -58,11 +55,11 @@ const OurApproachSection = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="heading-lg text-brand-black mb-4 sm:mb-6">
-                {t('approach.title')}
+                Our Approach
               </h2>
               <div className="accent-line mb-6 sm:mb-8"></div>
               <p className="body-lg text-brand-gray mb-8 sm:mb-12">
-                {t('approach.description')}
+                Our proven legal strategy guides every case from initial consultation to final resolution, ensuring comprehensive representation and maximum compensation for our clients.
               </p>
             </motion.div>
 
@@ -169,7 +166,7 @@ const OurApproachSection = () => {
                     to="/contact"
                     className="btn-primary inline-block"
                   >
-                    {t('approach.cta')}
+                    Schedule Your Free Consultation
                   </Link>
                 </motion.div>
               </motion.div>

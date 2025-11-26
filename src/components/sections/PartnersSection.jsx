@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion'
-import { useTranslation } from 'react-i18next'
 import Marquee from 'react-fast-marquee'
 
 const PartnersSection = () => {
-  const { t } = useTranslation()
 
   // Partner logos with working placeholder images
   const partnerLogos = [
@@ -43,11 +41,11 @@ const PartnersSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="heading-md text-white mb-3 sm:mb-4 px-4">
-            {t('partners.title', 'Trusted by Leading Organizations')}
+            Trusted by Leading Organizations
           </h2>
           <div className="accent-line bg-white mx-auto mb-4 sm:mb-6"></div>
           <p className="body-md text-white/90 max-w-2xl mx-auto px-4">
-            {t('partners.description', 'We are proud to partner with industry-leading organizations in our commitment to excellence and justice.')}
+            We are proud to partner with industry-leading organizations in our commitment to excellence and justice.
           </p>
         </motion.div>
 

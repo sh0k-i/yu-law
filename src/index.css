@@ -215,3 +215,90 @@ html {
 .stack-mobile-reverse {
   @apply flex flex-col-reverse md:flex-row;
 }
+
+/* Hide Google Translate Banner and Branding */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-logo-link {
+  display: none !important;
+}
+
+/* Hide the Google Translate widget completely */
+.goog-te-gadget {
+  display: none !important;
+}
+
+#google_translate_element {
+  display: none !important;
+}
+
+/* Hide any Google Translate UI elements */
+.skiptranslate {
+  display: none !important;
+}
+
+/* But show the translation itself */
+body.translated-ltr .skiptranslate {
+  display: block !important;
+}
+
+/* Hide the top frame that Google adds */
+body > .skiptranslate {
+  display: none !important;
+}
+
+iframe.skiptranslate {
+  display: none !important;
+}
+
+/* Hide the floating Google Translate icon/button */
+.goog-te-spinner-pos,
+.goog-te-balloon-frame,
+div#goog-gt-,
+.goog-te-ftab,
+.goog-te-menu-value span,
+.goog-te-menu-value:before {
+  display: none !important;
+}
+
+/* Hide any element with Google Translate classes */
+[class*="goog-te"] {
+  display: none !important;
+}
+
+/* But keep the translated content visible */
+body [class*="goog-te"] {
+  display: none !important;
+}
+
+/* Hide the Google Translate loading spinner */
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-aZ2wEe-OiiCO,
+.VIpgJd-ZVi9od-aZ2wEe,
+.VIpgJd-ZVi9od-aZ2wEe-Jt5cK {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Hide any div with VIpgJd class (Google Translate UI) */
+[class*="VIpgJd"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Ensure body doesn't have extra margin from Google Translate */
+body {
+  margin-top: 0 !important;
+}
