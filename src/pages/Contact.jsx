@@ -58,7 +58,7 @@ const Contact = () => {
         from_email: formData.email,
         phone: formData.phone,
         message: formData.message,
-        to_email: 'leila@attorneyyu.com'
+        to_email: 'eservice@attorneyyu.com'
       }
 
       await emailjs.send(serviceId, templateId, templateParams, publicKey)
