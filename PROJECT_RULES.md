@@ -500,7 +500,7 @@ className="focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offse
 **Firm Name**: Yu Law Firm  
 **Specialization**: Personal Injury Law (Exclusive)  
 **Phone**: (940) 239-9840  
-**Email**: info@yulawfirm.com  
+**Email**: eservice@attorneyyu.com  
 **Address**: 2201 Midway Road, Suite 102, Carrollton, Texas 75006  
 **Hours**: Monday - Friday, 9:00 AM - 5:00 PM
 

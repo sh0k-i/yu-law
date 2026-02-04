@@ -21,7 +21,7 @@ const Contact = () => {
       longitude: -96.8408679,
       address: '2201 Midway Road, Suite 102<br/>Carrollton, Texas 75006',
       phone: '(940) 239-9840',
-      email: 'info@yulawfirm.com'
+      email: 'eservice@attorneyyu.com'
     },
     austin: {
       name: 'Austin',
@@ -29,7 +29,7 @@ const Contact = () => {
       longitude: -97.754922,
       address: '5900 Balcones Drive # 12813<br/>Austin, TX 78731',
       phone: '(940) 239-9840',
-      email: 'info@yulawfirm.com'
+      email: 'eservice@attorneyyu.com'
     }
   }
 
@@ -292,10 +292,10 @@ const Contact = () => {
                     <h3 className="heading-sm text-brand-black mb-1 sm:mb-2">Email</h3>
                     <p className="body-md text-brand-gray mb-1 sm:mb-2">Send us an email anytime</p>
                     <a 
-                      href="mailto:info@yulawfirm.com" 
+                      href="mailto:eservice@attorneyyu.com" 
                       className="text-brand-red font-acherus font-medium hover:text-brand-black transition-colors"
                     >
-                      info@yulawfirm.com
+                      eservice@attorneyyu.com
                     </a>
                   </div>
                 </div>

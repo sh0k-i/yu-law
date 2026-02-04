@@ -88,7 +88,7 @@ const HeroSection = () => {
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-brand-red"></div>
                   <div className="text-xs sm:text-sm font-acherus text-brand-gray font-medium">
-                    We speak English, Spanish, Tagalog & Cebuano
+                    We speak English, Spanish, Tagalog, Cebuano, & Vietnamese
                   </div>
                 </div>
               </motion.div>

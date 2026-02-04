@@ -12,6 +12,7 @@ const GoogleTranslate = ({ isScrolled = false }) => {
     { code: 'es', name: 'Español', flag: '🇪🇸' },
     { code: 'tl', name: 'Tagalog', flag: '🇵🇭' },
     { code: 'ceb', name: 'Cebuano', flag: '🇵🇭' },
+    { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' },
   ]
 
   const getCurrentLanguageInfo = () => {

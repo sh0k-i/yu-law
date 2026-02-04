@@ -74,7 +74,7 @@ The form sends these variables to your email template:
 - `from_email` - The sender's email address
 - `phone` - The sender's phone number
 - `message` - The message content
-- `to_email` - Your firm's email (info@yulawfirm.com)
+- `to_email` - Your firm's email (eservice@attorneyyu.com)
 
 ## Troubleshooting
 

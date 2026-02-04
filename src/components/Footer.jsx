@@ -39,7 +39,7 @@ const Footer = () => {
               </p>
               <p className="text-brand-cream font-acherus text-sm">
                 <span className="font-medium">Email:</span><br />
-                info@yulawfirm.com
+                eservice@attorneyyu.com
               </p>
               <div className="text-brand-cream font-acherus text-sm leading-relaxed">
                 <span className="font-medium">Address:</span>
