@@ -117,7 +117,7 @@ const OurApproachSection = () => {
                     delay: 1.0 + index * 0.2,
                     ease: "easeOut"
                   }}
-                  className="flex items-start space-x-4 sm:space-x-6 py-4 sm:py-6 group hover:bg-white/50 transition-all duration-300 card-padding -mx-4 sm:-mx-6 relative"
+                  className="flex items-start space-x-4 sm:space-x-6 py-4 sm:py-6 group hover:bg-white/50 transition-all duration-300 px-4 sm:px-6 relative"
                 >
                   {/* Step Number */}
                   <motion.div 

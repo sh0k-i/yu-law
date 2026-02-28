@@ -91,7 +91,7 @@ const TestimonialCard = ({
         clipPath: `polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0)`,
         transform: `
           translate(-50%, -50%) 
-          translateX(${(cardSize / 1.5) * position}px)
+          translateX(${Math.max(-cardSize * 0.8, Math.min(cardSize * 0.8, (cardSize / 1.5) * position))}px)
           translateY(${isCenter ? -65 : position % 2 ? 15 : -15}px)
           rotate(${isCenter ? 0 : position % 2 ? 2.5 : -2.5}deg)
         `,
@@ -189,7 +189,7 @@ export const StaggerTestimonials = () => {
 
   return (
     <div
-      className="relative w-full overflow-hidden bg-brand-cream/30"
+      className="relative w-full overflow-hidden bg-brand-cream/30 max-w-full"
       style={{ height: 520 }}
     >
       {testimonialsList.map((testimonial, index) => {

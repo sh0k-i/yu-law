@@ -13,9 +13,9 @@ import Privacy from './pages/Privacy'
 function App() {
   return (
     <Router>
-      <div className="min-h-screen">
+      <div className="min-h-screen overflow-x-hidden">
         <Header />
-        <main>
+        <main className="overflow-x-hidden">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
