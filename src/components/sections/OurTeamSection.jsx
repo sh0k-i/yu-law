@@ -57,6 +57,12 @@ const OurTeamSection = () => {
       image: '/images/team/ngoc.png'
     },
     {
+      name: 'Hannson Namoc',
+      title: 'Social Media Manager',
+      description: 'Creative social media strategist managing the firm\'s online presence and digital engagement. Dedicated to connecting with clients and sharing the firm\'s success stories.',
+      image: '/images/team/hanson.png'
+    },
+    {
       name: 'Bear',
       title: 'Barketing Manager',
       description: 'Our beloved office companion providing emotional support and stress relief for both clients and staff. Specializing in tail wags and unconditional loyalty.',
