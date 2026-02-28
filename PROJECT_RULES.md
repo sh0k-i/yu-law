@@ -504,7 +504,7 @@ className="focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offse
 **Address**: 2201 Midway Road, Suite 102, Carrollton, Texas 75006  
 **Hours**: Monday - Friday, 9:00 AM - 5:00 PM
 
-### Team Members (9 Total)
+### Team Members (10 Total)
 1. Liezyl Yu Masinag - Owner | Attorney
 2. Carla Cano Cantu - Case Manager
 3. Kaye Brier - Paralegal
@@ -513,7 +513,8 @@ className="focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offse
 6. Leila Trono - Medical Clerk
 7. Tanya Almendarez - Compliance Officer
 8. Marilyn Sario - Closing Coordinator
-9. Bear - Barketing Manager 🐕
+9. Ngoc "Kris" Nguyen - Administrative Coordinator
+10. Bear - Barketing Manager 🐕
 
 **Rule**: Contact information is hardcoded in multiple places. When updating, check Header, Footer, Contact page, and translation files.
 

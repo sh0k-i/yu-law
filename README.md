@@ -280,7 +280,8 @@ export default defineConfig({
 6. Leila Trono - Medical Clerk
 7. Tanya Almendarez - Compliance Officer
 8. Marilyn Sario - Closing Coordinator
-9. Bear - Barketing Manager 🐕
+9. Ngoc "Kris" Nguyen - Administrative Coordinator
+10. Bear - Barketing Manager 🐕
 
 ## 🔧 Troubleshooting
 

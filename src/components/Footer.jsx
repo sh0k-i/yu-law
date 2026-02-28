@@ -120,18 +120,12 @@ const Footer = () => {
             <p className="text-brand-cream font-acherus text-sm">
               © {currentYear} Yu Law Firm. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="mt-4 md:mt-0">
               <Link
                 to="/privacy"
                 className="text-brand-cream font-acherus text-sm hover:text-brand-red transition-colors duration-200"
               >
                 Privacy Policy
-              </Link>
-              <Link
-                to="/terms"
-                className="text-brand-cream font-acherus text-sm hover:text-brand-red transition-colors duration-200"
-              >
-                Terms of Service
               </Link>
             </div>
           </div>

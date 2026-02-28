@@ -51,6 +51,12 @@ const OurTeamSection = () => {
       image: '/images/team/marilyn.png'
     },
     {
+      name: 'Ngoc "Kris" Nguyen',
+      title: 'Administrative Coordinator',
+      description: 'Dedicated administrative professional coordinating office operations and supporting the legal team. Committed to ensuring efficient workflow and exceptional client service.',
+      image: '/images/team/ngoc.png'
+    },
+    {
       name: 'Bear',
       title: 'Barketing Manager',
       description: 'Our beloved office companion providing emotional support and stress relief for both clients and staff. Specializing in tail wags and unconditional loyalty.',
