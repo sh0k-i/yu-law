@@ -13,7 +13,7 @@ import Privacy from './pages/Privacy'
 function App() {
   return (
     <Router>
-      <div className="min-h-screen overflow-x-hidden">
+      <div className="min-h-screen">
         <Header />
         <main className="overflow-x-hidden">
           <Routes>

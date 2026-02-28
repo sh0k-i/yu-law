@@ -36,8 +36,8 @@ const Header = () => {
     <motion.header 
       className="sticky top-0 z-50 transition-all duration-300"
       animate={{
-        backgroundColor: isHomePage ? 'rgba(171, 21, 34, 1)' : (isScrolled ? 'rgba(171, 21, 34, 1)' : 'rgba(255, 255, 255, 0)'),
-        boxShadow: (isHomePage || isScrolled) ? '0 1px 3px 0 rgba(0, 0, 0, 0.1)' : '0 0 0 0 rgba(0, 0, 0, 0)'
+        backgroundColor: 'rgba(171, 21, 34, 1)',
+        boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
       }}
       transition={{ duration: 0.3 }}
     >
