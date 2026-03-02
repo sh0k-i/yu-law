@@ -41,24 +41,24 @@ const GoogleTranslate = ({ isScrolled = false }) => {
     // Set current language state
     setCurrentLanguage(savedLanguage)
     
-    // Set Google Translate cookies based on localStorage
+    const domain = window.location.hostname
+    const cookiesToClear = ['googtrans', 'googtrans_backup']
+    
+    // ALWAYS clear ALL Google Translate cookies first on every page load
+    cookiesToClear.forEach(cookieName => {
+      document.cookie = `${cookieName}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`
+      document.cookie = `${cookieName}=; path=/; domain=${domain}; expires=Thu, 01 Jan 1970 00:00:00 GMT`
+      document.cookie = `${cookieName}=; path=/; domain=.${domain}; expires=Thu, 01 Jan 1970 00:00:00 GMT`
+    })
+    
+    // Only set cookies if NOT English (English = no translation needed)
     if (savedLanguage !== 'en') {
-      const domain = window.location.hostname
       const cookieValue = `/en/${savedLanguage}`
       
-      // Set cookies for Google Translate to pick up
+      // Set fresh cookies for Google Translate to pick up
       document.cookie = `googtrans=${cookieValue}; path=/; max-age=31536000`
       document.cookie = `googtrans=${cookieValue}; path=/; domain=${domain}; max-age=31536000`
       document.cookie = `googtrans=${cookieValue}; path=/; domain=.${domain}; max-age=31536000`
-    } else {
-      // Clear cookies if English is selected
-      const domain = window.location.hostname
-      const cookiesToClear = ['googtrans', 'googtrans_backup']
-      cookiesToClear.forEach(cookieName => {
-        document.cookie = `${cookieName}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`
-        document.cookie = `${cookieName}=; path=/; domain=${domain}; expires=Thu, 01 Jan 1970 00:00:00 GMT`
-        document.cookie = `${cookieName}=; path=/; domain=.${domain}; expires=Thu, 01 Jan 1970 00:00:00 GMT`
-      })
     }
   }, [])
   
