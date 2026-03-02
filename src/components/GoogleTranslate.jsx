@@ -127,7 +127,7 @@ const GoogleTranslate = ({ isScrolled = false }) => {
   const currentLangInfo = getCurrentLanguageInfo()
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative notranslate" ref={dropdownRef} translate="no">
       {/* Hidden Google Translate Element */}
       <div id="google_translate_element" style={{ 
         position: 'absolute',
@@ -139,7 +139,7 @@ const GoogleTranslate = ({ isScrolled = false }) => {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center space-x-1 px-3 py-2 transition-all duration-300 ${
+        className={`notranslate flex items-center space-x-1 px-3 py-2 transition-all duration-300 ${
           isScrolled
             ? 'text-white hover:bg-white hover:bg-opacity-20' 
             : 'text-white hover:text-brand-cream'
@@ -150,7 +150,7 @@ const GoogleTranslate = ({ isScrolled = false }) => {
         title={!isGoogleTranslateReady ? 'Loading translator...' : 'Select language'}
       >
         <span className="text-xl mr-1">{currentLangInfo.flag}</span>
-        <span className="text-sm font-acherus font-medium hidden sm:block">{currentLangInfo.name}</span>
+        <span className="text-sm font-acherus font-medium hidden sm:block notranslate" translate="no">{currentLangInfo.name}</span>
         <svg
           className={`h-5 w-5 transition-transform duration-200 ${isOpen ? 'transform rotate-180' : ''}`}
           xmlns="http://www.w3.org/2000/svg"
@@ -189,7 +189,7 @@ const GoogleTranslate = ({ isScrolled = false }) => {
                   role="menuitem"
                 >
                   <span className="text-xl mr-3 group-hover:scale-110 transition-transform duration-200">{language.flag}</span>
-                  <span className="font-acherus">{language.name}</span>
+                  <span className="font-acherus notranslate" translate="no">{language.name}</span>
                   {currentLanguage === language.code && (
                     <svg className="ml-auto h-4 w-4 text-brand-red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />

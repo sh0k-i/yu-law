@@ -135,12 +135,12 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
               <div className="text-left">
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-lancea text-brand-red mb-2">{formatNumber(cases)}</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-lancea text-brand-red mb-2 notranslate" translate="no">{formatNumber(cases)}</div>
                 <div className="text-xs sm:text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">Cases Successfully Handled</div>
               </div>
               
               <div className="text-left">
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-lancea text-brand-red mb-2">{formatMoney(recovered)}</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-lancea text-brand-red mb-2 notranslate" translate="no">{formatMoney(recovered)}</div>
                 <div className="text-xs sm:text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">Recovered for Clients</div>
               </div>
             </motion.div>
