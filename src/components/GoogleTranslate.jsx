@@ -33,33 +33,13 @@ const GoogleTranslate = ({ isScrolled = false }) => {
     }
   }, [])
 
-  // Set cookies based on localStorage BEFORE Google Translate initializes
+  // Read localStorage to set dropdown state (cookies are handled in index.html)
   useEffect(() => {
     // Check localStorage for saved language preference
     const savedLanguage = localStorage.getItem('selectedLanguage') || 'en'
     
-    // Set current language state
+    // Set current language state for dropdown display
     setCurrentLanguage(savedLanguage)
-    
-    const domain = window.location.hostname
-    const cookiesToClear = ['googtrans', 'googtrans_backup']
-    
-    // ALWAYS clear ALL Google Translate cookies first on every page load
-    cookiesToClear.forEach(cookieName => {
-      document.cookie = `${cookieName}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`
-      document.cookie = `${cookieName}=; path=/; domain=${domain}; expires=Thu, 01 Jan 1970 00:00:00 GMT`
-      document.cookie = `${cookieName}=; path=/; domain=.${domain}; expires=Thu, 01 Jan 1970 00:00:00 GMT`
-    })
-    
-    // Only set cookies if NOT English (English = no translation needed)
-    if (savedLanguage !== 'en') {
-      const cookieValue = `/en/${savedLanguage}`
-      
-      // Set fresh cookies for Google Translate to pick up
-      document.cookie = `googtrans=${cookieValue}; path=/; max-age=31536000`
-      document.cookie = `googtrans=${cookieValue}; path=/; domain=${domain}; max-age=31536000`
-      document.cookie = `googtrans=${cookieValue}; path=/; domain=.${domain}; max-age=31536000`
-    }
   }, [])
   
   // Wait for Google Translate to initialize

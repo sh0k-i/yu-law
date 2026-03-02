@@ -10,6 +10,57 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     
+    <!-- Clear and Set Google Translate Cookies BEFORE Script Loads -->
+    <script type="text/javascript">
+      (function() {
+        // Get saved language from localStorage
+        const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+        
+        // Get all possible domain variations
+        const hostname = window.location.hostname;
+        const domains = [
+          '',  // no domain
+          hostname,  // exact domain
+          '.' + hostname,  // wildcard subdomain
+        ];
+        
+        // If hostname has www, also try without it
+        if (hostname.startsWith('www.')) {
+          domains.push(hostname.substring(4));
+          domains.push('.' + hostname.substring(4));
+        } else {
+          // If no www, also try with it
+          domains.push('www.' + hostname);
+          domains.push('.www.' + hostname);
+        }
+        
+        // Clear ALL Google Translate cookies with all domain variations
+        const cookiesToClear = ['googtrans', 'googtrans_backup'];
+        cookiesToClear.forEach(function(cookieName) {
+          domains.forEach(function(domain) {
+            if (domain) {
+              document.cookie = cookieName + '=; path=/; domain=' + domain + '; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+            } else {
+              document.cookie = cookieName + '=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+            }
+          });
+        });
+        
+        // Only set cookies if NOT English
+        if (savedLanguage !== 'en') {
+          const cookieValue = '/en/' + savedLanguage;
+          // Set with all domain variations for maximum compatibility
+          domains.forEach(function(domain) {
+            if (domain) {
+              document.cookie = 'googtrans=' + cookieValue + '; path=/; domain=' + domain + '; max-age=31536000';
+            } else {
+              document.cookie = 'googtrans=' + cookieValue + '; path=/; max-age=31536000';
+            }
+          });
+        }
+      })();
+    </script>
+    
     <!-- Google Translate Script - Load after React app -->
     <script type="text/javascript">
       function googleTranslateElementInit() {
