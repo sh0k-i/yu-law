@@ -33,17 +33,32 @@ const GoogleTranslate = ({ isScrolled = false }) => {
     }
   }, [])
 
-  // Detect current language from localStorage only
+  // Set cookies based on localStorage BEFORE Google Translate initializes
   useEffect(() => {
     // Check localStorage for saved language preference
-    const savedLanguage = localStorage.getItem('selectedLanguage')
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'en'
     
-    if (savedLanguage) {
-      setCurrentLanguage(savedLanguage)
+    // Set current language state
+    setCurrentLanguage(savedLanguage)
+    
+    // Set Google Translate cookies based on localStorage
+    if (savedLanguage !== 'en') {
+      const domain = window.location.hostname
+      const cookieValue = `/en/${savedLanguage}`
+      
+      // Set cookies for Google Translate to pick up
+      document.cookie = `googtrans=${cookieValue}; path=/; max-age=31536000`
+      document.cookie = `googtrans=${cookieValue}; path=/; domain=${domain}; max-age=31536000`
+      document.cookie = `googtrans=${cookieValue}; path=/; domain=.${domain}; max-age=31536000`
     } else {
-      // Default to English if no saved preference
-      setCurrentLanguage('en')
-      localStorage.setItem('selectedLanguage', 'en')
+      // Clear cookies if English is selected
+      const domain = window.location.hostname
+      const cookiesToClear = ['googtrans', 'googtrans_backup']
+      cookiesToClear.forEach(cookieName => {
+        document.cookie = `${cookieName}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`
+        document.cookie = `${cookieName}=; path=/; domain=${domain}; expires=Thu, 01 Jan 1970 00:00:00 GMT`
+        document.cookie = `${cookieName}=; path=/; domain=.${domain}; expires=Thu, 01 Jan 1970 00:00:00 GMT`
+      })
     }
   }, [])
   
@@ -71,46 +86,12 @@ const GoogleTranslate = ({ isScrolled = false }) => {
   }, [])
 
   const handleLanguageChange = (code) => {
-    // Save to localStorage
+    // Save to localStorage and reload - let the page initialization handle the rest
     localStorage.setItem('selectedLanguage', code)
     
-    const domain = window.location.hostname
-    
-    // Clear ALL Google Translate cookies first (both with and without domain)
-    const cookiesToClear = ['googtrans', 'googtrans_backup']
-    cookiesToClear.forEach(cookieName => {
-      document.cookie = `${cookieName}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`
-      document.cookie = `${cookieName}=; path=/; domain=${domain}; expires=Thu, 01 Jan 1970 00:00:00 GMT`
-      document.cookie = `${cookieName}=; path=/; domain=.${domain}; expires=Thu, 01 Jan 1970 00:00:00 GMT`
-    })
-    
-    // If English is selected, just reload with cleared cookies
-    if (code === 'en') {
-      setCurrentLanguage('en')
-      setIsOpen(false)
-      // Use href assignment for hard reload
-      window.location.href = window.location.pathname + window.location.search
-      return
-    }
-    
-    // For other languages, set the translation cookie
-    try {
-      const cookieValue = `/en/${code}`
-      
-      // Set new language cookies (both with and without domain for compatibility)
-      document.cookie = `googtrans=${cookieValue}; path=/; max-age=31536000`
-      document.cookie = `googtrans=${cookieValue}; path=/; domain=${domain}; max-age=31536000`
-      document.cookie = `googtrans=${cookieValue}; path=/; domain=.${domain}; max-age=31536000`
-      
-      // Update state before reload
-      setCurrentLanguage(code)
-      setIsOpen(false)
-      
-      // Use href assignment for hard reload to ensure Google Translate reinitializes
-      window.location.href = window.location.pathname + window.location.search
-    } catch (e) {
-      console.error('Error setting language:', e)
-    }
+    // Immediately reload the page
+    // The useEffect above will read localStorage and set cookies on the fresh page load
+    window.location.href = window.location.pathname + window.location.search
   }
 
   const currentLangInfo = getCurrentLanguageInfo()
