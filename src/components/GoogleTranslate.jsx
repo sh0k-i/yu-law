@@ -33,44 +33,17 @@ const GoogleTranslate = ({ isScrolled = false }) => {
     }
   }, [])
 
-  // Detect current language from localStorage and Google Translate cookie
+  // Detect current language from localStorage only
   useEffect(() => {
-    const getCookie = (name) => {
-      const value = `; ${document.cookie}`
-      const parts = value.split(`; ${name}=`)
-      if (parts.length === 2) return parts.pop().split(';').shift()
-      return null
-    }
-    
-    // First check localStorage for saved language preference
+    // Check localStorage for saved language preference
     const savedLanguage = localStorage.getItem('selectedLanguage')
     
-    // Then check Google Translate cookie
-    const googtransCookie = getCookie('googtrans')
-    
-    let detectedLang = 'en'
-    
-    if (googtransCookie) {
-      // Cookie format is "/en/es" where "es" is the target language
-      const parts = googtransCookie.split('/')
-      if (parts.length >= 3) {
-        detectedLang = parts[2] || 'en'
-      }
-    }
-    
-    // Use localStorage as source of truth, but sync with cookie if different
     if (savedLanguage) {
       setCurrentLanguage(savedLanguage)
-      // If cookie doesn't match localStorage, update cookie
-      if (savedLanguage !== detectedLang && savedLanguage !== 'en') {
-        const domain = window.location.hostname
-        const cookieValue = `/en/${savedLanguage}`
-        document.cookie = `googtrans=${cookieValue};path=/;domain=${domain}`
-        document.cookie = `googtrans=${cookieValue};path=/`
-      }
-    } else if (detectedLang) {
-      setCurrentLanguage(detectedLang)
-      localStorage.setItem('selectedLanguage', detectedLang)
+    } else {
+      // Default to English if no saved preference
+      setCurrentLanguage('en')
+      localStorage.setItem('selectedLanguage', 'en')
     }
   }, [])
   
