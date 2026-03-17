@@ -127,7 +127,7 @@ const HeroSection = () => {
             </motion.div>
             
             {/* Stats Section */}
-            <motion.div
+            {/* <motion.div
               ref={statsRef}
               className="grid grid-cols-2 gap-4 md:gap-6"
               initial={{ opacity: 0, y: 20 }}
@@ -143,7 +143,7 @@ const HeroSection = () => {
                 <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-lancea text-brand-red mb-2 notranslate" translate="no">{formatMoney(recovered)}</div>
                 <div className="text-xs sm:text-sm md:text-base font-acherus text-brand-gray leading-tight font-medium">Recovered for Clients</div>
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
           
           {/* Right Column - Hero Image (Desktop: side by side, Mobile: below) */}
