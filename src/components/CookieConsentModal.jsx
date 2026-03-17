@@ -1,21 +1,36 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { getCookieConsent, setCookieConsent, needsConsent } from '../utils/cookieConsent'
+import { usePostHog } from '@posthog/react'
+import { trackCookieConsent } from '../utils/analytics'
 
 const CookieConsentModal = () => {
+  const posthog = usePostHog()
   const [showBanner, setShowBanner] = useState(false)
+  const [showTime, setShowTime] = useState(null)
 
   useEffect(() => {
     if (needsConsent()) {
+      const startTime = Date.now()
+      setShowTime(startTime)
       setTimeout(() => setShowBanner(true), 1000)
     }
   }, [])
 
   const handleAccept = () => {
+    const timeToAccept = showTime ? Math.round((Date.now() - showTime) / 1000) : null
+    
     setCookieConsent({
       analytics: true,
       functional: true
     })
+    
+    trackCookieConsent(posthog, {
+      analytics: true,
+      functional: true,
+      timeToAccept
+    })
+    
     setShowBanner(false)
   }
 

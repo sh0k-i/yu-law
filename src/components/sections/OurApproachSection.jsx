@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { usePostHog } from '@posthog/react'
+import { trackCTAClick } from '../../utils/analytics'
 
 const OurApproachSection = () => {
+  const posthog = usePostHog()
   const approachSteps = [
     {
       number: '1',
@@ -165,6 +168,10 @@ const OurApproachSection = () => {
                   <Link
                     to="/contact"
                     className="btn-primary inline-block"
+                    onClick={() => trackCTAClick(posthog, { 
+                      ctaText: 'Schedule Your Free Consultation', 
+                      location: 'our_approach_section' 
+                    })}
                   >
                     Schedule Your Free Consultation
                   </Link>

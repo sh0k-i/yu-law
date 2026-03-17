@@ -3,8 +3,11 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Logo from './Logo'
 import GoogleTranslate from './GoogleTranslate'
+import { usePostHog } from '@posthog/react'
+import { trackPhoneClick, trackCTAClick, trackNavigationClick, trackMobileMenuToggle } from '../utils/analytics'
 
 const Header = () => {
+  const posthog = usePostHog()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const location = useLocation()
@@ -64,6 +67,11 @@ const Header = () => {
                         : 'text-white border-b-2 border-white'
                       : 'text-white hover:text-brand-cream'
                   }`}
+                  onClick={() => trackNavigationClick(posthog, { 
+                    navItem: item.name, 
+                    destination: item.href, 
+                    isMobile: false 
+                  })}
                 >
                   {item.name}
                 </Link>
@@ -79,8 +87,9 @@ const Header = () => {
           {/* Phone Number */}
           <div className="hidden md:flex items-center mr-4">
             <a
-              href="tel:+1-555-YU-LAW-01"
+              href="tel:940-239-9840"
               className="flex items-center text-white hover:text-brand-cream transition-colors duration-200 group"
+              onClick={() => trackPhoneClick(posthog, { location: 'header_desktop' })}
             >
               <svg className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -100,6 +109,10 @@ const Header = () => {
                   ? 'bg-white text-brand-red hover:bg-brand-cream focus:ring-white focus:ring-offset-brand-red' 
                   : 'bg-brand-red text-white hover:bg-red-700 focus:ring-brand-red focus:ring-offset-transparent'
               }`}
+              onClick={() => trackCTAClick(posthog, { 
+                ctaText: 'Get Started Now', 
+                location: 'header_desktop' 
+              })}
             >
               Get Started Now
             </Link>
@@ -108,7 +121,11 @@ const Header = () => {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={() => {
+                const newState = !isMenuOpen
+                setIsMenuOpen(newState)
+                trackMobileMenuToggle(posthog, { action: newState ? 'opened' : 'closed' })
+              }}
               className="inline-flex items-center justify-center p-2 transition-all duration-300 text-white hover:text-brand-cream focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red"
             >
               <span className="sr-only">{isMenuOpen ? 'Close menu' : 'Open menu'}</span>
@@ -150,7 +167,14 @@ const Header = () => {
                       ? 'text-brand-red bg-red-50 border-brand-red'
                       : 'text-brand-black hover:text-brand-red hover:bg-gray-50 border-transparent hover:border-brand-red'
                   }`}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuOpen(false)
+                    trackNavigationClick(posthog, { 
+                      navItem: item.name, 
+                      destination: item.href, 
+                      isMobile: true 
+                    })
+                  }}
                 >
                   {item.name}
                 </Link>
@@ -172,6 +196,7 @@ const Header = () => {
               <a
                 href="tel:940-239-9840"
                 className="flex items-center text-brand-black hover:text-brand-red transition-colors duration-200 group"
+                onClick={() => trackPhoneClick(posthog, { location: 'header_mobile_menu' })}
               >
                 <svg className="w-5 h-5 mr-3 text-brand-red group-hover:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -192,7 +217,13 @@ const Header = () => {
               <Link
                 to="/contact"
                 className="btn-primary w-full text-center block py-4 text-base font-medium"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false)
+                  trackCTAClick(posthog, { 
+                    ctaText: 'Get Started Now', 
+                    location: 'header_mobile_menu' 
+                  })
+                }}
               >
                 Get Started Now
               </Link>

@@ -12,8 +12,11 @@ import SettlementsSection from '../components/sections/SettlementsSection'
 import FAQSection from '../components/sections/FAQSection'
 import PartnersSection from '../components/sections/PartnersSection'
 import OurApproachSection from '../components/sections/OurApproachSection'
+import { usePostHog } from '@posthog/react'
+import { trackNavigationClick } from '../utils/analytics'
 
 const Home = () => {
+  const posthog = usePostHog()
   return (
     <>
       <HeroSection />
@@ -69,6 +72,11 @@ const Home = () => {
             <Link
               to="/reviews"
               className="inline-flex items-center gap-2 text-brand-red font-acherus font-medium text-lg hover:text-brand-red/80 transition-colors duration-200 border-b-2 border-brand-red hover:border-brand-red/80 pb-1"
+              onClick={() => trackNavigationClick(posthog, { 
+                navItem: 'View All Reviews', 
+                destination: '/reviews', 
+                isMobile: false 
+              })}
             >
               View All Reviews
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

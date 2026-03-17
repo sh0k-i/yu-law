@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
+import { usePostHog } from '@posthog/react'
+import { trackPhoneClick, trackEmailClick, trackCTAClick, trackNavigationClick } from '../utils/analytics'
 
 const Footer = () => {
+  const posthog = usePostHog()
   const currentYear = new Date().getFullYear()
 
   const quickLinks = [
@@ -35,11 +38,23 @@ const Footer = () => {
             <div className="space-y-3">
               <p className="text-brand-cream font-acherus text-sm">
                 <span className="font-medium">Phone:</span><br />
-                (940) 239-9840
+                <a 
+                  href="tel:940-239-9840"
+                  className="hover:text-brand-red transition-colors"
+                  onClick={() => trackPhoneClick(posthog, { location: 'footer_contact_info' })}
+                >
+                  (940) 239-9840
+                </a>
               </p>
               <p className="text-brand-cream font-acherus text-sm">
                 <span className="font-medium">Email:</span><br />
-                eservice@attorneyyu.com
+                <a 
+                  href="mailto:eservice@attorneyyu.com"
+                  className="hover:text-brand-red transition-colors"
+                  onClick={() => trackEmailClick(posthog, { location: 'footer_contact_info' })}
+                >
+                  eservice@attorneyyu.com
+                </a>
               </p>
               <div className="text-brand-cream font-acherus text-sm leading-relaxed">
                 <span className="font-medium">Address:</span>
@@ -76,6 +91,11 @@ const Footer = () => {
                   <Link
                     to={link.href}
                     className="text-brand-cream font-acherus text-sm hover:text-brand-red transition-colors duration-200"
+                    onClick={() => trackNavigationClick(posthog, { 
+                      navItem: link.name, 
+                      destination: link.href, 
+                      isMobile: false 
+                    })}
                   >
                     {link.name}
                   </Link>
@@ -107,6 +127,10 @@ const Footer = () => {
               <Link
                 to="/contact"
                 className="btn-primary inline-block w-full text-center text-sm py-3"
+                onClick={() => trackCTAClick(posthog, { 
+                  ctaText: 'Get Started Now', 
+                  location: 'footer' 
+                })}
               >
                 Get Started Now
               </Link>
@@ -124,6 +148,11 @@ const Footer = () => {
               <Link
                 to="/privacy"
                 className="text-brand-cream font-acherus text-sm hover:text-brand-red transition-colors duration-200"
+                onClick={() => trackNavigationClick(posthog, { 
+                  navItem: 'Privacy Policy', 
+                  destination: '/privacy', 
+                  isMobile: false 
+                })}
               >
                 Privacy Policy
               </Link>

@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
+import { usePostHog } from '@posthog/react'
+import { trackCTAClick, trackPhoneClick } from '../../utils/analytics'
 
 const HeroSection = () => {
+  const posthog = usePostHog()
   
   // State for animated counters
   const [cases, setCases] = useState(0)
@@ -75,7 +78,13 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
                 Our law firm is committed to serving you and getting the justice you deserve! If you or a loved one has been impacted by legal challenges, call us at{' '}
-                <a href="tel:940-239-9840" className="text-brand-red font-medium hover:underline transition-all">940-239-9840</a>
+                <a 
+                  href="tel:940-239-9840" 
+                  className="text-brand-red font-medium hover:underline transition-all"
+                  onClick={() => trackPhoneClick(posthog, { location: 'hero_text' })}
+                >
+                  940-239-9840
+                </a>
               </motion.p>
 
               {/* Languages Spoken */}
@@ -107,6 +116,10 @@ const HeroSection = () => {
                 <Link
                   to="/contact"
                   className="btn-primary text-center block w-full sm:w-auto min-w-[160px]"
+                  onClick={() => trackCTAClick(posthog, { 
+                    ctaText: 'Get Started Now', 
+                    location: 'hero_primary' 
+                  })}
                 >
                   Get Started Now
                 </Link>
@@ -120,6 +133,10 @@ const HeroSection = () => {
                 <Link
                   to="/services"
                   className="btn-secondary text-center block w-full sm:w-auto min-w-[160px]"
+                  onClick={() => trackCTAClick(posthog, { 
+                    ctaText: 'Our Services', 
+                    location: 'hero_secondary' 
+                  })}
                 >
                   Our Services
                 </Link>

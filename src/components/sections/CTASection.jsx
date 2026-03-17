@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { usePostHog } from '@posthog/react'
+import { trackCTAClick, trackPhoneClick } from '../../utils/analytics'
 
 const CTASection = () => {
+  const posthog = usePostHog()
   return (
     <section className="section-padding bg-brand-red text-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -38,6 +41,10 @@ const CTASection = () => {
             <Link
               to="/contact"
               className="bg-white text-brand-red px-6 sm:px-8 py-3 sm:py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-brand-cream hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red btn-mobile"
+              onClick={() => trackCTAClick(posthog, { 
+                ctaText: 'Get Started Now', 
+                location: 'cta_section' 
+              })}
             >
               Get Started Now
             </Link>
@@ -50,6 +57,7 @@ const CTASection = () => {
             <a
               href="tel:940-239-9840"
               className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-white hover:text-brand-red hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red btn-mobile"
+              onClick={() => trackPhoneClick(posthog, { location: 'cta_section' })}
             >
               Call Now: 940-239-9840
             </a>

@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { usePostHog } from '@posthog/react'
+import { trackPracticeAreaView, trackCTAClick } from '../../utils/analytics'
 
 const PracticeAreasSection = () => {
+  const posthog = usePostHog()
   // Focus exclusively on Personal Injury
   const personalInjury = {
     id: 'personalInjury',
@@ -128,7 +131,11 @@ const PracticeAreasSection = () => {
               <motion.div 
                 key={index}
                 variants={itemVariants}
-                className="bg-white card-padding shadow-lg transition-all duration-300 hover:shadow-2xl group relative overflow-hidden"
+                className="bg-white card-padding shadow-lg transition-all duration-300 hover:shadow-2xl group relative overflow-hidden cursor-pointer"
+                onClick={() => trackPracticeAreaView(posthog, {
+                  injuryType: type.title,
+                  position: index
+                })}
               >
                 {/* Red accent line */}
                 <div className="absolute top-0 left-0 w-1 h-full bg-brand-red group-hover:h-full group-hover:w-full group-hover:opacity-10 transition-all duration-500"></div>
@@ -214,6 +221,10 @@ const PracticeAreasSection = () => {
               <Link
                 to="/contact"
                 className="bg-white text-brand-red py-3 sm:py-4 px-6 sm:px-8 font-acherus font-medium text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center justify-center w-full sm:w-auto"
+                onClick={() => trackCTAClick(posthog, { 
+                  ctaText: 'Get A Free Consultation', 
+                  location: 'practice_areas_section' 
+                })}
               >
                 Get A Free Consultation
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

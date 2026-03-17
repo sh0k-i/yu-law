@@ -3,8 +3,11 @@ import { motion } from 'framer-motion'
 import { Link, useSearchParams } from 'react-router-dom'
 import testimonialsData from '../data/testimonials.json'
 import ReviewModal from '../components/ReviewModal'
+import { usePostHog } from '@posthog/react'
+import { trackReviewFilterChange, trackReviewCardClick, trackReviewModalOpen, trackCTAClick } from '../utils/analytics'
 
 const Reviews = () => {
+  const posthog = usePostHog()
   const [searchParams, setSearchParams] = useSearchParams()
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedReview, setSelectedReview] = useState(null)
@@ -13,6 +16,12 @@ const Reviews = () => {
   const openReviewModal = (testimonial) => {
     setSelectedReview(testimonial)
     setIsModalOpen(true)
+    trackReviewModalOpen(posthog, {
+      reviewId: testimonial.id,
+      caseType: testimonial.caseType,
+      rating: testimonial.rating,
+      source: 'review_page'
+    })
   }
 
   const closeReviewModal = () => {
@@ -151,7 +160,18 @@ const Reviews = () => {
             {caseTypes.map((type) => (
               <motion.button
                 key={type}
-                onClick={() => setSelectedCategory(type)}
+                onClick={() => {
+                  const previousFilter = selectedCategory
+                  setSelectedCategory(type)
+                  const filteredCount = type === 'all' 
+                    ? testimonialsData.length 
+                    : testimonialsData.filter(t => t.caseType === type).length
+                  trackReviewFilterChange(posthog, {
+                    filterType: type,
+                    reviewsCount: filteredCount,
+                    previousFilter
+                  })
+                }}
                 className={`px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-acherus font-medium transition-all duration-300 border-2 touch-target ${
                   selectedCategory === type
                     ? 'bg-brand-red text-white border-brand-red shadow-lg'
@@ -173,13 +193,21 @@ const Reviews = () => {
             initial="hidden"
             animate="visible"
           >
-            {sortedTestimonials.map((testimonial) => (
+            {sortedTestimonials.map((testimonial, index) => (
               <motion.article
                 key={testimonial.id}
                 variants={itemVariants}
                 className="bg-white shadow-lg overflow-hidden hover:shadow-[0_25px_50px_-12px_rgba(171,21,34,0.25)] transition-all duration-300 group flex flex-col cursor-pointer"
                 whileHover={{ y: -8 }}
-                onClick={() => openReviewModal(testimonial)}
+                onClick={() => {
+                  trackReviewCardClick(posthog, {
+                    reviewId: testimonial.id,
+                    caseType: testimonial.caseType,
+                    rating: testimonial.rating,
+                    position: index
+                  })
+                  openReviewModal(testimonial)
+                }}
               >
                 {/* Card Header */}
                 <div className="card-padding border-l-4 border-brand-red">
@@ -298,7 +326,14 @@ const Reviews = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link to="/contact" className="btn-primary">
+              <Link 
+                to="/contact" 
+                className="btn-primary"
+                onClick={() => trackCTAClick(posthog, { 
+                  ctaText: 'Contact Us', 
+                  location: 'reviews_page_bottom' 
+                })}
+              >
                 Contact Us
               </Link>
             </motion.div>

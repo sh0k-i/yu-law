@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import testimonialsData from '../data/testimonials.json';
+import { usePostHog } from '@posthog/react';
+import { trackTestimonialReviewLink, trackTestimonialNavigation } from '../utils/analytics';
 
 const SQRT_5000 = Math.sqrt(5000);
 
@@ -135,7 +137,13 @@ const TestimonialCard = ({
               ? "text-white hover:text-white/80 border-white/30 hover:border-white" 
               : "text-brand-red hover:text-brand-red/80 border-brand-red/30 hover:border-brand-red"
           )}
-          onClick={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.stopPropagation()
+            trackTestimonialReviewLink(posthog, {
+              reviewId: originalTestimonial.id,
+              position: position
+            })
+          }}
         >
           Read Full Review
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -155,7 +163,8 @@ const TestimonialCard = ({
 };
 
 export const StaggerTestimonials = () => {
-  const [cardSize, setCardSize] = useState(365);
+  const posthog = usePostHog()
+  const [cardSize, setCardSize] = useState(365)
   const [testimonialsList, setTestimonialsList] = useState(testimonials);
 
   const handleMove = (steps) => {
@@ -211,7 +220,13 @@ export const StaggerTestimonials = () => {
       })}
       <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
         <button
-          onClick={() => handleMove(-1)}
+          onClick={() => {
+            handleMove(-1)
+            trackTestimonialNavigation(posthog, {
+              direction: 'previous',
+              currentTestimonialId: testimonialsList[0]?.originalId
+            })
+          }}
           className={cn(
             "flex h-14 w-14 items-center justify-center text-2xl transition-colors",
             "bg-white border-2 border-gray-200 hover:bg-brand-red hover:text-white hover:border-brand-red",
@@ -222,7 +237,13 @@ export const StaggerTestimonials = () => {
           <ChevronLeft />
         </button>
         <button
-          onClick={() => handleMove(1)}
+          onClick={() => {
+            handleMove(1)
+            trackTestimonialNavigation(posthog, {
+              direction: 'next',
+              currentTestimonialId: testimonialsList[0]?.originalId
+            })
+          }}
           className={cn(
             "flex h-14 w-14 items-center justify-center text-2xl transition-colors",
             "bg-white border-2 border-gray-200 hover:bg-brand-red hover:text-white hover:border-brand-red",

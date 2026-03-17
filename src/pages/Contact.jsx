@@ -2,8 +2,11 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 import Map from '../components/Map'
+import { usePostHog } from '@posthog/react'
+import { trackContactFormSubmit, trackPhoneClick, trackEmailClick, trackOfficeLocationSelect } from '../utils/analytics'
 
 const Contact = () => {
+  const posthog = usePostHog()
   const [selectedLocation, setSelectedLocation] = useState('carrollton')
   const [formData, setFormData] = useState({
     name: '',
@@ -68,6 +71,17 @@ const Contact = () => {
         message: 'Thank you for contacting us! We will get back to you soon.'
       })
 
+      // Track successful form submission
+      trackContactFormSubmit(posthog, {
+        location: 'contact_page',
+        status: 'success',
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        preferredOffice: selectedLocation
+      })
+
       // Reset form
       setFormData({
         name: '',
@@ -77,6 +91,18 @@ const Contact = () => {
       })
     } catch (error) {
       console.error('Email send error:', error)
+      
+      // Track failed form submission
+      trackContactFormSubmit(posthog, {
+        location: 'contact_page',
+        status: 'error',
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        error: error.message
+      })
+      
       setSubmitStatus({
         type: 'error',
         message: 'Sorry, there was an error sending your message. Please try calling us directly at (940) 239-9840.'
@@ -276,6 +302,7 @@ const Contact = () => {
                     <a 
                       href="tel:940-239-9840" 
                       className="text-brand-red font-acherus font-medium hover:text-brand-black transition-colors"
+                      onClick={() => trackPhoneClick(posthog, { location: 'contact_page_info' })}
                     >
                       (940) 239-9840
                     </a>
@@ -294,6 +321,7 @@ const Contact = () => {
                     <a 
                       href="mailto:eservice@attorneyyu.com" 
                       className="text-brand-red font-acherus font-medium hover:text-brand-black transition-colors"
+                      onClick={() => trackEmailClick(posthog, { location: 'contact_page_info' })}
                     >
                       eservice@attorneyyu.com
                     </a>
@@ -376,7 +404,14 @@ const Contact = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <button
-                onClick={() => setSelectedLocation('carrollton')}
+                onClick={() => {
+                  const previousLocation = selectedLocation
+                  setSelectedLocation('carrollton')
+                  trackOfficeLocationSelect(posthog, { 
+                    location: 'carrollton', 
+                    previousLocation 
+                  })
+                }}
                 className={`px-6 py-3 font-acherus font-medium text-base transition-all duration-300 ${
                   selectedLocation === 'carrollton'
                     ? 'bg-brand-red text-white shadow-lg'
@@ -386,7 +421,14 @@ const Contact = () => {
                 Carrollton Office
               </button>
               <button
-                onClick={() => setSelectedLocation('austin')}
+                onClick={() => {
+                  const previousLocation = selectedLocation
+                  setSelectedLocation('austin')
+                  trackOfficeLocationSelect(posthog, { 
+                    location: 'austin', 
+                    previousLocation 
+                  })
+                }}
                 className={`px-6 py-3 font-acherus font-medium text-base transition-all duration-300 ${
                   selectedLocation === 'austin'
                     ? 'bg-brand-red text-white shadow-lg'

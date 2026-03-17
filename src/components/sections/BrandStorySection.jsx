@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { usePostHog } from '@posthog/react'
+import { trackNavigationClick } from '../../utils/analytics'
 
 const BrandStorySection = () => {
+  const posthog = usePostHog()
   return (
     <section className="py-20 bg-brand-black text-white relative overflow-hidden">
       {/* Background matching Settlements By Yu section */}
@@ -68,6 +71,11 @@ const BrandStorySection = () => {
                 <Link
                   to="/about"
                   className="btn-primary"
+                  onClick={() => trackNavigationClick(posthog, { 
+                    navItem: 'Learn More About Us', 
+                    destination: '/about', 
+                    isMobile: false 
+                  })}
                 >
                   Learn More About Us
                 </Link>

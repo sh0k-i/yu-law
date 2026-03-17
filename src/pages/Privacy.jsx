@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
+import { usePostHog } from '@posthog/react'
+import { trackPhoneClick, trackEmailClick } from '../utils/analytics'
 
 const Privacy = () => {
+  const posthog = usePostHog()
   return (
     <>
       {/* Hero Section */}
@@ -266,6 +269,7 @@ const Privacy = () => {
                 <a 
                   href="tel:940-239-9840" 
                   className="text-brand-red font-acherus font-medium hover:text-brand-black transition-colors"
+                  onClick={() => trackPhoneClick(posthog, { location: 'privacy_page' })}
                 >
                   Call: (940) 239-9840
                 </a>
@@ -273,6 +277,7 @@ const Privacy = () => {
                 <a 
                   href="mailto:eservice@attorneyyu.com" 
                   className="text-brand-red font-acherus font-medium hover:text-brand-black transition-colors"
+                  onClick={() => trackEmailClick(posthog, { location: 'privacy_page' })}
                 >
                   Email: eservice@attorneyyu.com
                 </a>

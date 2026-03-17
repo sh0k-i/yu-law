@@ -1,7 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { usePostHog } from '@posthog/react'
+import { trackLanguageChange } from '../utils/analytics'
 
 const GoogleTranslate = ({ isScrolled = false }) => {
+  const posthog = usePostHog()
   const [isOpen, setIsOpen] = useState(false)
   const [currentLanguage, setCurrentLanguage] = useState('en')
   const [isGoogleTranslateReady, setIsGoogleTranslateReady] = useState(false)
@@ -66,6 +69,14 @@ const GoogleTranslate = ({ isScrolled = false }) => {
   }, [])
 
   const handleLanguageChange = (code) => {
+    const fromLanguage = currentLanguage
+    
+    // Track language change
+    trackLanguageChange(posthog, {
+      fromLanguage,
+      toLanguage: code
+    })
+    
     // Save to localStorage and reload - let the page initialization handle the rest
     localStorage.setItem('selectedLanguage', code)
     

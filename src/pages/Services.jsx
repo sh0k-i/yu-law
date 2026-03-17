@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { usePostHog } from '@posthog/react'
+import { trackCTAClick, trackPhoneClick } from '../utils/analytics'
 
 const Services = () => {
+  const posthog = usePostHog()
   // Only offering Personal Injury services
   const services = [
     {
@@ -114,6 +117,10 @@ const Services = () => {
                     <Link
                       to="/contact"
                       className="btn-primary inline-block"
+                      onClick={() => trackCTAClick(posthog, { 
+                        ctaText: 'Get Started Now', 
+                        location: 'services_page_content' 
+                      })}
                     >
                       Get Started Now
                     </Link>
@@ -183,12 +190,17 @@ const Services = () => {
             <Link
               to="/contact"
               className="bg-white text-brand-red px-6 sm:px-8 py-3 sm:py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red btn-mobile"
+              onClick={() => trackCTAClick(posthog, { 
+                ctaText: 'Get Started Now', 
+                location: 'services_page_bottom_cta' 
+              })}
             >
               Get Started Now
             </Link>
             <a
               href="tel:940-239-9840"
               className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 font-acherus font-medium tracking-wide transition-all duration-300 hover:bg-white hover:text-brand-red focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-red btn-mobile"
+              onClick={() => trackPhoneClick(posthog, { location: 'services_page_bottom_cta' })}
             >
               Call: 940-239-9840
             </a>

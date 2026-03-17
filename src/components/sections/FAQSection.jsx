@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { usePostHog } from '@posthog/react'
+import { trackFAQToggle, trackCTAClick } from '../../utils/analytics'
 
 const FAQSection = () => {
+  const posthog = usePostHog()
   const [openFAQ, setOpenFAQ] = useState(null)
 
   // Use dynamic translations with namespaces
@@ -33,7 +36,15 @@ const FAQSection = () => {
   ]
 
   const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index)
+    const newState = openFAQ === index ? null : index
+    const action = newState === index ? 'opened' : 'closed'
+    setOpenFAQ(newState)
+    
+    trackFAQToggle(posthog, {
+      question: faqs[index].question,
+      action: action,
+      faqIndex: index
+    })
   }
 
   return (
@@ -84,7 +95,16 @@ const FAQSection = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <button className="btn-primary">
+                <button 
+                  className="btn-primary"
+                  onClick={() => {
+                    window.location.href = '/contact'
+                    trackCTAClick(posthog, { 
+                      ctaText: 'Contact 24-7', 
+                      location: 'faq_section' 
+                    })
+                  }}
+                >
                   Contact 24-7
                 </button>
               </motion.div>

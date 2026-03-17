@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import OurTeamSection from '../components/sections/OurTeamSection'
+import { usePostHog } from '@posthog/react'
+import { trackCTAClick } from '../utils/analytics'
 
 const About = () => {
+  const posthog = usePostHog()
   return (
     <>
       {/* Hero Section */}
@@ -132,6 +135,10 @@ const About = () => {
           <Link
             to="/contact"
             className="btn-primary"
+            onClick={() => trackCTAClick(posthog, { 
+              ctaText: 'Get Started Now', 
+              location: 'about_page' 
+            })}
           >
             Get Started Now
           </Link>
