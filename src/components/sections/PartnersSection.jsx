@@ -25,6 +25,16 @@ const PartnersSection = () => {
       logo: '/images/dba.png',
       whiteOverlay: true
     },
+    {
+      name: 'Greater Dallas Hispanic Chamber of Commerce',
+      logo: '/images/GDH.png',
+      whiteOverlay: false
+    },
+    {
+      name: 'Greater Manor Hispanic Chamber of Commerce',
+      logo: '/images/GMH.png',
+      whiteOverlay: false
+    },
   ]
 
   return (

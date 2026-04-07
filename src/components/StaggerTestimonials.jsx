@@ -93,7 +93,7 @@ const TestimonialCard = ({
         clipPath: `polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0)`,
         transform: `
           translate(-50%, -50%) 
-          translateX(${Math.max(-cardSize * 0.8, Math.min(cardSize * 0.8, (cardSize / 1.5) * position))}px)
+          translateX(${(cardSize * 0.75) * position}px)
           translateY(${isCenter ? -65 : position % 2 ? 15 : -15}px)
           rotate(${isCenter ? 0 : position % 2 ? 2.5 : -2.5}deg)
         `,

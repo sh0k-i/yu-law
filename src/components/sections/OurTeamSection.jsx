@@ -9,6 +9,12 @@ const OurTeamSection = () => {
       image: '/images/team/liezyl.png'
     },
     {
+      name: 'Marcel Medley',
+      title: 'Oklahoma Attorney',
+      description: 'Experienced Oklahoma attorney providing expert legal representation and counsel. Dedicated to delivering exceptional legal services and advocating for clients with integrity and professionalism.',
+      image: '/images/team/marcel.png'
+    },
+    {
       name: 'Carla Cano Cantu',
       title: 'Case Manager',
       description: 'Expert case management professional ensuring smooth client communication and efficient case progression. Dedicated to keeping clients informed throughout their legal journey.',

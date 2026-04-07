@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
+import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa'
 import { usePostHog } from '@posthog/react'
 import { trackPhoneClick, trackEmailClick, trackCTAClick, trackNavigationClick } from '../utils/analytics'
 
@@ -20,6 +21,13 @@ const Footer = () => {
     { name: 'Free Consultation', href: '/contact' },
   ]
 
+  const socialLinks = [
+    { name: 'Facebook', href: 'https://www.facebook.com/attorneyyu', icon: FaFacebook },
+    { name: 'Instagram', href: 'https://www.instagram.com/yulawfirm', icon: FaInstagram },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/yu-law-firm-pllc', icon: FaLinkedin },
+    { name: 'TikTok', href: 'https://www.tiktok.com/@yu.law.firm', icon: FaTiktok },
+  ]
+
   return (
     <footer className="bg-brand-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -27,9 +35,32 @@ const Footer = () => {
           {/* Column 1 - Brand Section */}
           <div>
             <Logo variant="horizontal" color="white" className="mb-4" />
-            <p className="text-brand-cream font-acherus leading-relaxed text-sm">
+            <p className="text-brand-cream font-acherus leading-relaxed text-sm mb-6">
               Specializing in Personal Injury Law. Empowering lives through compassionate legal advocacy and unwavering support.
             </p>
+            {/* Social Media Links */}
+            <div className="flex gap-4">
+              {socialLinks.map((social) => {
+                const IconComponent = social.icon
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-cream hover:text-brand-red transition-all duration-200 hover:scale-110"
+                    aria-label={social.name}
+                    onClick={() => trackNavigationClick(posthog, { 
+                      navItem: social.name, 
+                      destination: social.href, 
+                      isMobile: false 
+                    })}
+                  >
+                    <IconComponent className="w-5 h-5" />
+                  </a>
+                )
+              })}
+            </div>
           </div>
 
           {/* Column 2 - Contact Information */}
