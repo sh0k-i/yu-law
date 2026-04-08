@@ -10,8 +10,8 @@ const OurTeamSection = () => {
     },
     {
       name: 'Marcel Medley',
-      title: 'Oklahoma Attorney',
-      description: 'Experienced Oklahoma attorney providing expert legal representation and counsel. Dedicated to delivering exceptional legal services and advocating for clients with integrity and professionalism.',
+      title: 'Attorney',
+      description: 'Experienced attorney providing expert legal representation and counsel. Dedicated to delivering exceptional legal services and advocating for clients with integrity and professionalism.',
       image: '/images/team/marcel.png'
     },
     {
