@@ -101,12 +101,27 @@ const HeroSection = () => {
                   </div>
                 </div>
               </motion.div>
+
+              {/* Service Area */}
+              <motion.div 
+                className="mb-6 md:mb-8 border-l-4 border-brand-red pl-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
+              >
+                <h3 className="text-sm sm:text-base font-acherus font-semibold mb-1" style={{ color: '#6B6960' }}>
+                  Serving Clients Across Texas & Oklahoma
+                </h3>
+                <p className="text-xs sm:text-sm font-acherus text-brand-gray leading-relaxed">
+                  We proudly represent individuals and families throughout Texas and Oklahoma.
+                </p>
+              </motion.div>
               
               <motion.div 
                 className="flex flex-col sm:flex-row gap-4 mb-8 md:mb-12"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
               >
               <motion.div
                 whileHover={{ scale: 1.05 }}

@@ -15,16 +15,16 @@ const OurTeamSection = () => {
       image: '/images/team/marcel.png'
     },
     {
-      name: 'Carla Cano Cantu',
-      title: 'Case Manager',
-      description: 'Expert case management professional ensuring smooth client communication and efficient case progression. Dedicated to keeping clients informed throughout their legal journey.',
-      image: '/images/team/carla.png'
-    },
-    {
       name: 'Kaye Brier',
       title: 'Paralegal',
       description: 'Skilled paralegal providing comprehensive legal support and document preparation. Committed to thorough case preparation and exceptional client service.',
       image: '/images/team/kaye.png'
+    },
+    {
+      name: 'Carla Cano Cantu',
+      title: 'Case Manager',
+      description: 'Expert case management professional ensuring smooth client communication and efficient case progression. Dedicated to keeping clients informed throughout their legal journey.',
+      image: '/images/team/carla.png'
     },
     {
       name: 'Caren Marie Montelibano',
