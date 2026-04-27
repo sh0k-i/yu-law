@@ -64,9 +64,15 @@ const OurTeamSection = () => {
     },
     {
       name: 'Hannson Namoc',
-      title: 'Social Media Manager',
-      description: 'Creative social media strategist managing the firm\'s online presence and digital engagement. Dedicated to connecting with clients and sharing the firm\'s success stories.',
+      title: 'Marketing Manager',
+      description: 'Strategic marketing professional driving brand awareness and client engagement. Expert in developing comprehensive marketing campaigns and managing the firm\'s digital presence.',
       image: '/images/team/hanson.png'
+    },
+    {
+      name: 'Jesus Gochangco Jr.',
+      title: 'Director of Relations',
+      description: 'Experienced relations director building and maintaining strong client relationships and community partnerships. Dedicated to fostering trust and ensuring exceptional client experiences.',
+      image: '/images/team/jesus.png'
     },
     {
       name: 'Bear',
