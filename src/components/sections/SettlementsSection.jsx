@@ -42,6 +42,31 @@ const SettlementsSection = () => {
       amount: "$35,000",
       description: "At-fault driver ran a red light and T-boned the car our Client was a passenger in"
     },
+    {
+      case: "Motor Vehicle Collision",
+      amount: "$115,000",
+      description: "At-fault driver made unsafe lane change with no witnesses"
+    },
+    {
+      case: "Premises Liability",
+      amount: "$135,000",
+      description: "Client slipped on liquid in restricted commercial area"
+    },
+    {
+      case: "Motor Vehicle Collision",
+      amount: "$150,000",
+      description: "At-fault driver merged into client's lane without checking"
+    },
+    {
+      case: "Motor Vehicle Collision",
+      amount: "$160,000",
+      description: "At-fault driver rear-ended our client's vehicle"
+    },
+    {
+      case: "Motor Vehicle Collision",
+      amount: "$175,000",
+      description: "At-fault driver failed to change lanes safely"
+    },
   ]
 
   // Duplicate settlements for continuous scroll
